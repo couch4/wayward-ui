@@ -1,0 +1,26 @@
+{
+  "moduleName": "HeroCenterAlignedModule",
+  "moduleId": "1d34ad8f-b7ad-4ced-b6e2-e9fc274f4cb7",
+  "paddingTop": "Medium",
+  "paddingBottom": "Large",
+  "backgroundColour": "#e2e2e2",
+  "props": {
+    "preHeading": "We are sorry, the page what you are looking for ",
+    "headingTitle": {
+      "heading": "Was not found",
+      "htag": "h1"
+    },
+    "description": "",
+    "backgroundMedia": {
+      "coverImage": null,
+      "videoFromGallery": null,
+      "vimeoId": "",
+      "youtubeId": "",
+      "autoPlay": false,
+      "loop": false,
+      "allowFullScreen": false
+    },
+    "primaryCTA": null,
+    "secondaryCTA": null
+  }
+}

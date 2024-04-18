@@ -1,0 +1,88 @@
+{
+  "logo": {
+    "imageUrl": "https://zhweb-qa-f-app.azurewebsites.net/media/32en41sr/zha_logo.png",
+    "caption": "",
+    "imageAlt": "",
+    "mediaId": 1208,
+    "isSvg": false,
+    "isVideo": false
+  },
+  "upperLinks": [
+    {
+      "text": "Contact",
+      "href": "/contact",
+      "linkType": "Content",
+      "target": ""
+    },
+    {
+      "text": "Careers",
+      "href": "https://zaha-hadid.jobs.personio.com/?language=en",
+      "linkType": "External",
+      "target": ""
+    },
+    {
+      "text": "Reports",
+      "href": "/reports",
+      "linkType": "Content",
+      "target": ""
+    }
+  ],
+  "bottomLinks": [
+    {
+      "text": "Privacy Policy",
+      "href": "/privacy-policy",
+      "linkType": "Content",
+      "target": ""
+    },
+    {
+      "text": "Terms of Use",
+      "href": "/terms-of-use",
+      "linkType": "Content",
+      "target": ""
+    },
+    {
+      "text": "Archive",
+      "href": "https://www.zaha-hadid.com/archive",
+      "linkType": "External",
+      "target": "_blank"
+    }
+  ],
+  "copyrightText": "©2024 Zaha Hadid Architects",
+  "backgroundImage": {
+    "imageUrl": "https://zhweb-qa-f-app.azurewebsites.net/media/2y3fbnzx/maarten-deckers-t5nxyxcf50i-unsplash.jpg",
+    "caption": "Duis aute irure dolor in 324  in voluptate velit",
+    "imageAlt": "",
+    "mediaId": 1254,
+    "isSvg": false,
+    "isVideo": false
+  },
+  "socialMediaLinks": [
+    {
+      "socialPlatform": "Instagram",
+      "link": {
+        "text": "Instagram",
+        "href": "https://www.instagram.com/zahahadidarchitects",
+        "linkType": "External",
+        "target": ""
+      }
+    },
+    {
+      "socialPlatform": "Facebook",
+      "link": {
+        "text": "Facebook",
+        "href": "https://www.facebook.com/ZHANews/",
+        "linkType": "External",
+        "target": ""
+      }
+    },
+    {
+      "socialPlatform": "X",
+      "link": {
+        "text": "https://twitter.com/ZHA_News",
+        "href": "https://twitter.com/ZHA_News",
+        "linkType": "External",
+        "target": ""
+      }
+    }
+  ]
+}

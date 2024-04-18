@@ -1,0 +1,77 @@
+/* card variants */
+.card.primary {
+  @apply p-5 bg-white;
+}
+
+.card.overlay {
+  @apply relative p-10;
+}
+
+.card.overlay:after {
+  @apply absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.7)];
+  content: "";
+}
+
+.card.sm {
+  @apply w-[18rem] md:w-[28rem] lg:w-[56rem] gap-5;
+}
+
+.card.md {
+  @apply w-[22rem] md:w-[33rem] lg:w-[66rem] gap-8;
+}
+
+.card.lg {
+  @apply w-[20rem] md:w-[43rem] lg:w-[76rem] gap-10 grid-cols-5;
+}
+
+.full {
+  @apply w-full h-full;
+}
+
+.card .media-holder {
+  @apply relative w-full bg-cover bg-center;
+}
+
+.card .media-holder.sm {
+  @apply h-[12rem] md:h-[20rem] lg:h-[25rem];
+}
+
+.card .media-holder.md {
+  @apply h-[14rem] md:h-[22rem] lg:h-[35rem];
+}
+
+.card .media-holder.lg {
+  @apply h-[14rem] md:h-full lg:h-full col-span-5 md:col-span-2 lg:col-span-2;
+}
+
+.card-content {
+  @apply gap-5 h-full lg:min-h-[25rem];
+}
+
+.card-content.lg {
+  @apply col-span-5 md:col-span-3 lg:col-span-3;
+}
+
+.card .content-block .primary-cta {
+  @apply self-baseline mt-6 lg:mt-auto flex;
+}
+
+.card.overlay .media-holder {
+  @apply absolute top-0 left-0 w-full h-full;
+}
+
+.card.overlay .content-block {
+  @apply relative z-[1];
+}
+
+.card.overlay .card-content .text {
+  @apply text-white;
+}
+
+.card.overlay .card-content .heading-title {
+  @apply font-secondary uppercase;
+}
+
+.card.overlay .card-content .text-copy-bold {
+  @apply !text-gray-300;
+}

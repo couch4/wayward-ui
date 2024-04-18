@@ -1,0 +1,23 @@
+.module.pt-small {
+  @apply pt-6 lg:pt-10;
+}
+
+.module.pt-medium {
+  @apply pt-10 lg:pt-16;
+}
+
+.module.pt-large {
+  @apply pt-16 lg:pt-20;
+}
+
+.module.pb-small {
+  @apply pb-6 lg:pb-10;
+}
+
+.module.pb-medium {
+  @apply pb-10 lg:pb-16;
+}
+
+.module.pb-large {
+  @apply pb-16 lg:pb-20;
+}

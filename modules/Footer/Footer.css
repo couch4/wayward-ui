@@ -1,0 +1,18 @@
+.footer {
+  @apply relative;
+
+  &-logo {
+    @apply relative
+    w-12
+    h-12;
+  }
+
+  &-background {
+    @apply absolute
+    top-0
+    left-0
+    w-full
+    h-full
+    z-[-1];
+  }
+}

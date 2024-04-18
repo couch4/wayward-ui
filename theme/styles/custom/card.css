@@ -1,0 +1,21 @@
+.card.custom-zha {
+  @apply content-end relative overflow-hidden p-[0.4rem];
+}
+
+.card.custom-zha:after {
+  @apply absolute top-[initial] bottom-0 left-0 w-full h-[50%];
+  content: "";
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+}
+
+.card.custom-zha .card-content {
+  @apply min-h-[9rem] rounded-lg;
+}
+
+.card.custom-zha .button-group {
+  @apply justify-end;
+}
+
+.card.custom-zha .button {
+  @apply border-none;
+}

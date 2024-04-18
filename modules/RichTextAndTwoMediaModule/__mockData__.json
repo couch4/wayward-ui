@@ -1,0 +1,45 @@
+{
+  "tag": "Tag 2",
+  "headingTitle": {
+    "heading": "<p>Title here LPV</p>",
+    "htag": "p"
+  },
+  "description": "<p>Description goes here lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec vestibulum eros. Curabitur ac libero malesuada, feugiat ligula quis, sodales diam. Morbi cursus mauris id bibendum commodo.Description goes here lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec vestibulum eros. Curabitur ac libero malesuada, feugiat ligula quis, sodales diam. Morbi cursus mauris id bibendum commodo.Description goes here lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec vestibulum eros. Curabitur ac libero malesuada, feugiat ligula quis, sodales diam. Morbi cursus mauris id bibendum commodo.</p>",
+  "primaryCta": null,
+  "secondaryCta": {
+    "text": "Image",
+    "href": "/media/iepha0bt/flipboard-h5h5uyxblbq-unsplash.jpg",
+    "linkType": "Media",
+    "target": ""
+  },
+  "mediaAlignment": "Left",
+  "mediaOrientation": "Portrait",
+  "largeMedia": {
+    "imageUrl": "https://qa-api.zaha-hadid.com/media/0gnjyfnm/anders-jilden-sc5rkxlbjgg-unsplash.jpg",
+    "caption": "Duis aute irure dolor in reprehenderit in voluptate velit 1",
+    "imageAlt": "",
+    "mediaId": 1251,
+    "isSvg": false,
+    "isVideo": false
+  },
+  "smallMedia": {
+    "coverImage": {
+      "imageUrl": "https://qa-api.zaha-hadid.com/media/tlil3thy/lance-anderson-qdaaasrzhdk-unsplash.jpg",
+      "caption": "New element 47",
+      "imageAlt": "Description field for the New element 47",
+      "mediaId": 1255,
+      "isSvg": false,
+      "isVideo": false
+    },
+    "videoFromGallery": null,
+    "vimeoId": "889428749",
+    "youtubeId": "",
+    "autoPlay": true,
+    "loop": true,
+    "allowFullScreen": true
+  },
+  "anchor": "",
+  "anchorDisplayName": "Pre-heading",
+  "paddingTop": "Medium",
+  "paddingBottom": "Large"
+}

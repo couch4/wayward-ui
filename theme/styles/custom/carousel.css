@@ -1,0 +1,9 @@
+.carousel.custom-zha .carousel-control-wrapper {
+  @apply !w-[124%] left-[-12%];
+}
+
+.carousel.custom-zha .carousel-control {
+  @apply w-[6.5rem] h-[6.5rem] rounded-full bg-[rgba(0,0,0,0.1)] p-[2.3rem] transition duration-700 ease-in-out text-white;
+  border: solid 1px rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(0.5rem) !important;
+}

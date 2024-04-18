@@ -1,0 +1,133 @@
+.rich-text-and-two-media {
+  @apply relative;
+
+  &.left {
+    & > .media-holder {
+      @apply left-[2.5rem];
+    }
+    & > .card .content-block {
+      @apply ml-auto;
+    }
+  }
+
+  .card {
+    @apply flex
+    flex-col
+    justify-around lg:justify-center
+    p-8 md:p-16 lg:p-10
+    h-svh;
+
+    .media-holder.portrait.right,
+    .media-holder.portrait.left,
+    .media-holder.landscape.right,
+    .media-holder.landscape.left {
+      @apply relative lg:absolute
+      right-0 lg:left-[2.5rem]
+      bottom-0 lg:bottom-[2.5rem] 
+      lg:top-auto 
+      lg:right-auto
+      block
+      overflow-hidden
+      w-[15.5rem] md:w-[22.8rem] xl:w-[28.5rem] 2xl:w-[37rem]
+      h-[10rem] md:h-[15rem] xl:h-[17.5rem] 2xl:h-[22.5rem]
+      z-10;
+      &.right {
+        @apply ml-auto
+        lg:right-[2.5rem];
+      }
+      &.portrait {
+        @apply w-[12.9rem] md:w-[14.6rem] xl:w-[20.8rem] 2xl:w-[27.5rem]
+        h-[15rem] md:h-[20rem] xl:h-[25rem] 2xl:h-[32.5rem];
+      }
+
+      /* iframe {
+        @apply w-[15.5rem] md:w-[22.75rem] xl:w-[28.5rem] 2xl:w-[36.8rem]
+        h-[10rem] md:h-[15.1rem] xl:h-[17.8rem] 2xl:h-[22.1rem];
+      } */
+
+      iframe {
+        @apply absolute z-[1]
+        p-0
+        pointer-events-none
+        left-[50%]
+          top-[50%]
+          translate-x-[-50%]
+          translate-y-[-50%];
+      }
+
+      .player {
+        width: 100%;
+        height: 100%;
+        border: red solid 1px;
+      }
+
+      .video {
+        &-wrapper {
+          @apply overflow-hidden;
+        }
+        &-controls {
+          @apply absolute
+          z-[2];
+        }
+      }
+    }
+    .media-holder:not(.portrait) {
+      @apply absolute
+      top-0
+      left-0
+      w-full
+      h-full
+      z-0;
+    }
+    .content-block {
+      @apply w-full lg:w-1/2
+      h-auto lg:h-full
+      flex
+      flex-col
+      z-10;
+
+      .pre-content {
+        @apply absolute
+        top-4 md:top-10 lg:top-0
+        lg:relative
+        md:grow;
+      }
+
+      .description {
+        @apply opacity-75;
+      }
+      .button-group {
+        @apply flex
+        mt-[8px] md:mt-[16px] xl:mt-[24px] 2xl:mt-[16px] 
+        gap-2;
+
+        button {
+          @apply uppercase 
+          rounded
+          border 
+          md:h-[48px];
+          &.button-primary {
+            @apply m-0 
+              bg-white 
+              text-black;
+            &:hover {
+              @apply bg-black 
+                  text-white 
+                  border-white;
+            }
+          }
+          &.secondary-cta {
+            &:hover {
+              @apply bg-white 
+                  text-black;
+            }
+          }
+          svg {
+            @apply w-[12px] 
+              ml-[12px];
+          }
+        }
+      }
+    }
+  }
+}

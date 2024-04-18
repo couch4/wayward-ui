@@ -1,0 +1,231 @@
+{
+  "filtersAndCards": {
+    "cardType": "Expertise",
+    "displayFilters": false,
+    "filter": null,
+    "sortByOptions": [],
+    "featuredCard": null,
+    "featuredId": null,
+    "cards": [
+      {
+        "moduleName": "ExpertiseCardModel",
+        "moduleId": "437177b8-cf1a-4e17-9a45-9f73ed5743be",
+        "props": {
+          "tag": "Expertise",
+          "headingTitle": "Virtual Spaces",
+          "description": "",
+          "primaryCta": {
+            "text": "Virtual Spaces",
+            "href": "/expertise/virtual-spaces",
+            "linkType": "Content",
+            "target": null
+          },
+          "cardImage": {
+            "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/phkp5hmm/verne-ho-0lajfsna-xq-unsplash.jpg",
+            "caption": "Duis aute irure dolor in reprehenderit in voluptate velit 47",
+            "imageAlt": "",
+            "mediaId": 1253,
+            "isSvg": false,
+            "isVideo": false
+          }
+        }
+      },
+      {
+        "moduleName": "ExpertiseCardModel",
+        "moduleId": "e1b16e51-2863-4ff8-914a-6cd6c91ec3d1",
+        "props": {
+          "tag": "Expertise",
+          "headingTitle": "Architecture",
+          "description": "",
+          "primaryCta": {
+            "text": "Architecture",
+            "href": "/expertise/architecture",
+            "linkType": "Content",
+            "target": null
+          },
+          "cardImage": {
+            "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/nm4aowig/zha_1.jpg?rxy=0.43734335839599,0.428340048455968",
+            "caption": "",
+            "imageAlt": "",
+            "mediaId": 1201,
+            "isSvg": false,
+            "isVideo": false
+          }
+        }
+      },
+      {
+        "moduleName": "ExpertiseCardModel",
+        "moduleId": "8a45d04e-6c1f-4b97-a696-9169e53446e1",
+        "props": {
+          "tag": "Example",
+          "headingTitle": "Workplace Consultancy",
+          "description": "",
+          "primaryCta": {
+            "text": "Workplace Consultancy",
+            "href": "/expertise/workplace-consultancy",
+            "linkType": "Content",
+            "target": null
+          },
+          "cardImage": {
+            "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/i5rj4mnz/marek-omasta-ybkklyupnrm-unsplash.jpg",
+            "caption": "Marek Omasta Ybkklyupnrm Unsplash",
+            "imageAlt": "",
+            "mediaId": 1326,
+            "isSvg": false,
+            "isVideo": false
+          }
+        }
+      },
+      {
+        "moduleName": "ExpertiseCardModel",
+        "moduleId": "a6a4dfa2-175d-4221-9743-2f82c79558f5",
+        "props": {
+          "tag": "Expertise",
+          "headingTitle": "Design",
+          "description": "",
+          "primaryCta": {
+            "text": "Design",
+            "href": "/expertise/design",
+            "linkType": "Content",
+            "target": null
+          },
+          "cardImage": null
+        }
+      },
+      {
+        "moduleName": "ExpertiseCardModel",
+        "moduleId": "364917d1-f968-4828-8cb0-cc9f58dd3943",
+        "props": {
+          "tag": "Tag",
+          "headingTitle": "Exhibitions",
+          "description": "Short card description goes here. ",
+          "primaryCta": {
+            "text": "Exhibitions",
+            "href": "/expertise/exhibitions",
+            "linkType": "Content",
+            "target": null
+          },
+          "cardImage": {
+            "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/n3wnnfrm/max-van-den-oetelaar-zv4gltvfwsa-unsplash.jpg",
+            "caption": "Max Van Den Oetelaar Zv4gltvfwsa Unsplash",
+            "imageAlt": "",
+            "mediaId": 1339,
+            "isSvg": false,
+            "isVideo": false
+          }
+        }
+      },
+      {
+        "moduleName": "ExpertiseCardModel",
+        "moduleId": "819f78e1-10e7-4970-925f-042f70ce5dd8",
+        "props": {
+          "tag": "Expertise",
+          "headingTitle": "Interior Design",
+          "description": "",
+          "primaryCta": {
+            "text": "Interior Design",
+            "href": "/expertise/interior-design",
+            "linkType": "Content",
+            "target": null
+          },
+          "cardImage": {
+            "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/wjynwnvn/arturo-castaneyra-o-dkysvidb4-unsplash.jpg",
+            "caption": "Duis aute irure dolor in reprehenderit in voluptate velit 45",
+            "imageAlt": "",
+            "mediaId": 1252,
+            "isSvg": false,
+            "isVideo": false
+          }
+        }
+      },
+      {
+        "moduleName": "ExpertiseCardModel",
+        "moduleId": "489e07d0-b808-4d50-8376-564530e210d4",
+        "props": {
+          "tag": "Expertise",
+          "headingTitle": "Masterplans",
+          "description": "",
+          "primaryCta": {
+            "text": "Masterplans",
+            "href": "/expertise/masterplans",
+            "linkType": "Content",
+            "target": null
+          },
+          "cardImage": {
+            "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/frmfifg5/danist-soh-dqxiw7ncb9q-unsplash.jpg",
+            "caption": "Duis aute irure velit 7436",
+            "imageAlt": "",
+            "mediaId": 1257,
+            "isSvg": false,
+            "isVideo": false
+          }
+        }
+      },
+      {
+        "moduleName": "ExpertiseCardModel",
+        "moduleId": "27818c30-091d-4e7a-bb1f-5f274cca3d78",
+        "props": {
+          "tag": "Tag ",
+          "headingTitle": "Installations + Pavilions",
+          "description": "Short card description goes here",
+          "primaryCta": {
+            "text": "Installations + Pavilions",
+            "href": "/expertise/installations-plus-pavilions",
+            "linkType": "Content",
+            "target": null
+          },
+          "cardImage": {
+            "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/wjynwnvn/arturo-castaneyra-o-dkysvidb4-unsplash.jpg",
+            "caption": "Duis aute irure dolor in reprehenderit in voluptate velit 45",
+            "imageAlt": "",
+            "mediaId": 1252,
+            "isSvg": false,
+            "isVideo": false
+          }
+        }
+      },
+      {
+        "moduleName": "ExpertiseCardModel",
+        "moduleId": "f61e41f9-e022-4fc6-a539-df7e68a07432",
+        "props": {
+          "tag": "Expertise",
+          "headingTitle": "Products ",
+          "description": "Description",
+          "primaryCta": {
+            "text": "Products",
+            "href": "/expertise/products",
+            "linkType": "Content",
+            "target": null
+          },
+          "cardImage": {
+            "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/1tpggpe3/nastuh-abootalebi-ehd8y1znfpk-unsplash.jpg",
+            "caption": "Nastuh Abootalebi Ehd8y1znfpk Unsplash",
+            "imageAlt": "",
+            "mediaId": 1333,
+            "isSvg": false,
+            "isVideo": false
+          }
+        }
+      }
+    ],
+    "orderBy": [
+      {
+        "field": "nodeName",
+        "sortType": "String",
+        "orderByDirection": "Asc"
+      }
+    ],
+    "totalCount": 9,
+    "totalPages": 1,
+    "currentPage": 1,
+    "pageSize": 9
+  },
+  "anchor": "",
+  "anchorDisplayName": "",
+  "tag": "Expertise",
+  "headingTitle": {
+    "heading": "<p>Explore our wide-range of specialisms</p>",
+    "htag": ""
+  },
+  "description": "Zaha Hadid Architects showcases unparalleled expertise, blending visionary design with technical mastery. Their multidisciplinary team seamlessly integrates creativity, technology, and innovation - pushing the boundaries of architectural excellence."
+}

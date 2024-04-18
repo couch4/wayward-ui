@@ -1,0 +1,24 @@
+.popover {
+  &-wrapper {
+    @apply relative
+    z-[3];
+
+    &.open {
+      .popover-content {
+        @apply absolute
+        
+        top-full
+        bg-white
+        p-6
+        h-auto;
+      }
+    }
+    span {
+      @apply pointer-events-none;
+    }
+  }
+  &-content {
+    @apply h-0
+    overflow-hidden;
+  }
+}

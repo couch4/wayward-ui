@@ -1,0 +1,94 @@
+.generic-carousel {
+  @apply relative
+  w-[90vw] xl:w-[98vw]
+  max-w-[1200px]
+  m-auto
+  mb-16;
+
+  &-content {
+    @apply relative
+    pl-[20%]
+    flex
+    flex-col
+    mb-6
+    gap-2;
+  }
+
+  &-tag {
+    @apply absolute
+    top-0
+    left-0;
+  }
+
+  .media-holder {
+    @apply min-h-20;
+  }
+
+  .carousel {
+    @apply flex flex-row mb-16;
+
+    &-wrapper {
+      @apply flex flex-row;
+    }
+
+    .card {
+      @apply border;
+
+      .tag {
+        @apply whitespace-nowrap;
+      }
+    }
+
+    &-control {
+      @apply w-16
+      h-16
+      border
+      border-[rgba(255,255,255,0.25)]
+      rounded-full
+      cursor-pointer
+      p-5;
+      transition: 0.3s ease-out;
+
+      &:hover {
+        @apply border-white
+          bg-[rgba(255,255,255,0.15)];
+      }
+
+      &:first-child {
+        @apply rotate-180;
+      }
+
+      &-wrapper {
+        @apply absolute
+        flex
+        flex-row
+        justify-end
+        gap-4
+        bottom-0
+        right-6;
+        top: initial;
+        left: initial;
+      }
+    }
+
+    &-pagination {
+      @apply absolute 
+      right-[14rem]
+      bottom-6
+      flex
+      flex-row
+      gap-6
+      translate-x-0;
+      left: initial;
+
+      &-number {
+        @apply text-white
+        opacity-50
+        select-none;
+        &.active {
+          @apply opacity-100;
+        }
+      }
+    }
+  }
+}

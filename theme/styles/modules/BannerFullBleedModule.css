@@ -1,0 +1,23 @@
+.banner-full-bleed .card.overlay {
+  @apply p-4 md:p-8 min-h-lvh;
+}
+.banner-full-bleed .pre-content {
+  @apply grow;
+}
+.banner-full-bleed .content-block {
+  @apply md:pr-[30%] lg:pr-[50%];
+}
+.banner-full-bleed .button-group {
+  @apply md:absolute md:bottom-0 md:right-0 w-auto;
+  .primary-cta {
+    @apply bg-transparent text-white border-white border rounded-full
+        mt-0 opacity-25
+        w-[96px] h-[96px]
+        md:w-[120px] md:h-[120px]
+        xl:w-[144px] xl:h-[144px]
+        2xl:w-[160px] 2xl:h-[160px];
+    &:hover {
+      @apply opacity-100;
+    }
+  }
+}

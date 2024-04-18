@@ -1,0 +1,12 @@
+/* content variants */
+.content-block {
+  @apply gap-5;
+}
+
+.content-block .pre-content {
+  @apply w-full justify-between;
+}
+
+.content-block .primary-cta {
+  @apply self-baseline mt-6;
+}

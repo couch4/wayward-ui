@@ -1,0 +1,28 @@
+{
+  "crumbs": [
+    {
+      "text": "Home",
+      "href": "/",
+      "linkType": "Content",
+      "target": null
+    },
+    {
+      "text": "Breadcrumb level 02",
+      "href": "/breadcrumb2",
+      "linkType": "Content",
+      "target": null
+    },
+    {
+      "text": "Breadcrumb level 03",
+      "href": "/breadcrumb2/breadcrumb3",
+      "linkType": "Content",
+      "target": null
+    },
+    {
+      "text": "Current page",
+      "href": null,
+      "linkType": "Content",
+      "target": null
+    }
+  ]
+}

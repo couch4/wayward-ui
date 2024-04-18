@@ -1,0 +1,62 @@
+{
+  "tag": "Label",
+  "headingTitle": {
+    "heading": "<p>Accordion test module</p>",
+    "htag": "h3"
+  },
+  "allowOpeningMultiple": true,
+  "accordionElements": [
+    {
+      "title": "First section",
+      "text": "{\n  \"rteLimitedText\": \"<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\",\n  \"rteLimitedlimit\": 250\n}"
+    },
+    {
+      "title": "Second section",
+      "text": "{\n  \"rteLimitedText\": \"<p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>\",\n  \"rteLimitedlimit\": 250\n}"
+    },
+    {
+      "title": "Third section of this Accordion module test page",
+      "text": "{\n  \"rteLimitedText\": \"\",\n  \"rteLimitedlimit\": 250\n}"
+    },
+    {
+      "title": "4th section",
+      "text": "{\n  \"rteLimitedText\": \"<p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>\",\n  \"rteLimitedlimit\": 250\n}"
+    },
+    {
+      "title": "5th section",
+      "text": "{\n  \"rteLimitedText\": \"<p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>\",\n  \"rteLimitedlimit\": 250\n}"
+    },
+    {
+      "title": "6th section",
+      "text": "{\n  \"rteLimitedText\": \"<p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>\",\n  \"rteLimitedlimit\": 250\n}"
+    },
+    {
+      "title": "7th section",
+      "text": "{\n  \"rteLimitedText\": \"<p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>\",\n  \"rteLimitedlimit\": 250\n}"
+    },
+    {
+      "title": "8th section",
+      "text": "{\n  \"rteLimitedText\": \"<p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>\",\n  \"rteLimitedlimit\": 250\n}"
+    },
+    {
+      "title": "9th section",
+      "text": "{\n  \"rteLimitedText\": \"<p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>\",\n  \"rteLimitedlimit\": 250\n}"
+    },
+    {
+      "title": "10th section",
+      "text": "{\n  \"rteLimitedText\": \"<p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>\",\n  \"rteLimitedlimit\": 250\n}"
+    },
+    {
+      "title": "11th",
+      "text": "{\n  \"rteLimitedText\": \"\",\n  \"rteLimitedlimit\": 250\n}"
+    },
+    {
+      "title": "Title",
+      "text": "{\n  \"rteLimitedText\": \"\",\n  \"rteLimitedlimit\": 250\n}"
+    }
+  ],
+  "paddingTop": "Large",
+  "paddingBottom": "Medium",
+  "anchor": "accordion-anchor",
+  "anchorDisplayName": "Accordion"
+}

@@ -1,0 +1,257 @@
+{
+  "filtersAndCards": {
+    "cardType": "TeamMember",
+    "displayFilters": true,
+    "filter": [
+      {
+        "filterName": "Category",
+        "filterValue": "category",
+        "filters": [
+          {
+            "name": "Board Directors",
+            "filterGuid": "239f7013-9bd9-4184-95bb-3f5043b34c7b",
+            "isSelected": false,
+            "hasTypologies": false
+          },
+          {
+            "name": "Associate Directors",
+            "filterGuid": "7960226f-152e-467e-9dad-f43e6ffc0aac",
+            "isSelected": false,
+            "hasTypologies": false
+          },
+          {
+            "name": "Exhibitions, Design and Interiors",
+            "filterGuid": "08e85e5b-fb30-4e28-8f23-44c423aaa2bd",
+            "isSelected": false,
+            "hasTypologies": false
+          }
+        ]
+      },
+      {
+        "filterName": "Location",
+        "filterValue": "officeLocation",
+        "filters": [
+          {
+            "name": "London, UK",
+            "filterGuid": "f397040f-37a7-4cc4-9b75-490fe69478d1",
+            "isSelected": false,
+            "hasTypologies": false
+          },
+          {
+            "name": "Beijing, China",
+            "filterGuid": "7dafeea9-f6fe-4c35-91d3-a4804508dc8e",
+            "isSelected": false,
+            "hasTypologies": false
+          }
+        ]
+      },
+      {
+        "filterName": "Team",
+        "filterValue": "team",
+        "filters": [
+          {
+            "name": "Computation and Design",
+            "filterGuid": "d9d41a65-6884-491e-8210-c8aefea3d5d6",
+            "isSelected": false,
+            "hasTypologies": false
+          }
+        ]
+      }
+    ],
+    "sortByOptions": [],
+    "featuredCard": null,
+    "featuredId": null,
+    "cards": [
+      {
+        "moduleName": "TeamMemberListingGroup",
+        "moduleId": "239f7013-9bd9-4184-95bb-3f5043b34c7b",
+        "props": {
+          "categoryName": "Board Directors",
+          "people": [
+            {
+              "moduleName": "TeamMemberCardModel",
+              "moduleId": "57202c39-d7dc-4f9f-892b-69441448a6b1",
+              "props": {
+                "firstName": "Jim",
+                "lastName": "Heverin",
+                "tag": "Board Directors",
+                "headingTitle": null,
+                "description": null,
+                "primaryCta": {
+                  "text": "Jim Heverin",
+                  "href": "/people/jim-heverin",
+                  "linkType": "Content",
+                  "target": null
+                },
+                "cardImage": {
+                  "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/g0gdfmvr/jim-heverin_ph-jacopo-spilimbergo-583x583.jpg",
+                  "caption": "",
+                  "imageAlt": "",
+                  "mediaId": 1316,
+                  "isSvg": false,
+                  "isVideo": false
+                }
+              }
+            },
+            {
+              "moduleName": "TeamMemberCardModel",
+              "moduleId": "53284768-6416-4db5-9111-9f7e063f6e92",
+              "props": {
+                "firstName": "Mouzhan",
+                "lastName": "Majidi",
+                "tag": "Board Directors",
+                "headingTitle": null,
+                "description": null,
+                "primaryCta": {
+                  "text": "Mouzhan Majidi",
+                  "href": "/people/mouzhan-majidi",
+                  "linkType": "Content",
+                  "target": null
+                },
+                "cardImage": {
+                  "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/g00pzw5t/mouzhan-majidi_ph-jacopo-spilimbergo_02-583x583.jpg",
+                  "caption": "",
+                  "imageAlt": "",
+                  "mediaId": 1315,
+                  "isSvg": false,
+                  "isVideo": false
+                }
+              }
+            },
+            {
+              "moduleName": "TeamMemberCardModel",
+              "moduleId": "ed27fa64-b55d-44cc-97b7-e76d7f28b583",
+              "props": {
+                "firstName": "Patrik",
+                "lastName": "Schumacher",
+                "tag": "Board Directors",
+                "headingTitle": null,
+                "description": null,
+                "primaryCta": {
+                  "text": "Patrik Schumacher",
+                  "href": "/people/patrik-schumacher",
+                  "linkType": "Content",
+                  "target": null
+                },
+                "cardImage": {
+                  "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/5xadmbtx/zaha_hadid_architects_-patrikschumacher-583x583.jpg?rxy=0.9716981132075472,0.2770154373927959",
+                  "caption": "",
+                  "imageAlt": "",
+                  "mediaId": 1317,
+                  "isSvg": false,
+                  "isVideo": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "moduleName": "TeamMemberListingGroup",
+        "moduleId": "7960226f-152e-467e-9dad-f43e6ffc0aac",
+        "props": {
+          "categoryName": "Associate Directors",
+          "people": [
+            {
+              "moduleName": "TeamMemberCardModel",
+              "moduleId": "582cbc6a-90fb-476e-a69a-f3179a700c26",
+              "props": {
+                "firstName": "Karoly",
+                "lastName": "Markos",
+                "tag": "Associate Directors",
+                "headingTitle": null,
+                "description": null,
+                "primaryCta": {
+                  "text": "Karoly Markos",
+                  "href": "/people/karoly-markos",
+                  "linkType": "Content",
+                  "target": null
+                },
+                "cardImage": {
+                  "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/gfthe1dp/andres-rodriguez-f2ptsuudvsm-unsplash.jpg",
+                  "caption": "Andres Rodriguez",
+                  "imageAlt": "Andres Rodriguez as Karoly Markos",
+                  "mediaId": 1435,
+                  "isSvg": false,
+                  "isVideo": false
+                }
+              }
+            },
+            {
+              "moduleName": "TeamMemberCardModel",
+              "moduleId": "dc24eb77-990d-4006-baaf-ff7fc9d28f51",
+              "props": {
+                "firstName": "Mario",
+                "lastName": "Mattia",
+                "tag": "Associate Directors",
+                "headingTitle": null,
+                "description": null,
+                "primaryCta": {
+                  "text": "Mario Mattia",
+                  "href": "/people/mario-mattia",
+                  "linkType": "Content",
+                  "target": null
+                },
+                "cardImage": {
+                  "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/s1abfb0b/mariomattia_phjacopospilimbergo.jpg",
+                  "caption": "Mario Mattia",
+                  "imageAlt": "Mario Mattias profile picture",
+                  "mediaId": 1425,
+                  "isSvg": false,
+                  "isVideo": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "moduleName": "TeamMemberListingGroup",
+        "moduleId": "08e85e5b-fb30-4e28-8f23-44c423aaa2bd",
+        "props": {
+          "categoryName": "Exhibitions, Design and Interiors",
+          "people": [
+            {
+              "moduleName": "TeamMemberCardModel",
+              "moduleId": "9bbe5f1e-ba67-48e2-83df-ac8644176fef",
+              "props": {
+                "firstName": "Johannes",
+                "lastName": "Hoffmann",
+                "tag": "Exhibitions, Design and Interiors",
+                "headingTitle": null,
+                "description": null,
+                "primaryCta": {
+                  "text": "Johannes Hoffmann",
+                  "href": "/people/johannes-hoffmann",
+                  "linkType": "Content",
+                  "target": null
+                },
+                "cardImage": {
+                  "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/a40le234/image-ratio.png",
+                  "caption": "",
+                  "imageAlt": "",
+                  "mediaId": 1321,
+                  "isSvg": false,
+                  "isVideo": false
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "orderBy": null,
+    "totalCount": 4,
+    "totalPages": 2,
+    "currentPage": 10,
+    "pageSize": 3
+  },
+  "anchor": "",
+  "anchorDisplayName": "",
+  "tag": "",
+  "headingTitle": {
+    "heading": "",
+    "htag": ""
+  },
+  "description": ""
+}

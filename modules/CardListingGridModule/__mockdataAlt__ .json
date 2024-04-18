@@ -1,0 +1,177 @@
+{
+  "filtersAndCards": {
+    "cardType": "Project",
+    "filter": [
+      {
+        "filterLabel": "Discipline",
+        "filters": [
+          {
+            "name": "Architecture",
+            "filterGuid": "b811e46b-7805-4cdf-9856-affee019d536",
+            "isSelected": false,
+            "hasTypology": true
+          },
+          {
+            "name": "Interior Architecture",
+            "filterGuid": "cde18cf2-53cd-4ec7-810a-490544ad9173",
+            "isSelected": false,
+            "hasTypology": false
+          }
+        ]
+      },
+      {
+        "filterLabel": "Typologies",
+        "filters": [
+          {
+            "name": "Culture",
+            "filterGuid": "b811e46b-7805-4cdf-9856-affee019d536",
+            "isSelected": false,
+            "hasTypology": false
+          },
+          {
+            "name": "Civic",
+            "filterGuid": "cde18cf2-53cd-4ec7-810a-490544ad9173",
+            "isSelected": false,
+            "hasTypology": false
+          }
+        ]
+      },
+      {
+        "filterLabel": "Status",
+        "filters": [
+          {
+            "name": "Complete",
+            "filterGuid": "b811e46b-7805-4cdf-9856-affee019d536",
+            "isSelected": false,
+            "hasTypology": false
+          },
+          {
+            "name": "Under construction",
+            "filterGuid": "cde18cf2-53cd-4ec7-810a-490544ad9173",
+            "isSelected": false,
+            "hasTypology": false
+          },
+          {
+            "name": "Planning",
+            "filterGuid": "b6138ede-bdeb-4cbd-a429-152513d4cc55",
+            "isSelected": false,
+            "hasTypology": false
+          }
+        ]
+      },
+      {
+        "filterLabel": "Regions",
+        "filters": [
+          {
+            "name": "Asia",
+            "filterGuid": "b811e46b-7805-4cdf-9856-affee019d536",
+            "isSelected": false,
+            "hasTypology": false
+          },
+          {
+            "name": "Africa",
+            "filterGuid": "cde18cf2-53cd-4ec7-810a-490544ad9173",
+            "isSelected": false,
+            "hasTypology": false
+          },
+          {
+            "name": "Australia",
+            "filterGuid": "b6138ede-bdeb-4cbd-a429-152513d4cc55",
+            "isSelected": false,
+            "hasTypology": false
+          },
+          {
+            "name": "Europe",
+            "filterGuid": "e74595a1-3a50-480a-ae54-672e86fe96c8",
+            "isSelected": false,
+            "hasTypology": false
+          }
+        ]
+      }
+    ],
+    "cards": [
+      {
+        "moduleName": "ProjectCard",
+        "moduleId": "70a0a131-23bgr0-467c-bd7f-ac2ree9ac97327",
+        "props": {
+          "image": {
+            "imageUrl": "https://qa-bb-api.matterofform.com/media/toejwqb0/samuel-regan-asante-bzwtozzopuc-unsplash.jpg?rxy=0.32456140350877194,0.4924812030075188",
+            "caption": "Samuel Regan ",
+            "imageAlt": "Caption goes here lorem ipsum dolor sit amet consectetur adipiscing elit",
+            "mediaId": 1308,
+            "isSvg": false,
+            "isVideo": false
+          },
+          "tag": "Culture",
+          "headingTitle": "Alai",
+          "description": "<p>Designed in response to its natural surroundings, Alai marries ecological considerations, engaging design and a…</p>",
+          "primaryCta": {
+            "text": "Project Page",
+            "href": "/",
+            "linkType": "Content",
+            "target": null
+          }
+        }
+      },
+
+      {
+        "moduleName": "ProjectCard",
+        "moduleId": "70a0a131-23b0-467c-bd7f-ac2e9grwegrac97327",
+        "props": {
+          "image": {
+            "imageUrl": "https://qa-bb-api.matterofform.com/media/toejwqb0/samuel-regan-asante-bzwtozzopuc-unsplash.jpg?rxy=0.32456140350877194,0.4924812030075188",
+            "caption": "Samuel Regan ",
+            "imageAlt": "Caption goes here lorem ipsum dolor sit amet consectetur adipiscing elit",
+            "mediaId": 1308,
+            "isSvg": false,
+            "isVideo": false
+          },
+          "tag": "Culture",
+          "headingTitle": "Alai",
+          "description": "<p>Designed in response to its natural surroundings, Alai marries ecological considerations, engaging design and a…</p>",
+          "primaryCta": {
+            "text": "Project Page",
+            "href": "/",
+            "linkType": "Content",
+            "target": null
+          }
+        }
+      },
+      {
+        "moduleName": "ProjectCard",
+        "moduleId": "590ef37a-c77c-4c68-9848-9533gwerg55784f61",
+        "props": {
+          "image": {
+            "imageUrl": "https://qa-bb-api.matterofform.com/media/toejwqb0/samuel-regan-asante-bzwtozzopuc-unsplash.jpg?rxy=0.32456140350877194,0.4924812030075188",
+            "caption": "Samuel Regan ",
+            "imageAlt": "Caption goes here lorem ipsum dolor sit amet consectetur adipiscing elit",
+            "mediaId": 1308,
+            "isSvg": false,
+            "isVideo": false
+          },
+          "tag": "Culture",
+          "headingTitle": "Atelier Notify",
+          "description": "<p>The Atelier Notify constitutes a hybrid, part shop, part production line - presenting a fluid façade to the exterior, striking an elegant…</p>",
+          "primaryCta": {
+            "text": "Project Page",
+            "href": "/",
+            "linkType": "Content",
+            "target": null
+          }
+        }
+      }
+    ],
+    "totalCount": 3,
+    "totalPages": 1,
+    "currentPage": 1,
+    "pageSize": 3
+  },
+  "anchor": "all-projects",
+  "anchorDisplayName": "All Projects",
+  "preHeading": "All Projects",
+  "headingTitle": {
+    "heading": "<p>Explore our portfolio of work</p>",
+    "htag": "h1"
+  },
+  "description": "<p>Copy to be decided elementum egestas in nostra ac parturient a semper donec odio imperdiet imperdiet erat mus nec vestibulum parturient a etiam aenean.Et aliquet a vestibulum praesent ad a cum risus scelerisque at vestibulum.</p>"
+}

@@ -1,0 +1,28 @@
+.breadcrumbs-wrapper {
+  @apply py-2 overflow-auto;
+}
+
+.breadcrumbs-item-wrapper {
+  @apply shrink-0;
+}
+
+.breadcrumbs-item,
+.breadcrumbs-item-active,
+.breadcrumbs-separator {
+  @apply leading-3 uppercase -tracking-[0.02em] no-underline;
+}
+
+.breadcrumbs-item,
+.breadcrumbs-separator {
+  @apply !text-white/75;
+}
+
+.breadcrumbs-item-active,
+.breadcrumbs-item-wrapper:has(+ .breadcrumbs-item-active)
+  .breadcrumbs-separator {
+  @apply !text-white;
+}
+
+.breadcrumbs-item-active {
+  @apply flex shrink-0;
+}

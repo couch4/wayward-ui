@@ -1,0 +1,42 @@
+{
+  "tag": "Research & Technology",
+  "headingTitle": {
+    "heading": "<p>How we stay ahead of the curve</p>",
+    "htag": "h2"
+  },
+  "description": "<p>Description goes here lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec vestibulum eros. Curabitur ac libero malesuada, feugiat ligula quis, sodales diam. Morbi cursus mauris id bibendum commodo.</p>",
+  "primaryCta": {
+    "text": "People",
+    "href": "/people",
+    "linkType": "Content",
+    "target": ""
+  },
+  "secondaryCta": {
+    "text": "Projects",
+    "href": "/projects",
+    "linkType": "Content",
+    "target": ""
+  },
+  "mediaAlignment": "Right",
+  "mediaOrientation": "Portrait",
+  "media": {
+    "coverImage": {
+      "imageUrl": "https://zhweb-qa-f-app.azurewebsites.net/media/11tbjmi2/kychan-ccfo0o_ltsy-unsplash.jpg",
+      "caption": "Kychan CCFO0O LTSY Unsplash",
+      "imageAlt": "This will be the alt text",
+      "mediaId": 1330,
+      "isSvg": false,
+      "isVideo": false
+    },
+    "videoFromGallery": null,
+    "vimeoId": "",
+    "youtubeId": "rGXMo28Bqsw",
+    "autoPlay": true,
+    "loop": false,
+    "allowFullScreen": true
+  },
+  "anchor": "",
+  "anchorDisplayName": "",
+  "paddingTop": "Small",
+  "paddingBottom": "Small"
+}

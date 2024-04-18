@@ -1,0 +1,46 @@
+.quote-container {
+  @apply h-[80vh];
+}
+
+.quote-slide {
+  @apply !flex-col px-[5%] text-white;
+}
+
+.quote-main-wrapper {
+  @apply relative m-auto;
+}
+
+.quote-left {
+  @apply absolute top-0 left-[-3rem] text-[5rem] opacity-40;
+}
+
+.quote-right {
+  @apply absolute bottom-0 right-[5rem] text-[5rem] opacity-40;
+}
+
+.quote-footer {
+  @apply gap-10;
+}
+
+.quote-source {
+  @apply opacity-40;
+}
+
+.quote-carousel .carousel-control-wrapper {
+  @apply absolute !w-[8rem] h-[4rem] bottom-[-6rem] !text-white right-0;
+  top: initial;
+  left: initial;
+}
+
+.quote-carousel .carousel-pagination {
+  @apply right-[9rem] bottom-[-3.3rem] translate-x-0;
+  left: initial;
+}
+
+.quote-carousel .carousel-pagination-number {
+  @apply text-white opacity-50 select-none;
+}
+
+.quote-carousel .carousel-pagination-number.active {
+  @apply opacity-100;
+}

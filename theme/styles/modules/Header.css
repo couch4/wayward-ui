@@ -1,0 +1,14 @@
+header {
+  @apply bg-black w-full;
+
+  .header-content {
+    @apply relative container items-center justify-center;
+
+    .media-holder {
+      @apply w-[15rem] h-full;
+    }
+    .nav {
+      @apply border  text-white;
+    }
+  }
+}

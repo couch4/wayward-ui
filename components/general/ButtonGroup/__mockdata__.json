@@ -1,0 +1,12 @@
+{
+  "primaryCta": {
+    "text": "Primary CTA",
+    "variant": "primary",
+    "href": "https://www.google.com"
+  },
+  "secondaryCta": {
+    "text": "Secondary CTA",
+    "variant": "secondary",
+    "href": "https://www.google.com"
+  }
+}

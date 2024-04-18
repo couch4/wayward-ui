@@ -1,0 +1,160 @@
+{
+  "tag": "Tag",
+  "headingTitle": {
+    "heading": "<p>Generic Custom Cards</p>",
+    "htag": ""
+  },
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "cardRow": [
+    {
+      "moduleName": "CustomGenericCardRowModel",
+      "moduleId": "5d85a70d-26dd-408c-b80a-6e1b873fa0a4",
+      "props": {
+        "cards": [
+          {
+            "moduleName": "GenericCardModel",
+            "moduleId": "348bf78c-3eab-49d8-940a-45ecddf4a599",
+            "props": {
+              "tag": "Custom Card",
+              "headingTitle": "Accordion Module",
+              "description": "Accordion Module Description",
+              "primaryCta": {
+                "text": "Accordion Module",
+                "href": "/modules/accordion-module",
+                "linkType": "Content",
+                "target": ""
+              },
+              "cardImage": {
+                "imageUrl": "https://qa-api.zaha-hadid.com/media/evvpayb0/chuttersnap-awxnufumebi-unsplash.jpg",
+                "caption": "Chuttersnap Awxnufumebi Unsplash",
+                "imageAlt": "",
+                "mediaId": 1331,
+                "isSvg": false,
+                "isVideo": false
+              }
+            }
+          },
+          {
+            "moduleName": "GenericCardModel",
+            "moduleId": "6aeb3f20-c364-4280-a941-6a99b7f7fea8",
+            "props": {
+              "tag": "Custom Card",
+              "headingTitle": "Banner",
+              "description": "Banner Description",
+              "primaryCta": {
+                "text": "Banner - Full Bleed",
+                "href": "/modules/banner-full-bleed",
+                "linkType": "Content",
+                "target": ""
+              },
+              "cardImage": {
+                "imageUrl": "https://qa-api.zaha-hadid.com/media/0w1farsi/lycs-architecture-akij95mmus8-unsplash.jpg",
+                "caption": "Lycs Architecture Akij95mmus8 Unsplash",
+                "imageAlt": "",
+                "mediaId": 1332,
+                "isSvg": false,
+                "isVideo": false
+              }
+            }
+          },
+          {
+            "moduleName": "GenericCardModel",
+            "moduleId": "8ebf4007-c7a9-480c-b5d7-6cbdd08a4e52",
+            "props": {
+              "tag": "Custom Card",
+              "headingTitle": "Quote Carousel",
+              "description": "Quote Carousel Description",
+              "primaryCta": {
+                "text": "Quote Carousel Module",
+                "href": "/modules/quote-carousel-module",
+                "linkType": "Content",
+                "target": ""
+              },
+              "cardImage": {
+                "imageUrl": "https://qa-api.zaha-hadid.com/media/j04jmuxq/atanas-teodosiev-ezogykqmuyi-unsplash.jpg",
+                "caption": "Atanas Teodosiev Ezogykqmuyi Unsplash",
+                "imageAlt": "",
+                "mediaId": 1327,
+                "isSvg": false,
+                "isVideo": false
+              }
+            }
+          },
+          {
+            "moduleName": "GenericCardModel",
+            "moduleId": "a810299c-69d8-4a54-9484-16d5e063c138",
+            "props": {
+              "tag": "Custom Card",
+              "headingTitle": "Custom Into",
+              "description": "Custom Into Description",
+              "primaryCta": {
+                "text": "Custom Intro Module",
+                "href": "/modules/custom-intro-module",
+                "linkType": "Content",
+                "target": ""
+              },
+              "cardImage": {
+                "imageUrl": "https://qa-api.zaha-hadid.com/media/v2jduld5/armand-khoury-u8jvx55atv4-unsplash.jpg",
+                "caption": "Armand Khoury U8jvx55atv4 Unsplash",
+                "imageAlt": "",
+                "mediaId": 1329,
+                "isSvg": false,
+                "isVideo": false
+              }
+            }
+          },
+          {
+            "moduleName": "GenericCardModel",
+            "moduleId": "6aeb3f20-c364-4280-a941-6a99b7f7fea8",
+            "props": {
+              "tag": "Custom Card",
+              "headingTitle": "Banner",
+              "description": "Banner Description",
+              "primaryCta": {
+                "text": "Banner - Full Bleed",
+                "href": "/modules/banner-full-bleed",
+                "linkType": "Content",
+                "target": ""
+              },
+              "cardImage": {
+                "imageUrl": "https://qa-api.zaha-hadid.com/media/0w1farsi/lycs-architecture-akij95mmus8-unsplash.jpg",
+                "caption": "Lycs Architecture Akij95mmus8 Unsplash",
+                "imageAlt": "",
+                "mediaId": 1332,
+                "isSvg": false,
+                "isVideo": false
+              }
+            }
+          },
+          {
+            "moduleName": "GenericCardModel",
+            "moduleId": "6aeb3f20-c364-4280-a941-6a99b7f7fea8",
+            "props": {
+              "tag": "Custom Card",
+              "headingTitle": "Banner",
+              "description": "Banner Description",
+              "primaryCta": {
+                "text": "Banner - Full Bleed",
+                "href": "/modules/banner-full-bleed",
+                "linkType": "Content",
+                "target": ""
+              },
+              "cardImage": {
+                "imageUrl": "https://qa-api.zaha-hadid.com/media/0w1farsi/lycs-architecture-akij95mmus8-unsplash.jpg",
+                "caption": "Lycs Architecture Akij95mmus8 Unsplash",
+                "imageAlt": "",
+                "mediaId": 1332,
+                "isSvg": false,
+                "isVideo": false
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "anchor": "",
+  "anchorDisplayName": "",
+  "paddingTop": "Small",
+  "paddingBottom": "Small"
+}

@@ -1,0 +1,691 @@
+[
+  {
+    "navItemText": "Projects",
+    "navItemLink": {
+      "text": "Projects",
+      "href": "/projects",
+      "linkType": "Content",
+      "target": ""
+    },
+    "navItems": [
+      {
+        "navItems": [
+          {
+            "navItemText": "Zollhof Media Park",
+            "navItemLink": {
+              "text": "Zollhof Media Park",
+              "href": "/projects/test-projects/zollhof-media-park",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": {
+              "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/hjygleon/zollhof.jpeg",
+              "title": "",
+              "caption": "",
+              "imageAlt": "",
+              "mediaId": 3867,
+              "photographer": "",
+              "isSvg": false,
+              "isVideo": false
+            },
+            "colourCode": null
+          },
+          {
+            "navItemText": "BMW Central Building",
+            "navItemLink": {
+              "text": "BMW Central Building",
+              "href": "/projects/test-projects/bmw-central-building",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": {
+              "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/ktvhsbur/bmw-central.jpeg",
+              "title": "",
+              "caption": "",
+              "imageAlt": "",
+              "mediaId": 3869,
+              "photographer": "",
+              "isSvg": false,
+              "isVideo": false
+            },
+            "colourCode": null
+          },
+          {
+            "navItemText": "Beijing Daxing International Airport",
+            "navItemLink": {
+              "text": "Beijing Daxing International Airport",
+              "href": "/projects/test-projects/beijing-daxing-international-airport",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": {
+              "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/eialcnre/img-36.jpg",
+              "title": "",
+              "caption": "",
+              "imageAlt": "",
+              "mediaId": 3844,
+              "photographer": "",
+              "isSvg": false,
+              "isVideo": false
+            },
+            "colourCode": null
+          },
+          {
+            "navItemText": "Lois&Richard Rosenthal Center for Contemporary Art",
+            "navItemLink": {
+              "text": "Lois & Richard Rosenthal Center for Contemporary Art",
+              "href": "/projects/test-projects/lois-richard-rosenthal-center-for-contemporary-art",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": {
+              "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/1qjnjwwk/loisplusrichard.jpeg",
+              "title": "",
+              "caption": "",
+              "imageAlt": "",
+              "mediaId": 3868,
+              "photographer": "",
+              "isSvg": false,
+              "isVideo": false
+            },
+            "colourCode": null
+          }
+        ],
+        "navItemText": "Highlighted Projects",
+        "navItemLink": null,
+        "image": null,
+        "colourCode": null
+      }
+    ],
+    "image": {
+      "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/lhrhlsnl/marc-olivier-jodoin-hiinfxcbtq-unsplash.jpg",
+      "title": "21 Duis aute irure dolor in reprehenderit in voluptate velit",
+      "caption": "",
+      "imageAlt": "",
+      "mediaId": 1256,
+      "photographer": "",
+      "isSvg": false,
+      "isVideo": false
+    }
+  },
+  {
+    "navItemText": "Expertise",
+    "navItemLink": null,
+    "navItems": [
+      {
+        "navItems": [],
+        "navItemText": "View all expertise",
+        "navItemLink": {
+          "text": "Expertise",
+          "href": "/expertise",
+          "linkType": "Content",
+          "target": ""
+        },
+        "image": null,
+        "colourCode": null
+      },
+      {
+        "navItems": [
+          {
+            "navItemText": "View all Architecture",
+            "navItemLink": {
+              "text": "Architecture",
+              "href": "/expertise/architecture",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": {
+              "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/2ibjpg5d/img-17.jpg",
+              "title": "",
+              "caption": "",
+              "imageAlt": "",
+              "mediaId": 3822,
+              "photographer": "",
+              "isSvg": false,
+              "isVideo": false
+            },
+            "colourCode": "architecture"
+          },
+          {
+            "navItemText": "Culture",
+            "navItemLink": {
+              "text": "Culture",
+              "href": "/expertise/architecture/culture",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": {
+              "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/wotgyell/adrian-cuj-o_9ymcy0bag-unsplash.jpg?rxy=0.5037593984962406,0.5260651629072681",
+              "title": "First",
+              "caption": "",
+              "imageAlt": "",
+              "mediaId": 1267,
+              "photographer": "",
+              "isSvg": false,
+              "isVideo": false
+            },
+            "colourCode": "culture"
+          },
+          {
+            "navItemText": "Civic",
+            "navItemLink": {
+              "text": "Civic",
+              "href": "/expertise/architecture/civic",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": {
+              "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/nyvcuels/image-17581.png",
+              "title": "",
+              "caption": "",
+              "imageAlt": "",
+              "mediaId": 1600,
+              "photographer": "",
+              "isSvg": false,
+              "isVideo": false
+            },
+            "colourCode": "civic"
+          },
+          {
+            "navItemText": "Offices",
+            "navItemLink": {
+              "text": "Offices",
+              "href": "/expertise/architecture/education",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": {
+              "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/2ilnx0wu/zha_3.jpg",
+              "title": "Title English",
+              "caption": "",
+              "imageAlt": "Description English Use this for English language.",
+              "mediaId": 1225,
+              "photographer": "",
+              "isSvg": false,
+              "isVideo": false
+            },
+            "colourCode": "education"
+          },
+          {
+            "navItemText": "Heritage",
+            "navItemLink": {
+              "text": "Hertitage",
+              "href": "/expertise/architecture/hertitage",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": {
+              "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/gbbdqlpy/1_zha_eleftheria_square_photo_laurianghinitoiu_low-1620x1080.jpg",
+              "title": "1 ZHA Eleftheria Square Photo",
+              "caption": "",
+              "imageAlt": "",
+              "mediaId": 1318,
+              "photographer": "",
+              "isSvg": false,
+              "isVideo": false
+            },
+            "colourCode": "hertitage"
+          },
+          {
+            "navItemText": "Residential",
+            "navItemLink": {
+              "text": "Residential",
+              "href": "/expertise/architecture/residential",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": {
+              "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/32ddurjm/jason-briscoe-uv81e0oxxwq-unsplash.jpg",
+              "title": "Dummy image alt text",
+              "caption": "",
+              "imageAlt": "",
+              "mediaId": 1354,
+              "photographer": "",
+              "isSvg": false,
+              "isVideo": false
+            },
+            "colourCode": "residential"
+          },
+          {
+            "navItemText": "Tall Buildings",
+            "navItemLink": {
+              "text": "Tall Buildings",
+              "href": "/expertise/architecture/tall-buildings",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": {
+              "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/i5tp1box/donny-jiang-42gfagdiuc8-unsplash.jpg",
+              "title": "Unmistakable Italian charm",
+              "caption": "",
+              "imageAlt": "Description for 42Gfagdiuc8",
+              "mediaId": 1264,
+              "photographer": "",
+              "isSvg": false,
+              "isVideo": false
+            },
+            "colourCode": "tallBuildings"
+          },
+          {
+            "navItemText": "Sports",
+            "navItemLink": {
+              "text": "Sports",
+              "href": "/expertise/architecture/sports",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": {
+              "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/nyvcuels/image-17581.png",
+              "title": "",
+              "caption": "",
+              "imageAlt": "",
+              "mediaId": 1600,
+              "photographer": "",
+              "isSvg": false,
+              "isVideo": false
+            },
+            "colourCode": "sports"
+          },
+          {
+            "navItemText": "Transport + Infrastructure",
+            "navItemLink": {
+              "text": "Transportation + Infrastructure",
+              "href": "/expertise/architecture/transportation-plus-infrastructure",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": {
+              "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/nyvcuels/image-17581.png",
+              "title": "",
+              "caption": "",
+              "imageAlt": "",
+              "mediaId": 1600,
+              "photographer": "",
+              "isSvg": false,
+              "isVideo": false
+            },
+            "colourCode": "transportationInfrastructure"
+          },
+          {
+            "navItemText": "Education",
+            "navItemLink": {
+              "text": "Education",
+              "href": "/expertise/architecture/education",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": {
+              "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/2ilnx0wu/zha_3.jpg",
+              "title": "Title English",
+              "caption": "",
+              "imageAlt": "Description English Use this for English language.",
+              "mediaId": 1225,
+              "photographer": "",
+              "isSvg": false,
+              "isVideo": false
+            },
+            "colourCode": "education"
+          },
+          {
+            "navItemText": "Retail",
+            "navItemLink": {
+              "text": "Retail",
+              "href": "/expertise/architecture/retail",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": {
+              "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/xxkdbuti/kasper-rasmussen-ecrypq45-_g-unsplash.jpg",
+              "title": "Dummy image alt text6",
+              "caption": "",
+              "imageAlt": "",
+              "mediaId": 1358,
+              "photographer": "",
+              "isSvg": false,
+              "isVideo": false
+            },
+            "colourCode": "retail"
+          },
+          {
+            "navItemText": "Hospitality",
+            "navItemLink": {
+              "text": "Hospitality",
+              "href": "/expertise/architecture/hospitality",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": {
+              "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/gbbdqlpy/1_zha_eleftheria_square_photo_laurianghinitoiu_low-1620x1080.jpg",
+              "title": "1 ZHA Eleftheria Square Photo",
+              "caption": "",
+              "imageAlt": "",
+              "mediaId": 1318,
+              "photographer": "",
+              "isSvg": false,
+              "isVideo": false
+            },
+            "colourCode": "hospitality"
+          },
+          {
+            "navItemText": "Regeneration",
+            "navItemLink": {
+              "text": "Regeneration",
+              "href": "/expertise/architecture/regeneration",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": {
+              "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/nyvcuels/image-17581.png",
+              "title": "",
+              "caption": "",
+              "imageAlt": "",
+              "mediaId": 1600,
+              "photographer": "",
+              "isSvg": false,
+              "isVideo": false
+            },
+            "colourCode": "regeneration"
+          }
+        ],
+        "navItemText": "Architecture",
+        "navItemLink": {
+          "text": "Architecture",
+          "href": "/expertise/architecture",
+          "linkType": "Content",
+          "target": ""
+        },
+        "image": {
+          "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/2ibjpg5d/img-17.jpg",
+          "title": "",
+          "caption": "",
+          "imageAlt": "",
+          "mediaId": 3822,
+          "photographer": "",
+          "isSvg": false,
+          "isVideo": false
+        },
+        "colourCode": "architecture"
+      },
+      {
+        "navItems": [],
+        "navItemText": "Interior Architecture",
+        "navItemLink": {
+          "text": "Interior Architecture",
+          "href": "/expertise/interior-design",
+          "linkType": "Content",
+          "target": ""
+        },
+        "image": {
+          "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/zagpllhc/img-18.jpg",
+          "title": "",
+          "caption": "",
+          "imageAlt": "",
+          "mediaId": 3829,
+          "photographer": "",
+          "isSvg": false,
+          "isVideo": false
+        },
+        "colourCode": "interiorDesign"
+      },
+      {
+        "navItems": [],
+        "navItemText": "Masterplans",
+        "navItemLink": {
+          "text": "Masterplans",
+          "href": "/expertise/masterplans",
+          "linkType": "Content",
+          "target": ""
+        },
+        "image": {
+          "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/ylkir3zx/img-19.jpg",
+          "title": "",
+          "caption": "",
+          "imageAlt": "",
+          "mediaId": 3831,
+          "photographer": "",
+          "isSvg": false,
+          "isVideo": false
+        },
+        "colourCode": "masterplans"
+      },
+      {
+        "navItems": [],
+        "navItemText": "Virtual Spaces",
+        "navItemLink": {
+          "text": "Virtual Spaces",
+          "href": "/expertise/virtual-spaces",
+          "linkType": "Content",
+          "target": ""
+        },
+        "image": {
+          "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/aldfz53n/img-20.jpg",
+          "title": "",
+          "caption": "",
+          "imageAlt": "",
+          "mediaId": 3827,
+          "photographer": "",
+          "isSvg": false,
+          "isVideo": false
+        },
+        "colourCode": "virtualSpaces"
+      },
+      {
+        "navItems": [],
+        "navItemText": "Workplace Consultancy",
+        "navItemLink": {
+          "text": "Workplace Consultancy",
+          "href": "/expertise/workplace-consultancy",
+          "linkType": "Content",
+          "target": ""
+        },
+        "image": {
+          "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/tgflnrhm/img-21.jpg",
+          "title": "",
+          "caption": "",
+          "imageAlt": "",
+          "mediaId": 3828,
+          "photographer": "",
+          "isSvg": false,
+          "isVideo": false
+        },
+        "colourCode": "workplaceConsultancy"
+      },
+      {
+        "navItems": [],
+        "navItemText": "Products",
+        "navItemLink": {
+          "text": "Products",
+          "href": "/expertise/products",
+          "linkType": "Content",
+          "target": ""
+        },
+        "image": {
+          "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/mblb3evk/img-22.jpg",
+          "title": "",
+          "caption": "",
+          "imageAlt": "",
+          "mediaId": 3830,
+          "photographer": "",
+          "isSvg": false,
+          "isVideo": false
+        },
+        "colourCode": "products"
+      },
+      {
+        "navItems": [],
+        "navItemText": "Exhibitions",
+        "navItemLink": {
+          "text": "Exhibitions",
+          "href": "/expertise/exhibitions",
+          "linkType": "Content",
+          "target": ""
+        },
+        "image": {
+          "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/haqdvgfe/img-23.jpg",
+          "title": "",
+          "caption": "",
+          "imageAlt": "",
+          "mediaId": 3832,
+          "photographer": "",
+          "isSvg": false,
+          "isVideo": false
+        },
+        "colourCode": "exhibitions"
+      },
+      {
+        "navItems": [],
+        "navItemText": "Installations + Pavilions",
+        "navItemLink": {
+          "text": "Installations + Pavilions",
+          "href": "/expertise/installations-plus-pavilions",
+          "linkType": "Content",
+          "target": ""
+        },
+        "image": {
+          "imageUrl": "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/qoymexii/img-24.jpg",
+          "title": "",
+          "caption": "",
+          "imageAlt": "",
+          "mediaId": 3833,
+          "photographer": "",
+          "isSvg": false,
+          "isVideo": false
+        },
+        "colourCode": "installationsPavilions"
+      }
+    ],
+    "image": null
+  },
+  {
+    "navItemText": "People",
+    "navItemLink": {
+      "text": "People",
+      "href": "/people",
+      "linkType": "Content",
+      "target": ""
+    },
+    "navItems": [],
+    "image": null
+  },
+  {
+    "navItemText": "About us",
+    "navItemLink": {
+      "text": "About Us",
+      "href": "/about-us",
+      "linkType": "Content",
+      "target": ""
+    },
+    "navItems": [],
+    "image": null
+  },
+  {
+    "navItemText": "Research",
+    "navItemLink": null,
+    "navItems": [
+      {
+        "navItems": [],
+        "navItemText": "Computation & Design",
+        "navItemLink": null,
+        "image": null,
+        "colourCode": null
+      }
+    ],
+    "image": null
+  },
+  {
+    "navItemText": "Sustainability",
+    "navItemLink": {
+      "text": "Sustainability",
+      "href": "/sustainability",
+      "linkType": "Content",
+      "target": ""
+    },
+    "navItems": [],
+    "image": null
+  },
+  {
+    "navItemText": "Media Hub",
+    "navItemLink": null,
+    "navItems": [
+      {
+        "navItems": [],
+        "navItemText": "View all Media",
+        "navItemLink": {
+          "text": "Media Hub",
+          "href": "/media-hub",
+          "linkType": "Content",
+          "target": ""
+        },
+        "image": null,
+        "colourCode": null
+      },
+      {
+        "navItems": [
+          {
+            "navItemText": "Shell & Shadow - Designing Nordpark RailwayStation",
+            "navItemLink": {
+              "text": "TEST NEWS - Shell & Shadow - Designing Nordpark Railway Station",
+              "href": "/expertise/architecture/interior-architecture/test-news-shell-shadow-designing-nordpark-railway-station/",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": null,
+            "colourCode": null
+          },
+          {
+            "navItemText": "The CSS column-gap property sets space",
+            "navItemLink": {
+              "text": "TEST NEWS - The CSS column-gap property sets space",
+              "href": "/expertise/test-news-the-css-column-gap-property-sets-space/",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": null,
+            "colourCode": null
+          },
+          {
+            "navItemText": " Car Park and Terminus Strasbourg",
+            "navItemLink": {
+              "text": "TEST - Car Park and Terminus Strasbourg",
+              "href": "/media-hub/publications/test-car-park-and-terminus-strasbourg",
+              "linkType": "Content",
+              "target": ""
+            },
+            "image": null,
+            "colourCode": null
+          }
+        ],
+        "navItemText": "Articles",
+        "navItemLink": null,
+        "image": null,
+        "colourCode": null
+      },
+      {
+        "navItems": [],
+        "navItemText": "Publications",
+        "navItemLink": null,
+        "image": null,
+        "colourCode": null
+      },
+      {
+        "navItems": [],
+        "navItemText": "Events",
+        "navItemLink": null,
+        "image": null,
+        "colourCode": null
+      }
+    ],
+    "image": null
+  },
+  {
+    "navItemText": "Contact",
+    "navItemLink": {
+      "text": "Contact",
+      "href": "/contact",
+      "linkType": "Content",
+      "target": ""
+    },
+    "navItems": [],
+    "image": null
+  }
+]

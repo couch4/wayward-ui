@@ -1,0 +1,102 @@
+.button {
+  @apply h-10 sm:h-12 cursor-pointer font-primary font-semibold
+   sm:font-medium inline-flex duration-200
+   px-10 text-[14px] sm:text-[16px] leading-none items-center
+   justify-between gap-5;
+}
+
+/* if button only contains text - center, otherwise space between */
+.button:only-child {
+  @apply justify-center;
+}
+
+/* primary button */
+.button.primary {
+  @apply text-white bg-primary duration-200 
+     hover:bg-transparent hover:text-primary 
+     hover:border hover:border-primary 
+    active:bg-primary active:text-black 
+     disabled:text-white;
+}
+
+/* secondary button */
+.button.secondary {
+  @apply border border-white duration-200 [&_svg]:stroke-black text-white
+    hover:bg-primary hover:brightness-150 hover:border-transparent 
+    active:bg-primary active:text-white 
+     disabled:text-white  [&_svg]:disabled:stroke-white;
+}
+
+/* button modifiers */
+.button.sm {
+  @apply h-8 px-5 text-[14px];
+}
+
+.button.md {
+  @apply h-10 px-7;
+}
+.button.lg {
+  @apply h-12 px-10;
+}
+
+.button.full {
+  @apply min-h-12 h-full w-full flex;
+}
+
+.button.circle {
+  @apply rounded-full;
+}
+
+/* .button svg {
+  @apply first:mr-3 last:ml-3 only:mx-0;
+} */
+
+/* text button */
+.button.text {
+  @apply duration-200 [&_svg]:stroke-black  active:text-white 
+    disabled:opacity-25;
+}
+
+/* link button */
+.button.link {
+  @apply relative px-0 pb-0 duration-200 [&_svg]:stroke-black [&_svg]:duration-200
+
+    active:opacity-25 
+    disabled:opacity-25;
+}
+
+.button.link::after {
+  @apply absolute content-[''] w-full h-[1px] bottom-[1px] left-0 bg-black;
+}
+
+.button.link:hover::after {
+  @apply duration-200;
+}
+
+.button.link:active::after {
+  @apply opacity-25 duration-200;
+}
+
+/* action buttons */
+/* circle */
+.button.primary.circle {
+  @apply active:opacity-10 active:border-none;
+}
+
+.button.secondary.circle {
+  @apply hover:bg-black 
+    active:bg-white 
+    disabled:hover:bg-white disabled:hover:border-black;
+}
+
+.button.secondary.circle:hover svg {
+  @apply stroke-white;
+}
+
+.button.secondary.circle:hover:disabled svg {
+  @apply stroke-black;
+}
+
+.button .stack {
+  @apply w-full justify-between items-center;
+}

@@ -1,0 +1,48 @@
+{
+  "mediaSlides": [
+    {
+      "imageUrl": "http://zahahadid-qa-f-app.azurewebsites.net/media/i5tp1box/donny-jiang-42gfagdiuc8-unsplash.jpg",
+      "caption": "Unmistakable Italian charm",
+      "imageAlt": "",
+      "mediaId": 1264,
+      "isSvg": false,
+      "isVideo": false
+    },
+    {
+      "imageUrl": "http://zahahadid-qa-f-app.azurewebsites.net/media/1z5lzhrk/joel-filipe-rfdp7_80v5a-unsplash.jpg",
+      "caption": "Journey Simple Preferred",
+      "imageAlt": "",
+      "mediaId": 1265,
+      "isSvg": false,
+      "isVideo": false
+    },
+    {
+      "imageUrl": "http://zahahadid-qa-f-app.azurewebsites.net/media/iepha0bt/flipboard-h5h5uyxblbq-unsplash.jpg?rxy=0.5112781954887218,0.4954051796157059",
+      "caption": "Dummy image alt text",
+      "imageAlt": "",
+      "mediaId": 1262,
+      "isSvg": false,
+      "isVideo": false
+    },
+    {
+      "imageUrl": "http://zahahadid-qa-f-app.azurewebsites.net/media/wotgyell/adrian-cuj-o_9ymcy0bag-unsplash.jpg?rxy=0.5037593984962406,0.5260651629072681",
+      "caption": "First",
+      "imageAlt": "",
+      "mediaId": 1267,
+      "isSvg": false,
+      "isVideo": false
+    },
+    {
+      "imageUrl": "http://zahahadid-qa-f-app.azurewebsites.net/media/bjsjvyya/riccardo-oliva-c5dlhukewfm-unsplash-1.jpg",
+      "caption": "Dummy image alt text",
+      "imageAlt": "",
+      "mediaId": 1261,
+      "isSvg": false,
+      "isVideo": false
+    }
+  ],
+  "anchor": "Pre-heading",
+  "anchorDisplayName": "Anchor Display Name",
+  "paddingTop": "Medium",
+  "paddingBottom": "Large"
+}

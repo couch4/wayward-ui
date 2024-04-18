@@ -1,0 +1,42 @@
+.generic-container {
+  @apply relative h-[30rem] mb-[5rem];
+}
+
+.generic-carousel {
+  position: initial;
+}
+
+.generic-card {
+  @apply !flex flex-col rounded-lg;
+}
+
+.generic-container .content-block {
+  @apply gap-4 mt-5 min-h-[16rem];
+}
+
+.generic-container .content-block .description {
+  @apply line-clamp-3;
+}
+
+.generic-carousel .button-group {
+  @apply mt-auto;
+}
+
+.generic-carousel .carousel-control-wrapper {
+  @apply absolute !w-[8rem] h-[4rem] bottom-[-6rem] !text-white right-0;
+  top: initial;
+  left: initial;
+}
+
+.generic-carousel .carousel-pagination {
+  @apply right-[9rem] bottom-[-3.3rem] translate-x-0;
+  left: initial;
+}
+
+.generic-carousel .carousel-pagination-number {
+  @apply text-white opacity-50 select-none;
+}
+
+.generic-carousel .carousel-pagination-number.active {
+  @apply opacity-100;
+}

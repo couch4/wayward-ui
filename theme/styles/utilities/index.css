@@ -1,0 +1,11 @@
+.row {
+  @apply flex-row;
+}
+
+.column {
+  @apply flex-col;
+}
+
+.media-holder {
+  @apply relative;
+}

@@ -1,0 +1,210 @@
+.nav {
+  @apply absolute
+  lg:relative
+  w-full
+  top-8
+  justify-between;
+
+  &-item {
+    @apply relative w-full normal-case border-b text-copy bg-white
+    border-gray-200 justify-between text-left leading-snug min-h-20 h-full
+    hover:bg-gray-100 transition-colors duration-200;
+
+    &.sub-nav {
+      .box {
+        @apply text-gray-400;
+      }
+    }
+
+    &-wrapper {
+      @apply relative w-full;
+
+      &.attach-right {
+        .nav-item.active svg {
+          @apply rotate-0;
+        }
+      }
+
+      &.attach-bottom {
+        @apply w-full;
+        position: initial;
+      }
+    }
+
+    svg {
+      @apply h-6 flex justify-self-end;
+    }
+
+    &.main-nav {
+      @apply relative;
+      svg {
+        @apply h-4 text-gray-400;
+      }
+    }
+
+    &.active {
+      svg {
+        @apply rotate-90;
+      }
+    }
+
+    .colour-splash {
+      @apply absolute left-0 bottom-0 w-full h-2 z-[2];
+    }
+  }
+
+  &-panel {
+    @apply w-full min-w-[20rem] block;
+
+    &-wrapper {
+      @apply relative w-full origin-top shadow-lg bg-white;
+
+      &[class*="attach"] {
+        @apply left-[-10000px];
+      }
+      &.attach-inherit {
+        @apply relative w-full;
+      }
+      &.attach-bottom {
+        @apply absolute w-full top-full;
+        .nav-panel {
+          @apply py-5;
+        }
+        .nav-item {
+          @apply border-none min-h-16;
+        }
+        svg {
+          @apply hidden;
+        }
+      }
+      &.attach-right {
+        @apply absolute top-0 border border-gray-100 !shadow-lg;
+        &.active {
+          @apply left-full;
+        }
+      }
+      &.active {
+        @apply left-0;
+      }
+
+      &.with-image {
+        @apply w-[40rem] grid grid-cols-2 gap-2;
+
+        .media-holder {
+          @apply relative w-full h-full opacity-0;
+        }
+      }
+
+      &.with-image.active {
+        @apply w-[40rem] grid grid-cols-2 gap-2;
+
+        .media-holder {
+          @apply relative w-full h-full opacity-100;
+        }
+      }
+    }
+  }
+
+  &.meganav {
+    .nav-panel-wrapper.level-0 {
+      @apply relative
+      lg:fixed
+     lg:top-[5rem]
+      left-0
+      right-0
+      w-full
+      overflow-hidden;
+
+      .nav-panel {
+        @apply w-[25%];
+        > .stack {
+          @apply relative w-full h-full;
+
+          .nav-item {
+            @apply w-full;
+          }
+        }
+        .media-holder {
+          @apply absolute top-0 bottom-0 right-0 w-[50%] h-full;
+        }
+      }
+    }
+
+    .nav-panel-wrapper.level-1 {
+      @apply relative
+      lg:absolute
+      flex
+      top-0
+      left-0 lg:left-[-1000px]
+      w-0
+      h-full
+      opacity-0;
+      > .nav-panel {
+        @apply relative w-[25%];
+      }
+      > .stack {
+        @apply relative w-[25%];
+        .nav-item {
+          @apply !w-full;
+        }
+      }
+      .media-holder {
+        @apply absolute top-0 bottom-0 right-0 w-[50%] h-full;
+      }
+      &.active {
+        @apply left-full w-[300%] opacity-100;
+      }
+    }
+
+    .nav-item {
+      &-wrapper {
+        position: initial;
+        &[class*="attach"] {
+          @apply relative left-0;
+        }
+      }
+    }
+  }
+
+  &-image {
+    @apply opacity-0
+    w-full
+    transition-opacity
+    duration-300;
+
+    &.active {
+      @apply opacity-100;
+    }
+    &-wrapper {
+      @apply !hidden md:!flex
+      absolute
+      top-2
+      right-2
+      bottom-2
+      left-[25%]
+      ml-2
+      rounded-lg
+      overflow-hidden
+      pointer-events-none;
+
+      transition: left 0.4s ease-out;
+      transition-timing-function: cubic-bezier(0.1, 0.25, 0.22, 1);
+
+      &.level-1 {
+        @apply left-[49%];
+      }
+    }
+  }
+}
+
+/* .nav.flex-col > .stack {
+  @apply w-full;
+} */
+
+.nav.flex-col .nav-panel-wrapper {
+  @apply shadow-none;
+}
+
+.nav.flex-col > .nav-panel {
+  @apply shadow-none;
+}

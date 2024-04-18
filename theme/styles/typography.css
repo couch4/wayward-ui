@@ -1,0 +1,95 @@
+/* display classes */
+
+.text-display-lg {
+  @apply text-12xl md:text-14xl tracking-tight;
+}
+
+.text-display-md {
+  @apply text-8xl md:text-10xl tracking-tight;
+}
+
+.text-display-sm {
+  @apply text-5xl md:text-7xl tracking-tight;
+}
+
+/* heading classes */
+
+.text-h1 {
+  @apply text-4xl md:text-6xl tracking-tight;
+}
+
+.text-h2 {
+  @apply text-3xl md:text-5xl tracking-tight;
+}
+
+.text-h3 {
+  @apply text-2xl md:text-3xl tracking-tight;
+}
+
+.text-h4 {
+  @apply text-lg md:text-xl tracking-tight;
+}
+
+.text-h5 {
+  @apply text-md md:text-lg tracking-tight;
+}
+
+.text-h6 {
+  @apply text-sm md:text-md tracking-tight;
+}
+
+/* paragraph classes */
+
+.text-p {
+  @apply text-md md:text-lg;
+}
+
+.text-p-xxs {
+  @apply text-xs;
+}
+
+.text-p-xs {
+  @apply text-xs md:text-sm;
+}
+
+.text-p-sm {
+  @apply text-sm md:text-md;
+}
+
+.text-p-lg {
+  @apply text-lg md:text-xl;
+}
+
+/* interactive classes */
+
+.text-i {
+  @apply text-md tracking-tight uppercase;
+}
+
+.text-i-sm {
+  @apply text-sm tracking-tight uppercase;
+}
+
+.text-i-xs {
+  @apply text-xs tracking-tight uppercase;
+}
+
+/* quote class */
+
+.text-quote {
+  @apply text-3xl md:text-5xl tracking-tight;
+}
+
+/* utility classes */
+
+.text-link {
+  @apply underline;
+}
+
+.text-bold {
+  @apply !font-medium;
+}
+
+.text-italic {
+  @apply italic;
+}

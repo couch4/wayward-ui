@@ -1,0 +1,64 @@
+.carousel {
+  @apply relative w-full h-full justify-start;
+  touch-action: pan-y;
+}
+
+.carousel-canvas {
+  @apply h-full;
+}
+
+.carousel-canvas.crop {
+  @apply overflow-hidden;
+}
+
+.carousel-wrapper {
+  @apply h-full gap-0 cursor-grab;
+}
+
+.carousel-item {
+  @apply relative h-full;
+}
+
+.carousel.bookcase .carousel-item {
+  @apply origin-bottom;
+}
+
+.carousel-item img {
+  @apply w-full h-full pointer-events-none;
+}
+
+.carousel-control-wrapper {
+  @apply absolute top-[50%] left-0 translate-y-[-50%] p-5 justify-between pointer-events-none;
+}
+
+.carousel-control {
+  @apply w-9 h-9 justify-end !flex-none opacity-70 hover:opacity-100 duration-100 transition-opacity cursor-pointer pointer-events-auto text-white;
+}
+
+.carousel-control.prev {
+  @apply rotate-180;
+}
+
+.carousel-control.hide {
+  @apply opacity-0;
+}
+
+.carousel-pagination {
+  @apply absolute left-[50%] translate-x-[-50%] bottom-[-3rem];
+}
+
+.carousel-pagination-step {
+  @apply bg-white w-2 h-2 rounded-full opacity-50 transition-all duration-300 ease-out;
+}
+
+.carousel-pagination-step.active {
+  @apply opacity-100 scale-125;
+}
+
+.carousel-pagination-step-click-area {
+  @apply w-7 h-7 justify-center items-center cursor-pointer;
+}
+
+.carousel.focus .carousel-control-wrapper {
+  @apply left-[-10%] right-[-3rem] !w-[120%];
+}

@@ -1,0 +1,24 @@
+.rich-text-with-media > .stack {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3;
+}
+.rich-text-with-media > .stack .media-holder {
+  @apply row-span-1 md:row-span-2;
+}
+.rich-text-with-media > .stack {
+  @apply gap-8;
+}
+.rich-text-with-media > .stack .stack {
+  @apply col-span-2 flex-col gap-4 md:gap-5 xl:gap-7 2xl:gap-8;
+}
+.rich-text-with-media {
+  .rich-text-content {
+    @apply opacity-50;
+  }
+}
+.rich-text-with-media .media-holder {
+  @apply relative 
+    w-[343px] h-[228px] m-auto
+    md:w-[235px] md:h-[156px] md:m-0
+    xl:w-[340px] xl:h-[226px]
+    2xl:w-[436px] 2xl:h-[290px];
+}

@@ -1,0 +1,190 @@
+{
+  "filtersAndCards": {
+    "cardType": "Project",
+    "displayFilters": true,
+    "filter": [
+      {
+        "filterName": "",
+        "filterValue": "expertise",
+        "filters": [
+          {
+            "name": "Architecture",
+            "filterGuid": "e1b16e51-2863-4ff8-914a-6cd6c91ec3d1",
+            "isSelected": false,
+            "hasTypologies": true
+          },
+          {
+            "name": "Interior Design",
+            "filterGuid": "819f78e1-10e7-4970-925f-042f70ce5dd8",
+            "isSelected": false,
+            "hasTypologies": false
+          }
+        ]
+      },
+      {
+        "filterName": "",
+        "filterValue": "typology",
+        "filters": [
+          {
+            "name": "Culture",
+            "filterGuid": "20eb1501-aa9a-4976-aed5-a35c82ae7390",
+            "isSelected": false,
+            "hasTypologies": false
+          },
+          {
+            "name": "Interior architecture",
+            "filterGuid": "a64984ba-1d41-4127-b113-6108a183ebc4",
+            "isSelected": false,
+            "hasTypologies": false
+          },
+          {
+            "name": "Transportation + Infrastructure",
+            "filterGuid": "f5c25d7c-31bf-482e-b724-54f118fd73cd",
+            "isSelected": false,
+            "hasTypologies": false
+          }
+        ]
+      },
+      {
+        "filterName": "Construction Status",
+        "filterValue": "constructionStatus",
+        "filters": [
+          {
+            "name": "Competition / Research",
+            "filterGuid": "3aab9a17-f3ad-40bb-be7a-355c0c17f1a5",
+            "isSelected": false,
+            "hasTypologies": false
+          },
+          {
+            "name": "Built",
+            "filterGuid": "4cc8090a-8346-4c75-86fb-6937ba4219f0",
+            "isSelected": false,
+            "hasTypologies": false
+          },
+          {
+            "name": "Design",
+            "filterGuid": "2a3b5981-1fa5-4609-8751-bfa85ae53b63",
+            "isSelected": false,
+            "hasTypologies": false
+          }
+        ]
+      }
+    ],
+    "sortByOptions": [],
+    "featuredCard": null,
+    "featuredId": null,
+    "cards": [
+      {
+        "moduleName": "GenericProjectDetailCardModel",
+        "moduleId": "d1638425-53d1-452c-b921-92deb9a45c1e",
+        "props": {
+          "tag": "Culture",
+          "headingTitle": "Lois&Richard Rosenthal Center for Contemporary Art",
+          "description": "Conceived as a dynamic public space, an ‘Urban Carpet’ leads pedestrians into and through the interior space via a gentle slope, which becomes, in turn, wall, ramp, walkway and even an artificial park space.",
+          "primaryCta": {
+            "text": "Lois & Richard Rosenthal Center for Contemporary Art",
+            "href": "/projects/test-projects/lois-richard-rosenthal-center-for-contemporary-art",
+            "linkType": "Content",
+            "target": null
+          },
+          "cardImage": {
+            "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/vnhhfe15/rafael-de-nadai-a-uyhn_zt9o-unsplash.jpg",
+            "caption": "Rafael De Nadai A UYHN Zt9o Unsplash",
+            "imageAlt": "Rafael De Nadai A UYHN Zt9o Unsplash",
+            "mediaId": 1338,
+            "isSvg": false,
+            "isVideo": false
+          }
+        }
+      },
+      {
+        "moduleName": "GenericProjectDetailCardModel",
+        "moduleId": "6c230dc5-816c-4a20-89b4-c4e72b531c89",
+        "props": {
+          "tag": "Culture",
+          "headingTitle": "Zollhof Media Park",
+          "description": "Düsseldorf Harbour reinvented as an enterprise zone – an ‘artificial’ landscape in which contrasting elements collide and coalesce to form a coherent entity – a unique environment extending waterside activities inland through a sequence of distinctive structures – walled office block, glazed ‘finger’ tower, minimalist glass box, curvilinear cinema complex and more.",
+          "primaryCta": {
+            "text": "Zollhof Media Park",
+            "href": "/projects/test-projects/zollhof-media-park",
+            "linkType": "Content",
+            "target": null
+          },
+          "cardImage": {
+            "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/lhrhlsnl/marc-olivier-jodoin-hiinfxcbtq-unsplash.jpg",
+            "caption": "21 Duis aute irure dolor in reprehenderit in voluptate velit",
+            "imageAlt": "",
+            "mediaId": 1256,
+            "isSvg": false,
+            "isVideo": false
+          }
+        }
+      },
+      {
+        "moduleName": "GenericProjectDetailCardModel",
+        "moduleId": "3cc0a58c-d600-4ec0-a370-a1eb3776cc18",
+        "props": {
+          "tag": "Transportation + Infrastructure",
+          "headingTitle": "Beijing Daxing International Airport",
+          "description": "Beijing Daxing International Airport (BDIA) is a new airport in the Daxing district 46km south of the city centre. Developed to alleviate congestion at the capital’s existing airport, BDIA will be a major transport hub for the region with the world’s fastest growing demand for international travel and is fully integrated within the country’s expanding transport network.",
+          "primaryCta": {
+            "text": "Beijing Daxing International Airport",
+            "href": "/projects/test-projects/beijing-daxing-international-airport",
+            "linkType": "Content",
+            "target": null
+          },
+          "cardImage": {
+            "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/tlil3thy/lance-anderson-qdaaasrzhdk-unsplash.jpg",
+            "caption": "New element 47",
+            "imageAlt": "Description field for the New element 47",
+            "mediaId": 1255,
+            "isSvg": false,
+            "isVideo": false
+          }
+        }
+      },
+      {
+        "moduleName": "GenericProjectDetailCardModel",
+        "moduleId": "8ce2ff00-7bef-4ddf-858e-7b6ded1d0169",
+        "props": {
+          "tag": "Interior architecture",
+          "headingTitle": "BMW Central Building",
+          "description": "Our Central Building for BMW constituted a radical reinterpretation of the traditional office – transforming the building and the functions it contains into a more dynamic, engaging ‘nerve-centre’ or ‘communication knot’ – funneling all movement around the manufacturing complex through a space that transcends conventional white collar/blue collar spatial divisions.",
+          "primaryCta": {
+            "text": "BMW Central Building",
+            "href": "/projects/test-projects/bmw-central-building",
+            "linkType": "Content",
+            "target": null
+          },
+          "cardImage": {
+            "imageUrl": "https://zhweb-qa-a-app.azurewebsites.net/media/tlil3thy/lance-anderson-qdaaasrzhdk-unsplash.jpg",
+            "caption": "New element 47",
+            "imageAlt": "Description field for the New element 47",
+            "mediaId": 1255,
+            "isSvg": false,
+            "isVideo": false
+          }
+        }
+      }
+    ],
+    "orderBy": [
+      {
+        "field": "projectName_en-us",
+        "sortType": "String",
+        "orderByDirection": "Desc"
+      }
+    ],
+    "totalCount": 4,
+    "totalPages": 1,
+    "currentPage": 1,
+    "pageSize": 10
+  },
+  "anchor": "",
+  "anchorDisplayName": "",
+  "tag": "",
+  "headingTitle": {
+    "heading": "",
+    "htag": ""
+  },
+  "description": ""
+}

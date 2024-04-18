@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended",
+    "next",
+    "next/core-web-vitals"
+    // "airbnb/hooks"
+  ],
+  "rules": {
+    "react-hooks/exhaustive-deps": "off",
+    "no-unused-vars": "warn"
+  }
+}

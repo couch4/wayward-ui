@@ -1,0 +1,161 @@
+{
+  "activity": {},
+  "announcedBuild": {
+    "id": "65983b504959ff55a1cc4f30",
+    "number": 2,
+    "status": "ANNOUNCED",
+    "autoAcceptChanges": false,
+    "app": {
+      "id": "65981a87ef8d59cf0642efeb",
+      "turboSnapAvailability": "UNAVAILABLE"
+    }
+  },
+  "buildCommand": "bun run build-storybook --output-dir /var/folders/_l/s874l2gn7j541njnrdqh57_m0000gn/T/chromatic--96576-02P122srDfRz",
+  "buildLogFile": "/Users/barry/Documents/WAYWARD/MatterOfForm/base-builds/component-library/build-storybook.log",
+  "configuration": {},
+  "environment": {},
+  "exitCode": 0,
+  "exitCodeKey": "OK",
+  "flags": {
+    "debug": true,
+    "dryRun": true,
+    "outputDir": [],
+    "storybookBuildDir": [],
+    "externals": [],
+    "onlyStoryFiles": [],
+    "onlyStoryNames": [],
+    "untraced": [],
+    "fileHashing": true,
+    "interactive": true,
+    "appCode": []
+  },
+  "git": {
+    "version": "2.15.0",
+    "gitUserEmail": "jon.couch@matterofform.com",
+    "uncommittedHash": "",
+    "commit": "178e35d551c409d1da13b99f9cef8ed281e44fb1",
+    "committedAt": 1704475371000,
+    "committerEmail": "jon.couch@matterofform.com",
+    "committerName": "mofJon",
+    "branch": "main",
+    "slug": "mofjon/mof-component-library",
+    "fromCI": false,
+    "parentCommits": []
+  },
+  "input": [],
+  "isOnboarding": false,
+  "options": {
+    "fromCI": false,
+    "dryRun": true,
+    "debug": true,
+    "autoAcceptChanges": false,
+    "exitZeroOnChanges": false,
+    "exitOnceUploaded": false,
+    "diagnosticsFile": "chromatic-diagnostics.json",
+    "fileHashing": true,
+    "interactive": false,
+    "isLocalBuild": false,
+    "originalArgv": [
+      "--project-token=chpt_1884b5e48422bd0",
+      "--debug",
+      "--dry-run"
+    ],
+    "logFile": "chromatic.log",
+    "forceRebuild": true,
+    "buildScriptName": "build-storybook",
+    "storybookLogFile": "build-storybook.log",
+    "branchName": ""
+  },
+  "packageJson": {
+    "name": "component-library",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "next lint",
+      "storybook": "storybook dev -p 6006",
+      "build-storybook": "storybook build",
+      "build-static-webapp": "expo build:web",
+      "format": "prettier --write ."
+    },
+    "dependencies": {
+      "class-variance-authority": "^0.7.0",
+      "framer-motion": "^10.17.4",
+      "next": "14.0.4",
+      "react": "^18",
+      "react-dom": "^18"
+    },
+    "devDependencies": {
+      "@storybook/addon-essentials": "^7.6.7",
+      "@storybook/addon-interactions": "^7.6.7",
+      "@storybook/addon-links": "^7.6.7",
+      "@storybook/addon-onboarding": "^1.0.10",
+      "@storybook/blocks": "^7.6.7",
+      "@storybook/nextjs": "^7.6.7",
+      "@storybook/react": "^7.6.7",
+      "@storybook/test": "^7.6.7",
+      "@types/bun": "latest",
+      "@types/node": "^20",
+      "@types/react": "^18",
+      "@types/react-dom": "^18",
+      "autoprefixer": "^10.0.1",
+      "chromatic": "^10.2.0",
+      "eslint": "^8",
+      "eslint-config-next": "14.0.4",
+      "eslint-config-prettier": "^9.1.0",
+      "eslint-plugin-storybook": "^0.6.15",
+      "postcss": "^8",
+      "prettier": "^3.1.1",
+      "storybook": "^7.6.7",
+      "tailwindcss": "^3.3.0",
+      "typescript": "^5"
+    },
+    "packageManager": "bun@1.0.21",
+    "engines": {
+      "node": ">=20.0.0"
+    },
+    "module": "index.ts",
+    "type": "module",
+    "readme": "ERROR: No README data found!",
+    "_id": "component-library@0.1.0"
+  },
+  "packagePath": "/Users/barry/Documents/WAYWARD/MatterOfForm/base-builds/component-library/package.json",
+  "runtimeMetadata": {
+    "nodePlatform": "darwin",
+    "nodeVersion": "18.15.0",
+    "packageManager": "bun",
+    "packageManagerVersion": "1.0.10"
+  },
+  "sessionId": "02c1223e-c4d1-4717-adcf-3cff80f203ff",
+  "sourceDir": "/var/folders/_l/s874l2gn7j541njnrdqh57_m0000gn/T/chromatic--96576-02P122srDfRz",
+  "startedAt": 1704475473141,
+  "storybook": {
+    "addons": [
+      {
+        "name": "links",
+        "packageName": "@storybook/addon-links",
+        "packageVersion": "^7.6.7"
+      },
+      {
+        "name": "essentials",
+        "packageName": "@storybook/addon-essentials",
+        "packageVersion": "^7.6.7"
+      },
+      {
+        "name": "interactions",
+        "packageName": "@storybook/addon-interactions",
+        "packageVersion": "^7.6.7"
+      }
+    ],
+    "viewLayer": "react",
+    "version": "7.6.7",
+    "builder": {
+      "name": "@storybook/nextjs",
+      "packageVersion": "7.6.7"
+    }
+  },
+  "task": "build",
+  "userError": false
+}

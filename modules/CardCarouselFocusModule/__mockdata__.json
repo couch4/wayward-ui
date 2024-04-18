@@ -1,0 +1,113 @@
+{
+  "tag": "Focus tag",
+  "headingTitle": {
+    "heading": "<p>Custom Focus Cards</p>",
+    "htag": ""
+  },
+  "description": "focus description asdfasdf asdfasdf asdfasdf asdf",
+  "cardRow": [
+    {
+      "moduleName": "CustomFocusCardRowModel",
+      "moduleId": "933d01cc-fe46-468f-9057-015d4d3c6029",
+      "props": {
+        "cards": [
+          {
+            "moduleName": "FocusCardModel",
+            "moduleId": "d4a1fe64-439a-436c-b945-abf4fe41018c",
+            "props": {
+              "infoTags": ["1", "2", "3"],
+              "tag": "Custom Card",
+              "headingTitle": "Focus Card 1",
+              "description": "Focus Card 1 desc",
+              "primaryCta": {
+                "text": "Patrik Schumacher",
+                "href": "/people/patrik-schumacher",
+                "linkType": "Content",
+                "target": ""
+              },
+              "cardImage": {
+                "imageUrl": "/media/vnhhfe15/rafael-de-nadai-a-uyhn_zt9o-unsplash.jpg",
+                "caption": "Rafael De Nadai A UYHN Zt9o Unsplash",
+                "imageAlt": "Rafael De Nadai A UYHN Zt9o Unsplash",
+                "mediaId": 1338,
+                "isSvg": false,
+                "isVideo": false
+              }
+            }
+          },
+          {
+            "moduleName": "FocusCardModel",
+            "moduleId": "41be6a33-895a-4880-bd14-41b1aacc3398",
+            "props": {
+              "infoTags": ["4", "5", "6"],
+              "tag": "Custom Card",
+              "headingTitle": "Focus Card 2",
+              "description": "Focus Card 2 desc",
+              "primaryCta": null,
+              "cardImage": {
+                "imageUrl": "/media/o2oks2uv/liane-metzler-v3bwnxeinqa-unsplash.jpg?rxy=0.24185463659147868,0.7575187969924813",
+                "caption": "Liane Metzler V3bwnxeinqa Unsplash",
+                "imageAlt": "",
+                "mediaId": 1328,
+                "isSvg": false,
+                "isVideo": false
+              }
+            }
+          },
+          {
+            "moduleName": "FocusCardModel",
+            "moduleId": "5f458deb-b3dc-40b3-874f-6b5d8f5ae0e4",
+            "props": {
+              "infoTags": ["7", "8"],
+              "tag": "Custom Card",
+              "headingTitle": "Focus Card 3",
+              "description": "Focus Card 3 desc",
+              "primaryCta": {
+                "text": "Accordion Module",
+                "href": "/modules/accordion-module",
+                "linkType": "Content",
+                "target": ""
+              },
+              "cardImage": {
+                "imageUrl": "/media/fjzpjnk0/r-architecture-qmo-jtdyaqu-unsplash.jpg",
+                "caption": "R Architecture Qmo Jtdyaqu Unsplash",
+                "imageAlt": "",
+                "mediaId": 1343,
+                "isSvg": false,
+                "isVideo": false
+              }
+            }
+          },
+          {
+            "moduleName": "FocusCardModel",
+            "moduleId": "98c2749c-a96e-4d87-a09a-bf572f252344",
+            "props": {
+              "infoTags": [],
+              "tag": "Custom Card",
+              "headingTitle": "Focus Card 4",
+              "description": "Focus Card 4 desc",
+              "primaryCta": {
+                "text": "Architecture",
+                "href": "/expertise/architecture",
+                "linkType": "Content",
+                "target": ""
+              },
+              "cardImage": {
+                "imageUrl": "/media/mowbbrta/todd-quackenbush-jjb_k8acpu4-unsplash.jpg",
+                "caption": "Todd Quackenbush JJB K8acpu4 Unsplash",
+                "imageAlt": "",
+                "mediaId": 1345,
+                "isSvg": false,
+                "isVideo": false
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "anchor": "",
+  "anchorDisplayName": "",
+  "paddingTop": "Small",
+  "paddingBottom": "Small"
+}

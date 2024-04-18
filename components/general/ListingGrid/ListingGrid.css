@@ -1,0 +1,6 @@
+.listing-grid {
+  @apply w-full
+  grid
+  grid-cols-4
+  gap-6;
+}

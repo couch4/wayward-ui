@@ -1,0 +1,36 @@
+{
+  "tag": "Research & Technology",
+  "headingTitle": {
+    "heading": "<p>How we stay ahead of the curve</p>",
+    "htag": ""
+  },
+  "description": "<p>Description goes here lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec vestibulum eros. Curabitur ac libero malesuada, feugiat ligula quis, sodales diam. Morbi cursus mauris id bibendum commodo.</p>",
+  "primaryCta": {
+    "text": "People",
+    "href": "https://qa-api.zaha-hadid.com/people",
+    "linkType": "Content",
+    "target": ""
+  },
+  "secondaryCta": {
+    "text": "Projects",
+    "href": "https://qa-api.zaha-hadid.com/projects",
+    "linkType": "Content",
+    "target": ""
+  },
+  "mediaAlignment": "Right",
+  "mediaOrientation": "Portrait",
+  "image": {
+    "imageUrl": "https://zhweb-qa-f-app.azurewebsites.net/media/wotgyell/adrian-cuj-o_9ymcy0bag-unsplash.jpg",
+    "title": "",
+    "description": "",
+    "imageAlt": "",
+    "mediaId": 1229,
+    "isSvg": false,
+    "isVideo": false
+  },
+  "colourCodes": ["tallBuildings", "civic"],
+  "anchor": "",
+  "anchorDisplayName": "",
+  "paddingTop": "",
+  "paddingBottom": ""
+}

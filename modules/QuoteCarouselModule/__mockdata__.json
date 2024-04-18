@@ -1,0 +1,28 @@
+{
+  "quotes": [
+    {
+      "quote": "<p>First Quote Carousel Element Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+      "author": "Botond MOF",
+      "source": "MOF Weekly Digest "
+    },
+    {
+      "quote": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "author": "Vivienne is the French variation of \"Vivian\"",
+      "source": "Open Peer-Review"
+    },
+    {
+      "quote": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "author": "Vivienne",
+      "source": "Open Peer-Review"
+    },
+    {
+      "quote": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "author": "John Doe",
+      "source": "Open Peer-Review"
+    }
+  ],
+  "paddingTop": "Medium",
+  "paddingBottom": "Large",
+  "anchor": "",
+  "anchorDisplayName": ""
+}

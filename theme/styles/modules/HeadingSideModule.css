@@ -1,0 +1,20 @@
+.heading-side .content-block {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3;
+}
+
+.heading-side .pre-content {
+  @apply row-span-1 md:row-span-2;
+}
+
+.heading-side .content-block {
+  @apply flex-col md:flex-row;
+}
+
+.heading-side .heading-title,
+.heading-side .description {
+  @apply col-span-2;
+}
+
+.heading-side .description {
+  @apply opacity-50;
+}

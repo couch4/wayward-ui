@@ -1,0 +1,28 @@
+.listing-grid {
+  &-content {
+    @apply grid
+    grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xxl:grid-cols-4
+    gap-2
+    max-w-full;
+
+    .card {
+      @apply flex p-4 gap-4 flex-col items-start;
+
+      .media-holder {
+        @apply w-full h-[14rem];
+      }
+
+      .content-block {
+        @apply flex-1 gap-2 min-h-[10rem] h-full;
+
+        .description {
+          @apply line-clamp-3 mb-10;
+        }
+
+        .button-group {
+          @apply mt-auto;
+        }
+      }
+    }
+  }
+}
