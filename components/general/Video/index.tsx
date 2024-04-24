@@ -1,19 +1,19 @@
-"use client";
-import { useEffect, useRef, FC, useState } from "react";
-import { Box, Button, Image } from "../../";
-import screenfull from "screenfull";
-import { videoWrapper, videoControls } from "./Video.styles";
-import { useDimensions } from "../../../hooks";
+'use client';
+import { useEffect, useRef, FC, useState } from 'react';
+import { Box, Button, Image } from '../../';
+import screenfull from 'screenfull';
+import { videoWrapper, videoControls } from './Video.styles';
+import { useDimensions } from '../../../hooks';
 
-import dynamic from "next/dynamic";
-const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
+import dynamic from 'next/dynamic';
+const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
 
 const Video: FC<any> = ({
   data,
   imageSizes,
-  priority = "false",
-  onPlayerReady = () => {},
-  onAutoPlayStarted = () => {},
+  priority = 'false',
+  onPlayerReady,
+  onAutoPlayStarted,
   imageQuality,
 }: any) => {
   const videoWrapperRef = useRef<HTMLDivElement>(null);
@@ -35,14 +35,14 @@ const Video: FC<any> = ({
       const viewerWidth = viewer?.getBoundingClientRect()?.width;
 
       if (vidContainer) {
-        vidContainer.style.width = "105%";
+        vidContainer.style.width = '105%';
         vidContainer.style.height = `${width * 3}px`;
         if (
           height >=
           width * aspect
           // (viewerWidth || width) < width
         ) {
-          vidContainer.style.height = "105%";
+          vidContainer.style.height = '105%';
           vidContainer.style.width = `${height * 3}px`;
         }
       }
@@ -51,10 +51,10 @@ const Video: FC<any> = ({
 
   useEffect(() => {
     setIsClient(true);
-    document.addEventListener("fullscreenchange", onFullscreenChange);
+    document.addEventListener('fullscreenchange', onFullscreenChange);
 
     return () => {
-      document.removeEventListener("fullscreenchange", onFullscreenChange);
+      document.removeEventListener('fullscreenchange', onFullscreenChange);
     };
   }, []);
 
@@ -66,26 +66,28 @@ const Video: FC<any> = ({
     return null;
   }
 
-  let vidSrc = data?.videoFromGallery?.videoUrl;
-  if (data?.vimeoId !== "") vidSrc = `https://vimeo.com/${data?.vimeoId}`;
-  if (data?.youtubeId !== "")
+  let vidSrc = data?.src;
+  const vidType = data?.type;
+  if (vidType === 'vimeo') vidSrc = `https://vimeo.com/${data?.vimeoId}`;
+  if (vidType === 'youtube')
     vidSrc = `https://www.youtube.com/watch?v=${data?.youtubeId}`;
-  const cover = data?.coverImage;
 
   const handleReady = () => {
-    onPlayerReady();
+    onPlayerReady && onPlayerReady();
     const wrapper = videoWrapperRef.current;
 
+    console.log('handleReady');
+
     if (wrapper) {
-      let container: any = wrapper.getElementsByTagName("video")[0];
+      let container: any = wrapper.getElementsByTagName('video')[0];
       let vidWidth = container?.videoWidth;
       let vidHeight = container?.videoHeight;
-      if (wrapper.getElementsByTagName("iframe")[0]) {
-        container = wrapper.getElementsByTagName("iframe")[0];
-        vidWidth = container?.width.includes("px")
+      if (wrapper.getElementsByTagName('iframe')[0]) {
+        container = wrapper.getElementsByTagName('iframe')[0];
+        vidWidth = container?.width.includes('px')
           ? parseInt(container?.width)
           : 640;
-        vidHeight = container?.height.includes("px")
+        vidHeight = container?.height.includes('px')
           ? parseInt(container?.height)
           : 390;
       }
@@ -125,7 +127,7 @@ const Video: FC<any> = ({
     e.stopPropagation();
     if (init) {
       setInit(false);
-      onAutoPlayStarted();
+      onAutoPlayStarted && onAutoPlayStarted();
     }
 
     setIsPlaying(!isPlaying);
@@ -139,6 +141,8 @@ const Video: FC<any> = ({
     setIsMuted(!isMuted);
   };
 
+  console.log(vidSrc);
+
   return (
     <Box
       ref={videoWrapperRef}
@@ -147,7 +151,7 @@ const Video: FC<any> = ({
         data?.autoPlay,
         data?.allowFullScreen,
         isFullscreen,
-        init
+        init,
       )}
       onClick={handleFullscreen}
     >
@@ -166,8 +170,8 @@ const Video: FC<any> = ({
       {cover && (
         <Image
           sizes={imageSizes}
-          src={cover.imageUrl}
-          alt={cover.imageAlt}
+          src={cover?.url}
+          alt={cover?.alt}
           priority={priority}
           responsive
           quality={imageQuality}

@@ -1,0 +1,84 @@
+import { Canvas, Controls, Meta, Subtitle, Title } from '@storybook/blocks';
+import { ShowJSON, Stack, Tooltip } from '../../../components';
+import TrafficLight from 'react-trafficlight';
+
+export const proposedSchema = {
+  media: {
+    image: {
+      src: 'string',
+      id: 'string | number',
+      caption: 'string',
+      alt: 'string',
+      isSVG: 'boolean',
+    },
+    video: {
+      src: 'string // either url or vimeo/youtube id',
+      id: 'string | number',
+      type: 'vimeo | youtube | undefined // if undefined, assumes CMS asset.',
+      autoPlay: 'boolean',
+      loop: 'boolean',
+      allowFullscreen: 'boolean',
+      allowControls: 'boolean',
+      allowSound: 'boolean',
+    },
+  },
+};
+
+import * as MediaStories from './Media.stories';
+
+<Meta of={MediaStories} />
+
+<Stack className="docs-header">
+  <Title />
+  <Tooltip
+    anchor="bottom"
+    text="Awaiting confirmation of new schema<br/> specified below. Trying out in MOF2024"
+  >
+    <TrafficLight YellowOn />
+  </Tooltip>
+</Stack>
+<Subtitle>Render either image or video.</Subtitle>
+
+<Canvas of={MediaStories.MediaImage} story={{ height: 300 }} />
+
+<br />
+
+## Proposed new schema;
+
+We're currently assessing the data schema for this component going forward. It's currently aligned with Zaha's back end, but
+the proposed schema is below;
+
+<ShowJSON data={proposedSchema} collapsed={false} />
+
+<br />
+
+## Props
+
+<Controls exclude={['style']} />
+
+<br />
+
+## Stories
+
+### Media - Image
+
+Images are rendered with Next's Image component and are rendered **responsive** by default. Meaning they will fill the specified container.
+This comes in handy in responsive layouts and prevents content layout shift.
+
+One thing to note, is that due to the image component being **absolute** you'll just have to ensure that <span style={{color:"pink"}}>**.media-holder**</span> is set to responsive. Generally a global utility class sets this for us.
+
+The image component is processed by the **useImageOptimser** hook and also features a server action to fetch a blurred placeholder image.
+To disable this behaviour, set the **disablePlaceholder** prop to true.
+
+<Canvas of={MediaStories.MediaImage} sourceState="shown" exclude={['style']} />
+<br />
+### Media - Video
+
+Videos are fetched and rendered with
+[React-Player](https://github.com/cookpete/react-player). Currently if
+**allowFullscreen** is set to true, the video will be rendered in fullscreen. If
+set to true, then autoPlay won't work and vice versa.
+
+There are also a bunch of buttons that can be exposed by CSS (and assigned an SVG, for example) in the <span style={{color:"pink"}}>**.video-controls**</span> class.
+
+<Canvas of={MediaStories.MediaVideo} sourceState="shown" exclude={['style']} />

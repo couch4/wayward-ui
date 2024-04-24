@@ -1,0 +1,90 @@
+.tooltip {
+  &-wrapper {
+    @apply relative
+    cursor-pointer;
+
+    &.show {
+      .tooltip-bubble {
+        @apply flex;
+      }
+    }
+  }
+  &-bubble {
+    @apply absolute
+    z-50
+    p-3
+    rounded-md
+    bg-white
+    !text-black
+    shadow-lg
+    w-fit
+    text-md
+    text-nowrap
+    !leading-snug
+    text-center
+    hidden
+    m-0;
+
+    &:after {
+      @apply absolute
+        w-0
+        h-0
+        border
+        border-transparent;
+      content: '';
+    }
+    &.anchor-top,
+    &.anchor-bottom {
+      @apply left-1/2
+      translate-x-[-50%];
+      &:after {
+        @apply border-l-[0.5rem]
+        border-r-[0.5rem]
+        left-1/2
+        translate-x-[-50%];
+      }
+    }
+    &.anchor-left,
+    &.anchor-right {
+      @apply top-[50%] translate-y-[-50%];
+      &:after {
+        @apply border-t-[0.5rem]
+        border-b-[0.5rem]
+        top-1/2
+        translate-y-[-50%];
+      }
+    }
+    &.anchor-top {
+      @apply bottom-[calc(100%+1rem)];
+      &:after {
+        @apply border-t-[0.5rem]
+        top-full
+        border-t-white;
+      }
+    }
+    &.anchor-bottom {
+      @apply top-[calc(100%+1rem)];
+      &:after {
+        @apply border-b-[0.5rem]
+        bottom-full
+        border-b-white;
+      }
+    }
+    &.anchor-left {
+      @apply right-[calc(100%+1rem)];
+      &:after {
+        @apply border-l-[0.5rem]
+        left-full
+        border-l-white;
+      }
+    }
+    &.anchor-right {
+      @apply left-[calc(100%+1rem)];
+      &:after {
+        @apply border-r-[0.5rem]
+        right-full
+        border-r-white;
+      }
+    }
+  }
+}

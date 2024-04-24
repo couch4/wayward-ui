@@ -2,44 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
-  @import "./typography.css";
+  @import './typography.css';
 
   html {
     @apply font-light tracking-[0.01em];
   }
+  b,
+  strong {
+    @apply font-bold;
+  }
 }
 
 @layer components {
-  @import "components/accordion.css";
-  @import "components/button.css";
-  @import "components/buttonGroup.css";
-  @import "components/carousel.css";
-  @import "components/card.css";
-  @import "components/contentBlock.css";
-  @import "components/moduleBase.css";
-  @import "../../components/general/Nav/Nav.css";
-  @import "../../components/general/Popover/Popover.css";
-  @import "components/video.css";
+  @import 'components/accordion.css';
+  @import 'components/button.css';
+  @import 'components/buttonGroup.css';
+  @import 'components/carousel.css';
+  @import 'components/card.css';
+  @import 'components/contentBlock.css';
+  @import '../../components/general/Media/Media.css';
+  @import 'components/moduleBase.css';
+  @import '../../components/general/Nav/Nav.css';
+  @import '../../components/general/Popover/Popover.css';
+  @import '../../components/general/Tooltip/Tooltip.css';
+  @import 'components/video.css';
 
   /* modules */
-  @import "modules/BannerFullBleedModule.css";
-  @import "modules/BreadcrumbsModule.css";
-  @import "modules/CardCarouselFocusModule.css";
-  @import "../../modules/CardCarouselGenericModule/CardCarouselGenericModule.css";
-  @import "modules/CardListingGridModule.css";
+  @import 'modules/BannerFullBleedModule.css';
+  @import 'modules/BreadcrumbsModule.css';
+  @import 'modules/CardCarouselFocusModule.css';
+  @import '../../modules/CardCarouselGenericModule/CardCarouselGenericModule.css';
+  @import 'modules/CardListingGridModule.css';
   /* @import "modules/Header.css"; */
-  @import "../../modules/Header/Header.css";
-  @import "../../modules/Footer/Footer.css";
-  @import "modules/HeadingSideModule.css";
-  @import "modules/QuoteCarouselModule.css";
-  @import "../../modules/RichTextAndTwoMediaModule/RichTextAndTwoMediaModule.css";
-  @import "modules/RichTextAndOneMediaModule.css";
-  @import "modules/HeroLeftAlignedModule.css";
+  @import '../../modules/Header/Header.css';
+  @import '../../modules/Footer/Footer.css';
+  @import 'modules/HeadingSideModule.css';
+  @import 'modules/QuoteCarouselModule.css';
+  @import '../../modules/RichTextAndTwoMediaModule/RichTextAndTwoMediaModule.css';
+  @import 'modules/RichTextAndOneMediaModule.css';
+  @import 'modules/HeroLeftAlignedModule.css';
 
   /* custom */
-  @import "custom/index.css";
+  @import 'custom/index.css';
 }
 
 @layer utilities {
-  @import "utilities/index.css";
+  @import 'utilities/index.css';
 }

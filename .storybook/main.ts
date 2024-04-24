@@ -1,23 +1,22 @@
-import type { StorybookConfig } from "@storybook/nextjs";
+import type { StorybookConfig } from '@storybook/nextjs';
 
 const config: StorybookConfig = {
-  stories: ["../**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: ['../**/*.stories.@(js|jsx|mjs|ts|tsx)', '../**/*.docs.mdx'],
   addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
-    "@storybook/addon-docs",
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
   ],
   features: {
     // @ts-ignore
     experimentalRSC: true,
   },
   framework: {
-    name: "@storybook/nextjs",
+    name: '@storybook/nextjs',
     options: {},
   },
   docs: {
-    autodocs: "tag",
+    autodocs: 'tag',
   },
   webpackFinal: async (config) => {
     config.module = config.module || {};
@@ -25,17 +24,17 @@ const config: StorybookConfig = {
 
     // This modifies the existing image rule to exclude .svg files
     // since you want to handle those files with @svgr/webpack
-    const imageRule = config.module.rules.find(
-      (rule) => rule?.["test"]?.test(".svg")
+    const imageRule = config.module.rules.find((rule) =>
+      rule?.['test']?.test('.svg'),
     );
     if (imageRule) {
-      imageRule["exclude"] = /\.svg$/;
+      imageRule['exclude'] = /\.svg$/;
     }
 
     // Configure .svg files to be loaded with @svgr/webpack
     config.module.rules.push({
       test: /\.svg$/,
-      use: ["@svgr/webpack"],
+      use: ['@svgr/webpack'],
     });
 
     return config;

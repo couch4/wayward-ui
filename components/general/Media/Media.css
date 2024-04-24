@@ -1,0 +1,13 @@
+.media-holder {
+  @apply relative;
+
+  .caption {
+    @apply absolute
+        z-10
+        bottom-4
+        left-4
+        bg-[rgba(0,0,0,0.8)]
+        text-white
+        p-2;
+  }
+}

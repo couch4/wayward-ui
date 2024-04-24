@@ -1,42 +1,31 @@
-import { cva } from "class-variance-authority";
-import { BoxVars } from "./Box.types";
-import classnames from "classnames";
+import { cva } from 'class-variance-authority';
+import { BoxVars } from './Box.types';
+import classnames from 'classnames';
 
 // box Base and Variant Styles
-export const box = cva("box", {
+export const box = cva('box', {
   variants: {
     variant: {
-      flex: ["flex flex-initial"],
-      block: ["block"],
-      container: ["container m-auto"],
-      section: "",
-      header: "",
-      footer: "",
+      flex: ['flex flex-initial shrink-0'],
+      block: ['block'],
+      container: ['container m-auto'],
+      section: '',
+      header: '',
+      footer: '',
     },
   },
   defaultVariants: {
-    variant: "flex",
+    variant: 'flex',
   },
 });
 
 // box Props
-export const boxVars: BoxVars = (variant, bgSrc, classes, styleProps) => {
-  const baseStyles = [classes];
-
-  let bg = {};
-  if (bgSrc) {
-    bg = {
-      backgroundImage: `url(${bgSrc})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center center",
-    };
-  }
-
+export const boxVars: BoxVars = (variant, classes, styleProps) => {
   return {
     className: box({
       variant,
-      className: classnames(baseStyles),
+      className: classnames(classes),
     }),
-    style: { ...styleProps, ...bg },
+    style: { ...styleProps },
   };
 };
