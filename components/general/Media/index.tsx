@@ -7,7 +7,6 @@ export const Media = forwardRef(
   (
     {
       data,
-      size,
       imageSizes,
       responsive = true,
       priority = false,
@@ -60,7 +59,7 @@ export const Media = forwardRef(
     if (!variant) return null;
 
     return (
-      <Box {...props} {...mediaHolder(size, align, orientation, props)}>
+      <Box {...props} {...mediaHolder(align, orientation, props)}>
         {variant}
         <Text text={data?.image?.caption} {...caption('')} />
       </Box>

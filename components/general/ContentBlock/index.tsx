@@ -1,19 +1,19 @@
-import { capitalise } from "../../../utils/formatting";
-import { forwardRef, Ref } from "react";
-import { ContentBlockProps } from "./ContentBlock.types";
-import { emptyContentBlockAnim } from "../../../theme/motion";
-import Primary from "./variants/Primary";
+import { capitalise } from '../../../utils/formatting';
+import { forwardRef, Ref } from 'react';
+import { ContentBlockProps } from './ContentBlock.types';
+import { emptyContentBlockAnim } from '../../../theme/motion';
+import Primary from './variants/Primary';
 
 export const ContentBlock = forwardRef(
   (
     {
-      variant = "primary",
+      variant = 'primary',
       data,
-      childAnims = emptyContentBlockAnim,
+      motion = emptyContentBlockAnim,
       richText = false,
       ...props
     }: ContentBlockProps,
-    ref: Ref<ContentBlockProps>
+    ref: Ref<ContentBlockProps>,
   ) => {
     if (!data) return null;
 
@@ -27,12 +27,12 @@ export const ContentBlock = forwardRef(
         ref={ref}
         variant={variant}
         data={data}
-        childAnims={childAnims}
+        motion={motion}
         richText={richText}
         {...props}
       />
     );
-  }
+  },
 );
 
-ContentBlock.displayName = "ContentBlock";
+ContentBlock.displayName = 'ContentBlock';

@@ -1,10 +1,10 @@
-import React from "react";
-import { MotionProps } from "framer-motion";
+import React from 'react';
+import { MotionProps } from 'framer-motion';
 
 export interface ContentBlockProps {
   variant?: any;
   data: any;
-  childAnims?: Record<string, any>;
+  motion?: Record<string, any>;
   richText?: boolean;
 }
 
@@ -44,12 +44,12 @@ export interface ContentBlockContentProps extends HTMLAndMotionProps {
     sharingLinksModel?: any;
     infoTags?: string[] | string;
   };
-  childAnims?: ContentBlockMotionTypes;
+  motion?: ContentBlockMotionTypes;
   richText?: boolean;
 }
 
 export type ContentBlockVars = (
   variant: any,
-  childAnims: {},
+  motion: {},
   className: any,
 ) => Record<any, any>;

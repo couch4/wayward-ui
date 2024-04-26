@@ -10,6 +10,7 @@ const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
 
 const Video: FC<any> = ({
   data,
+  cover,
   imageSizes,
   priority = 'false',
   onPlayerReady,

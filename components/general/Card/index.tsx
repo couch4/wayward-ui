@@ -1,24 +1,23 @@
-import { forwardRef, Ref } from "react";
-import { CardProps } from "./Card.types";
+import { forwardRef, Ref } from 'react';
+import { CardProps } from './Card.types';
 import {
   backgroundMediaHolder,
   cardContent,
   cardVars,
   mediaHolder,
-} from "./Card.styles";
-import { ContentBlock, Grid, Media } from "../../../components";
-import { emptyContentBlockAnim } from "../../../theme/motion";
+} from './Card.styles';
+import { ContentBlock, Grid, Media } from '../../../components';
+import { emptyContentBlockAnim } from '../../../theme/motion';
 
 export const Card = forwardRef(
   (
     {
       className,
-      variant = "primary",
-      size,
+      variant = 'primary',
       imageSizes,
       backgroundImageSizes,
       data,
-      childAnims = emptyContentBlockAnim,
+      motion = emptyContentBlockAnim,
       priority,
       imageQuality,
       backgroundImageQuality,
@@ -26,11 +25,11 @@ export const Card = forwardRef(
       children,
       ...props
     }: CardProps,
-    ref: Ref<CardProps>
+    ref: Ref<CardProps>,
   ) => {
     const allProps = {
-      ...cardVars(variant, size, className),
-      ...childAnims?.card,
+      ...cardVars(variant, className),
+      ...motion?.card,
       ...props,
     };
 
@@ -49,9 +48,8 @@ export const Card = forwardRef(
       <Grid ref={ref} {...allProps}>
         <Media
           data={mainImage}
-          size={size}
           imageSizes={imageSizes}
-          {...mediaHolder(size)}
+          {...mediaHolder}
           responsive
           priority
           align={data?.mediaAlignment && data?.mediaAlignment?.toLowerCase()}
@@ -63,7 +61,6 @@ export const Card = forwardRef(
         />
         <Media
           data={bgImage}
-          size={size}
           imageSizes={backgroundImageSizes}
           {...backgroundMediaHolder}
           responsive
@@ -73,15 +70,15 @@ export const Card = forwardRef(
         />
         <ContentBlock
           data={data}
-          {...cardContent(size)}
-          childAnims={childAnims}
+          {...cardContent}
+          motion={motion}
           variant={variant}
           richText={richText}
         />
         {children}
       </Grid>
     );
-  }
+  },
 );
 
-Card.displayName = "Card";
+Card.displayName = 'Card';

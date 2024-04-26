@@ -1,8 +1,7 @@
-import React from "react";
-import { type VariantProps } from "class-variance-authority";
-import { card } from "./Card.styles";
-import { TextProps } from "../../../components";
-import { MotionProps } from "framer-motion";
+import React from 'react';
+import { type VariantProps } from 'class-variance-authority';
+import { card } from './Card.styles';
+import { MotionProps } from 'framer-motion';
 
 type HTMLAndMotionProps = React.HTMLAttributes<HTMLElement> & MotionProps;
 
@@ -14,7 +13,6 @@ export interface CardProps
         image?: {};
         backgroundImage?: {};
         backgroundMedia?: {};
-
         preHeading?: string;
         headingTitle?: string;
         subHeading?: string;
@@ -28,7 +26,7 @@ export interface CardProps
       }
     | any;
   priority?: boolean;
-  childAnims?: Record<string, any>;
+  motion?: Record<string, any>;
   imageSizes?: string;
   backgroundImageSizes?: string;
   imageQuality?: any;
@@ -37,14 +35,12 @@ export interface CardProps
 }
 
 export type CardVars = (
-  variant: CardProps["variant"],
-  size: CardProps["size"],
-  className: CardProps["className"],
+  variant: CardProps['variant'],
+  className: CardProps['className'],
 ) => Record<any, any>;
 
 export interface CardGenericProps {
   className?: Record<string, string>;
-  size: CardProps["size"];
   data: {
     preHeading: string;
     headingTitle: string;

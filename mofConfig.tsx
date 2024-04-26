@@ -1,5 +1,7 @@
-import Arrow from "./assets/icons/arrow.svg";
-import Close from "./assets/icons/close.svg";
+// @ts-ignore
+import Arrow from './assets/icons/arrow.svg';
+// @ts-ignore
+import Close from './assets/icons/close.svg';
 // MOF component library presets and overrides
 
 export default {
@@ -25,7 +27,7 @@ export default {
       icons: {
         iconPost: <Arrow />,
       },
-      text: "PLAY",
+      text: 'PLAY',
     },
     linkWithIcon: {
       icons: {
@@ -45,154 +47,157 @@ export default {
       omitText: true,
     },
     paginate: {
-      textStyle: "i-sm",
+      textStyle: 'i-sm',
     },
   },
   contentProps: {
     heroLeftAligned: {
       textStyles: {
         tag: {
-          textStyle: "p",
+          textStyle: 'p',
         },
         headingTitle: {
-          textStyle: "h1",
+          textStyle: 'h1',
         },
       },
     },
     articleHero: {
       textStyles: {
         tag: {
-          textStyle: "p",
+          textStyle: 'p',
         },
         headingTitle: {
-          textStyle: "h5",
+          textStyle: 'h5',
         },
         description: {
-          textStyle: "p-sm",
+          textStyle: 'p-sm',
         },
       },
       buttons: {
         primaryCta: {
-          variant: "primary",
+          variant: 'primary',
         },
         secondaryCta: {
-          variant: "secondary",
+          variant: 'secondary',
         },
       },
     },
     bannerFullBleed: {
       textStyles: {
         tag: {
-          textStyle: "p",
+          textStyle: 'p',
         },
         headingTitle: {
-          textStyle: "h1",
-          variant: "primary",
+          textStyle: 'h1',
+          variant: 'primary',
         },
         description: {
-          textStyle: "p-sm",
+          textStyle: 'p-sm',
         },
       },
       buttons: {
         primaryCta: {
-          variant: "primaryCircle",
+          variant: 'primaryCircle',
         },
       },
     },
     focus: {
       textStyles: {
         tag: {
-          textStyle: "p",
+          textStyle: 'p',
         },
         preHeading: {
-          textStyle: "p",
+          textStyle: 'p',
         },
         infoTags: {
-          textStyle: "p-sm",
+          textStyle: 'p-sm',
         },
         headingTitle: {
-          textStyle: "h5",
+          textStyle: 'h5',
         },
         description: {
-          textStyle: "p-sm",
+          textStyle: 'p-sm',
         },
       },
       buttons: {
         primaryCta: {
-          variant: "primary",
+          variant: 'primary',
         },
       },
     },
     generic: {
       textStyles: {
         tag: {
-          variant: "primary",
-          textStyle: "p-xxs",
+          variant: 'primary',
+          textStyle: 'p-xxs',
         },
         headingTitle: {
-          textStyle: "h5",
+          textStyle: 'h5',
         },
         subHeading: {
-          variant: "primaryBold",
-          textStyle: "h3",
+          variant: 'primaryBold',
+          textStyle: 'h3',
         },
         info: {
-          variant: "primaryBold",
-          textStyle: "p-xs",
+          variant: 'primaryBold',
+          textStyle: 'p-xs',
         },
         description: {
-          variant: "primary",
-          textStyle: "p-xs",
+          variant: 'primary',
+          textStyle: 'p-xs',
         },
       },
     },
     primary: {
       textStyles: {
         preHeading: {
-          variant: "primaryBold",
-          textStyle: "p",
+          variant: 'primaryBold',
+          textStyle: 'p',
         },
         headingTitle: {
-          textStyle: "h5",
+          textStyle: 'h5',
         },
         subHeading: {
-          variant: "primaryBold",
-          textStyle: "h3",
+          variant: 'primaryBold',
+          textStyle: 'h3',
         },
         info: {
-          variant: "primaryBold",
-          textStyle: "p",
+          variant: 'primaryBold',
+          textStyle: 'p',
         },
       },
       buttons: {
         primaryCta: {
-          variant: "primary",
+          variant: 'primary',
         },
       },
     },
     headingSide: {
       textStyles: {
         tag: {
-          textStyle: "p-sm",
+          textStyle: 'p-sm',
         },
         headingTitle: {
-          textStyle: "h1",
+          textStyle: 'h1',
         },
         description: {
-          textStyle: "p",
+          textStyle: 'p',
         },
       },
     },
   },
   text: {
     variant: {
-      alternate: "font-alternate",
-      alternateBold: "font-alternate text-bold",
-      alternateLight: "font-alternate text-light",
-      alternateItalic: "font-alternate text-italic",
+      alternate: 'font-alternate',
+      alternateBold: 'font-alternate text-bold',
+      alternateLight: 'font-alternate text-light',
+      alternateItalic: 'font-alternate text-italic',
     },
     textStyle: {
-      quote: "text-quote",
+      quote: 'text-quote',
     },
+  },
+  images: {
+    disableCDNOptimisation: false,
   },
 };

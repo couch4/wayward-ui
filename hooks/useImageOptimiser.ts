@@ -1,7 +1,9 @@
-import { useDimensions } from "./";
-import { stripQueryString } from "../utils";
-import { useDevicePixelRatio } from "use-device-pixel-ratio";
-import { focalPointSettings } from "../components/base/Image/Image.styles";
+import { useDimensions } from './';
+import { stripQueryString } from '../utils';
+import { useDevicePixelRatio } from 'use-device-pixel-ratio';
+import { focalPointSettings } from '../components/base/Image/Image.styles';
+// @ts-ignore - mof overrides
+import { images as imageSettings } from '/mofConfig';
 
 const dprQuality = [70, 30, 20];
 
@@ -29,10 +31,10 @@ export default function useImageOptimiser(
 
   const responsiveProps = {
     fill: true,
-    fit: "cover",
-    sizes: sizes || "100vw",
+    fit: 'cover',
+    sizes: sizes || '100vw',
     style: {
-      objectFit: "cover",
+      objectFit: 'cover',
       ...focalPointSettings(focalPoint),
     },
   };
@@ -44,8 +46,8 @@ export default function useImageOptimiser(
 
   // generates our responsive, width based srcset from the CDN
   const imageLoader = ({ width }: any) => {
-    const hasFocalPoint = focalPoint ? `&rxy=${focalPoint}` : "";
-    const hasHeight = imageHeight ? `&height=${imageHeight}` : "";
+    const hasFocalPoint = focalPoint ? `&rxy=${focalPoint}` : '';
+    const hasHeight = imageHeight ? `&height=${imageHeight}` : '';
 
     return `${stripQueryString(
       url,
@@ -57,8 +59,9 @@ export default function useImageOptimiser(
     fallbackWidth * dpr
   }&quality=${quality}&format=auto`;
 
-  const isAbsolute = url && url.includes("http");
-  const hasLoader = isAbsolute ? { loader: imageLoader } : {};
+  const isAbsolute = url && url.includes('http');
+  const isCDNDisabled = imageSettings?.disableCDNOptimisation || false;
+  const hasLoader = isAbsolute && !isCDNDisabled ? { loader: imageLoader } : {};
   // const blurDataURL = blurURL ? getBase64(blurURL) : "";
 
   return {
