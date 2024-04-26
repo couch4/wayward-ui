@@ -1,7 +1,7 @@
 'use server';
 import { stripQueryString } from '../../../utils';
 // @ts-ignore
-import { images as imageSettings } from '/mofConfig';
+import mofConfig from '/mofConfig';
 
 export const getBase64 = async (
   imagePath: string,
@@ -16,10 +16,10 @@ export const getBase64 = async (
 
   const hasFocalPoint = focalPoint ? `&rxy=${focalPoint}` : '';
   const hasHeight = imageHeight ? `&height=${imageHeight}` : '';
-  const isCDNDisabled = imageSettings?.disableCDNOptimisation || false;
+  const isCDNDisabled = mofConfig?.images?.disableCDNOptimisation || false;
   const params = isCDNDisabled
-    ? '?width=10&quality=10'
-    : `?width=10&quality=10${hasFocalPoint}${hasHeight}`;
+    ? '?width=300&quality=10'
+    : `?width=300&quality=10${hasFocalPoint}${hasHeight}`;
 
   try {
     return await fetch(`${imageUrl}${params}`)
@@ -36,6 +36,7 @@ export const getBase64 = async (
         return `data:image/jpeg;base64,${arrayBufferToBase64(arrayBuffer)}`;
       });
   } catch (error: unknown) {
+    console.log('failed to fetch blurURL', error);
     return null;
   }
 };

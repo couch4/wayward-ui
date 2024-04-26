@@ -3,7 +3,7 @@ import { stripQueryString } from '../utils';
 import { useDevicePixelRatio } from 'use-device-pixel-ratio';
 import { focalPointSettings } from '../components/base/Image/Image.styles';
 // @ts-ignore - mof overrides
-import { images as imageSettings } from '/mofConfig';
+import mofConfig from '/mofConfig';
 
 const dprQuality = [70, 30, 20];
 
@@ -48,26 +48,26 @@ export default function useImageOptimiser(
   const imageLoader = ({ width }: any) => {
     const hasFocalPoint = focalPoint ? `&rxy=${focalPoint}` : '';
     const hasHeight = imageHeight ? `&height=${imageHeight}` : '';
+    const isCDNDisabled = mofConfig?.images?.disableCDNOptimisation || false;
+    const extraParams = isCDNDisabled ? '' : `${hasFocalPoint}${hasHeight}`;
 
     return `${stripQueryString(
       url,
-    )}?width=${width}&quality=${quality}&format=webp${hasFocalPoint}${hasHeight}`;
+    )}?width=${width}&quality=${quality}&format=webp${extraParams}`;
   };
 
   // jpg fallback for older browsers
-  const fallbackURL = `${stripQueryString(url)}?width=${
+  const fallbackURL = `${stripQueryString(url)}?w=${
     fallbackWidth * dpr
-  }&quality=${quality}&format=auto`;
+  }&q=${quality}&f=auto`;
 
   const isAbsolute = url && url.includes('http');
-  const isCDNDisabled = imageSettings?.disableCDNOptimisation || false;
-  const hasLoader = isAbsolute && !isCDNDisabled ? { loader: imageLoader } : {};
+
+  const hasLoader = isAbsolute ? { loader: imageLoader } : {};
   // const blurDataURL = blurURL ? getBase64(blurURL) : "";
 
   return {
-    src: isAbsolute
-      ? fallbackURL
-      : `${stripQueryString(url)}?quality=${quality}`,
+    src: isAbsolute ? fallbackURL : stripQueryString(url),
     ...(responsive ? responsiveProps : staticProps),
     // placeholder: blurDataURL ? "blur" : null,
     // blurDataURL,
