@@ -1,6 +1,4 @@
-// @ts-ignore
 import Arrow from './assets/icons/arrow.svg';
-// @ts-ignore
 import Close from './assets/icons/close.svg';
 // MOF component library presets and overrides
 

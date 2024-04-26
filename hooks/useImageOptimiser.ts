@@ -65,7 +65,9 @@ export default function useImageOptimiser(
   // const blurDataURL = blurURL ? getBase64(blurURL) : "";
 
   return {
-    src: isAbsolute ? fallbackURL : stripQueryString(url),
+    src: isAbsolute
+      ? fallbackURL
+      : `${stripQueryString(url)}?quality=${quality}`,
     ...(responsive ? responsiveProps : staticProps),
     // placeholder: blurDataURL ? "blur" : null,
     // blurDataURL,
