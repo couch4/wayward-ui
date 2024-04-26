@@ -46,28 +46,30 @@ export const Card = forwardRef(
 
     return (
       <Grid ref={ref} {...allProps}>
-        <Media
-          data={mainImage}
-          imageSizes={imageSizes}
-          {...mediaHolder}
-          responsive
-          priority
-          align={data?.mediaAlignment && data?.mediaAlignment?.toLowerCase()}
-          orientation={
-            data?.mediaOrientation && data?.mediaOrientation?.toLowerCase()
-          }
-          cardVariant={variant}
-          imageQuality={imageQuality}
-        />
-        <Media
-          data={bgImage}
-          imageSizes={backgroundImageSizes}
-          {...backgroundMediaHolder}
-          responsive
-          priority
-          cardVariant={variant}
-          imageQuality={backgroundImageQuality}
-        />
+        {mainImage && (
+          <Media
+            data={mainImage}
+            imageSizes={imageSizes}
+            {...mediaHolder}
+            responsive
+            priority
+            align={data?.mediaAlignment && data?.mediaAlignment?.toLowerCase()}
+            orientation={
+              data?.mediaOrientation && data?.mediaOrientation?.toLowerCase()
+            }
+            imageQuality={imageQuality}
+          />
+        )}
+        {bgImage && (
+          <Media
+            data={bgImage}
+            imageSizes={backgroundImageSizes}
+            {...backgroundMediaHolder}
+            responsive
+            priority
+            imageQuality={backgroundImageQuality}
+          />
+        )}
         <ContentBlock
           data={data}
           {...cardContent}
