@@ -52,11 +52,7 @@ const PrimaryContentBlock: FC<ContentBlockContentProps> = ({
         text={data?.subHeading || data?.subheading}
         {...renderText('subHeading')}
       />
-      <Text
-        text={data?.description || data?.content}
-        rich={richText}
-        {...renderText('description')}
-      />
+      <Text text={data?.bodyCopy} rich={richText} {...renderText('bodyCopy')} />
       {hasButtons && (
         <ButtonGroup
           primaryProps={{

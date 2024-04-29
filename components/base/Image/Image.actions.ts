@@ -17,12 +17,13 @@ export const getBase64 = async (
   const hasFocalPoint = focalPoint ? `&rxy=${focalPoint}` : '';
   const hasHeight = imageHeight ? `&height=${imageHeight}` : '';
   const isCDNDisabled = mofConfig?.images?.disableCDNOptimisation || false;
+  const headers = mofConfig?.headers || {};
   const params = isCDNDisabled
     ? '?width=300&quality=10'
     : `?width=300&quality=10${hasFocalPoint}${hasHeight}`;
 
   try {
-    return await fetch(`${imageUrl}${params}`)
+    return await fetch(`${imageUrl}${params}`, headers)
       .then((res: any) => {
         try {
           if (res.status === 200) {
