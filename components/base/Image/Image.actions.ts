@@ -2,6 +2,7 @@
 import { stripQueryString } from '../../../utils';
 // @ts-ignore
 import mofConfig from '/mofConfig';
+const fs = require('fs');
 
 export const getBase64 = async (
   imagePath: string,
@@ -35,23 +36,14 @@ export const getBase64 = async (
       })
       .then(async (blob: Blob) => {
         if (blob.type === 'image/svg+xml') {
-          async function blobToString(blob: Blob) {
-            return new Promise((resolve, reject) => {
-              const reader = new FileReader();
-              reader.onerror = reject;
-              reader.onload = () => {
-                resolve(reader.result);
-              };
-              reader.readAsText(blob);
-            });
-          }
-
-          const svgString = ((await blobToString(blob)) as string)
+          const SVGBuffer = await blob.arrayBuffer();
+          const SVGString = Buffer.from(SVGBuffer)
+            .toString('utf8')
             .replace(/fill="[^"]+"/g, 'fill="currentColor"')
             .replace(/width=".*?"/, '')
             .replace(/height=".*?"/, '');
 
-          return svgString;
+          return SVGString;
         } else {
           const arrayBuffer = await blob.arrayBuffer();
           return `data:image/jpeg;base64,${arrayBufferToBase64(arrayBuffer)}`;

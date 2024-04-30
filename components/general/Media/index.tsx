@@ -33,7 +33,7 @@ export const Media = forwardRef(
         responsive={responsive}
         priority={priority}
         quality={imageQuality}
-        disablePlaceholder={disablePlaceholder || data?.image?.isSvg}
+        disablePlaceholder={disablePlaceholder}
       />
     );
     if (data?.video) {
@@ -51,10 +51,10 @@ export const Media = forwardRef(
         </Suspense>
       );
     }
-    if (data.isSvg && data.svg) {
-      const SVG = require(data.imageUrl).current;
-      variant = <SVG /> || null;
-    }
+    // if (data.isSvg && data.svg) {
+    //   const SVG = require(data.imageUrl).current;
+    //   variant = <SVG /> || null;
+    // }
 
     if (!variant) return null;
 
