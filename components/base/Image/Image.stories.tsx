@@ -1,19 +1,21 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Box, Image, Stack, Text } from "../../../components";
-import localImage from "../../../assets/images/zhaCarousel1.jpg";
+import type { Meta, StoryObj } from '@storybook/react';
+import { Box, Image, Stack, Text } from '../../../components';
+import localImage from '../../../assets/images/zhaCarousel1.jpg';
 
 const imageUrlWithQuery =
-  "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/53kgzguw/refargotohp-1azkcg0c38a-unsplash.jpg?width=696&format=webp";
+  'https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/53kgzguw/refargotohp-1azkcg0c38a-unsplash.jpg?width=696&format=webp';
 const imageUrlWithoutQuery =
-  "https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/53kgzguw/refargotohp-1azkcg0c38a-unsplash.jpg";
+  'https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/53kgzguw/refargotohp-1azkcg0c38a-unsplash.jpg';
 const imageUrlWithFocalPoint =
-  "https://qa-api.zaha-hadid.com/media/bwzfe0he/01667_cp_n101337.jpg?rxy=0.8771146616541353,0.20592004721792143";
+  'https://qa-api.zaha-hadid.com/media/bwzfe0he/01667_cp_n101337.jpg?rxy=0.8771146616541353,0.20592004721792143';
+const svgSrc =
+  'http://localhost:8055/assets/3b2af8a6-035d-4ef1-ad8c-fe584689ed0f';
 
 const meta: Meta<typeof Image> = {
   component: Image,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
   argTypes: {},
 };
@@ -28,7 +30,7 @@ export const ExplicitWidthAndHeight: Story = {
     height: 600,
     priority: true,
     blurDataURL: `${imageUrlWithoutQuery}?width=80&height=60`,
-    placeholder: "blur",
+    placeholder: 'blur',
   },
 };
 
@@ -84,6 +86,12 @@ export const StaticallyImportedImage: Story = {
     src: localImage.src,
     width: localImage.width,
     height: localImage.height,
-    sizes: "(min-width: 808px) 50vw, 100vw",
+    sizes: '(min-width: 808px) 50vw, 100vw',
+  },
+};
+
+export const SVG: Story = {
+  args: {
+    src: svgSrc,
   },
 };

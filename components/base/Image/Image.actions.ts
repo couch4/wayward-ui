@@ -27,15 +27,24 @@ export const getBase64 = async (
       .then((res: any) => {
         try {
           if (res.status === 200) {
-            return res.arrayBuffer();
+            return res.blob();
           }
         } catch (error) {
           return null;
         }
       })
-      .then((arrayBuffer: ArrayBuffer) => {
-        return `data:image/jpeg;base64,${arrayBufferToBase64(arrayBuffer)}`;
+      .then(async (blob: Blob) => {
+        if (blob.type === 'image/svg+xml') {
+          return blob;
+        } else {
+          const arrayBuffer = await blob.arrayBuffer();
+          return `data:image/jpeg;base64,${arrayBufferToBase64(arrayBuffer)}`;
+        }
       });
+    // .then((arrayBuffer: ArrayBuffer) => {
+    //   console.log(arrayBuffer);
+    //   return `data:image/jpeg;base64,${arrayBufferToBase64(arrayBuffer)}`;
+    // });
   } catch (error: unknown) {
     console.log('failed to fetch blurURL', error);
     return null;
