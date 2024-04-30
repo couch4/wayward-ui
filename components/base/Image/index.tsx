@@ -25,7 +25,7 @@ export const Image = forwardRef(
     ref: Ref<any>,
   ): any => {
     const [blurData, setBlurData] = useState({});
-    const [isSVG, setIsSVG] = useState(null);
+    const [isSVG, setIsSVG] = useState<any>(null);
     const imageRef = useRef<any>();
     const isAnimated = containsMotionProps(props);
 
@@ -43,27 +43,10 @@ export const Image = forwardRef(
           focalPoint,
         );
 
-        if (blurOrSVG?.type === 'image/svg+xml') {
-          async function blobToString(blob: Blob) {
-            return new Promise((resolve, reject) => {
-              const reader = new FileReader();
-              reader.onerror = reject;
-              reader.onload = () => {
-                resolve(reader.result);
-              };
-              reader.readAsText(blob);
-            });
-          }
-
-          const svgString = ((await blobToString(blurOrSVG)) as string)
-            .replace(/fill="[^"]+"/g, 'fill="currentColor"')
-            .replace(/width=".*?"/, '')
-            .replace(/height=".*?"/, '');
-
+        if (blurOrSVG && blurOrSVG.includes('</svg>')) {
           setIsSVG(
-            // @ts-ignore
             <Box
-              dangerouslySetInnerHTML={{ __html: svgString }}
+              dangerouslySetInnerHTML={{ __html: blurOrSVG }}
               {...generatedSVG(props)}
             />,
           );

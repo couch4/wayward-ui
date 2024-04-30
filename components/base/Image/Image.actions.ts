@@ -30,12 +30,28 @@ export const getBase64 = async (
             return res.blob();
           }
         } catch (error) {
-          return null;
+          return undefined;
         }
       })
       .then(async (blob: Blob) => {
         if (blob.type === 'image/svg+xml') {
-          return blob;
+          async function blobToString(blob: Blob) {
+            return new Promise((resolve, reject) => {
+              const reader = new FileReader();
+              reader.onerror = reject;
+              reader.onload = () => {
+                resolve(reader.result);
+              };
+              reader.readAsText(blob);
+            });
+          }
+
+          const svgString = ((await blobToString(blob)) as string)
+            .replace(/fill="[^"]+"/g, 'fill="currentColor"')
+            .replace(/width=".*?"/, '')
+            .replace(/height=".*?"/, '');
+
+          return svgString;
         } else {
           const arrayBuffer = await blob.arrayBuffer();
           return `data:image/jpeg;base64,${arrayBufferToBase64(arrayBuffer)}`;
@@ -47,7 +63,7 @@ export const getBase64 = async (
     // });
   } catch (error: unknown) {
     console.log('failed to fetch blurURL', error);
-    return null;
+    return undefined;
   }
 };
 
