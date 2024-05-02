@@ -17,7 +17,7 @@ export type ContentBlockMotionTypes = {
   infoTags?: Record<string, any>;
   infoTag?: Record<string, any>;
   headingTitle?: Record<string, any>;
-  subHeading?: Record<string, any>;
+  subTitle?: Record<string, any>;
   bodyCopy?: Record<string, any>;
   primaryCta?: Record<string, any>;
   secondaryCta?: Record<string, any>;
@@ -34,8 +34,7 @@ export interface ContentBlockContentProps extends HTMLAndMotionProps {
     title?: any;
     tag?: string;
     info?: string;
-    subHeading?: string;
-    subheading?: string;
+    subTitle?: string;
     bodyCopy?: string;
     content?: string;
     primaryCta?: any;
