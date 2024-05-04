@@ -19,6 +19,7 @@ export const Image = forwardRef(
       placeholder,
       sizes,
       quality,
+      preserveSVG = false,
       disablePlaceholder,
       ...props
     }: ImageProps,
@@ -41,6 +42,7 @@ export const Image = forwardRef(
           propSrc,
           imageHeight,
           focalPoint,
+          preserveSVG,
         );
 
         console.log('CL blurOrSVG', blurOrSVG);

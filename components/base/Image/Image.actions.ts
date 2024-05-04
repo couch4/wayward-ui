@@ -8,6 +8,7 @@ export const getBase64 = async (
   imagePath: string,
   imageHeight?: any,
   focalPoint?: any,
+  preserveSVG?: boolean,
 ) => {
   'use server';
 
@@ -37,11 +38,13 @@ export const getBase64 = async (
       .then(async (blob: Blob) => {
         if (blob.type === 'image/svg+xml') {
           const SVGBuffer = await blob.arrayBuffer();
-          const SVGString = Buffer.from(SVGBuffer)
-            .toString('utf8')
-            .replace(/fill="[^"]+"/g, 'fill="currentColor"')
-            .replace(/width=".*?"/, '')
-            .replace(/height=".*?"/, '');
+          const SVGString = preserveSVG
+            ? Buffer.from(SVGBuffer).toString('utf8')
+            : Buffer.from(SVGBuffer)
+                .toString('utf8')
+                .replace(/fill="(?!(?:none))[^"]+"/g, 'fill="currentColor"')
+                .replace(/width=".*?"/, '')
+                .replace(/height=".*?"/, '');
 
           return SVGString;
         } else {
@@ -49,10 +52,6 @@ export const getBase64 = async (
           return `data:image/jpeg;base64,${arrayBufferToBase64(arrayBuffer)}`;
         }
       });
-    // .then((arrayBuffer: ArrayBuffer) => {
-    //   console.log(arrayBuffer);
-    //   return `data:image/jpeg;base64,${arrayBufferToBase64(arrayBuffer)}`;
-    // });
   } catch (error: unknown) {
     console.log('failed to fetch blurURL', error);
     return undefined;

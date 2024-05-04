@@ -1,15 +1,15 @@
-import { FC, useContext } from "react";
-import { Box } from "../../../../components";
-import { ICarouselItem } from "../Carousel.types";
-import { itemHolder } from "../Carousel.styles";
+import { FC, useContext } from 'react';
+import { Media } from '../../../../components';
+import { ICarouselItem } from '../Carousel.types';
+import { itemHolder } from '../Carousel.styles';
 import {
   carouselFocusAnimation,
   carouselBookcaseAnimation,
   carouselFadeAndScaleAnimation,
   carouselJaggedAnimation,
-} from "../Carousel.motion";
-import { CarouselContext } from "./";
-import { getValueAtBreakpoint } from "../../../../utils";
+} from '../Carousel.motion';
+import { CarouselContext } from './';
+import { getValueAtBreakpoint } from '../../../../utils';
 
 let offset = 0;
 
@@ -51,7 +51,7 @@ const CarouselItem: FC<ICarouselItem> = ({
   }
 
   const itemAnimation = {
-    primary: { initial: "inactive", animate: isActive ? "active" : "inactive" },
+    primary: { initial: 'inactive', animate: isActive ? 'active' : 'inactive' },
     focus: carouselFocusAnimation(animationStyle, isActive, offset, loop),
     bookcase: carouselBookcaseAnimation(animationStyle, isActive, offset, loop),
     fadeInAndScale: carouselFadeAndScaleAnimation(
@@ -74,12 +74,12 @@ const CarouselItem: FC<ICarouselItem> = ({
   const allProps = {
     ...itemHolder(width / columnNum, offset, (props as any).style, loop),
     ...props,
-    bgSrc: typeof item === "string" ? item : "",
+    src: typeof item === 'string' ? item : '',
     // @ts-ignore
     ...itemAnimation[variant],
   };
 
-  return <Box {...allProps}>{item.type ? item : null}</Box>;
+  return <Media {...allProps}>{item.type ? item : null}</Media>;
 };
 
 export default CarouselItem;
