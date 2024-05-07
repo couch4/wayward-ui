@@ -45,8 +45,6 @@ export const Image = forwardRef(
           preserveSVG,
         );
 
-        console.log('CL blurOrSVG', blurOrSVG);
-
         if (blurOrSVG && blurOrSVG.includes('</svg>')) {
           setIsSVG(
             <Box

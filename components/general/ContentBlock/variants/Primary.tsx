@@ -49,8 +49,8 @@ const PrimaryContentBlock: FC<ContentBlockContentProps> = ({
       </Stack>
       <Text text={heading} {...htag} {...renderText('headingTitle')} />
       <Text
-        text={data?.subHeading || data?.subheading}
-        {...renderText('subHeading')}
+        text={data?.subTitle || data?.subTitle}
+        {...renderText('subTitle')}
       />
       <Text text={data?.bodyCopy} rich={richText} {...renderText('bodyCopy')} />
       {hasButtons && (

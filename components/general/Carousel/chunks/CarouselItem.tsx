@@ -1,5 +1,5 @@
 import { FC, useContext } from 'react';
-import { Media } from '../../../../components';
+import { Box } from '../../../../components';
 import { ICarouselItem } from '../Carousel.types';
 import { itemHolder } from '../Carousel.styles';
 import {
@@ -74,12 +74,12 @@ const CarouselItem: FC<ICarouselItem> = ({
   const allProps = {
     ...itemHolder(width / columnNum, offset, (props as any).style, loop),
     ...props,
-    src: typeof item === 'string' ? item : '',
+    // src: typeof item === 'string' ? item : '',
     // @ts-ignore
     ...itemAnimation[variant],
   };
 
-  return <Media {...allProps}>{item.type ? item : null}</Media>;
+  return <Box {...allProps}>{item.type ? item : null}</Box>;
 };
 
 export default CarouselItem;
