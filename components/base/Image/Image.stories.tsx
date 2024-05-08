@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Box, Image, Stack, Text } from '../../../components';
+// @ts-ignore
 import localImage from '../../../assets/images/zhaCarousel1.jpg';
 
 const imageUrlWithQuery =

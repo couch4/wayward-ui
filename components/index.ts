@@ -7,7 +7,10 @@ export * from './base/Image';
 export * from './base/Stack';
 export * from './base/Text';
 
+// scrollTriggers
 export { useScrollTrigger } from './base/Box';
+export { useScrollTriggerGrid } from './base/Grid';
+export { useScrollTriggerStack } from './base/Stack';
 
 // general components
 export { default as Accordion } from './general/Accordion';

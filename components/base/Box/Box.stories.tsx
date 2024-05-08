@@ -116,7 +116,7 @@ export const Footer: Story = {
 };
 
 const ProgressChild = () => {
-  const { progress } = useScrollTrigger();
+  const { progress, inView, scrollState, motionState } = useScrollTrigger();
   const [percent, setPercent] = useState(0);
 
   const progressSpring = useSpring(progress, { stiffness: 100, damping: 40 });

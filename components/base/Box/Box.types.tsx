@@ -13,6 +13,7 @@ export interface BoxProps extends HTMLAndMotionProps, VariantProps<typeof box> {
   onEnterBack?: string;
   onLeave?: string;
   onLeaveBack?: string;
+  onRefresh?: string;
   animateOnScrollDown?: boolean;
 }
 

@@ -35,6 +35,7 @@ export const Box = forwardRef(
       onEnterBack,
       onLeave,
       onLeaveBack,
+      onRefresh,
       animateOnScrollDown,
       ...props
     }: BoxProps,
@@ -44,6 +45,8 @@ export const Box = forwardRef(
     useImperativeHandle(ref, () => innerRef.current!, []);
     const [motionState, setMotionState] = useState<string | undefined>();
     const [gsapRegistered, setGsapRegistered] = useState(false);
+    const [inView, setInView] = useState(false);
+    const [scrollState, setScrollState] = useState<string | undefined>();
 
     const isAnimated = containsMotionProps(props); //contains framer motion props?
     const allProps = {
@@ -55,6 +58,7 @@ export const Box = forwardRef(
     // scrolltrigger
     const refTimeline = useRef<gsap.core.Timeline>();
     const progress = useMotionValue(0);
+    const velocity = useMotionValue(0);
 
     useEffect(() => {
       if (scrollTrigger || animateOnScrollDown) {
@@ -73,26 +77,40 @@ export const Box = forwardRef(
             trigger: innerRef.current,
             onUpdate: (instance) => {
               progress.set(clamp(instance.progress, 0, 1));
+              velocity.set(instance.getVelocity());
             },
             onEnter: () => {
               if (onEnter || animateOnScrollDown) {
                 setMotionState(animateOnScrollDown ? 'active' : onEnter);
               }
+              setScrollState('enter');
             },
             onEnterBack: () => {
               if (onEnterBack || animateOnScrollDown) {
                 setMotionState(animateOnScrollDown ? 'active' : onEnterBack);
               }
+              setScrollState('enterBack');
             },
             onLeave: () => {
               if (onLeave || animateOnScrollDown) {
                 setMotionState(animateOnScrollDown ? 'active' : onLeave);
               }
+              setScrollState('leave');
             },
             onLeaveBack: () => {
               if (onLeaveBack) {
                 setMotionState(onLeaveBack);
               }
+              setScrollState('leaveBack');
+            },
+            onRefresh: () => {
+              if (onRefresh) {
+                setMotionState(onRefresh);
+              }
+              setScrollState('refresh');
+            },
+            onToggle: (self) => {
+              setInView(self.isActive);
             },
           },
         });
@@ -104,7 +122,14 @@ export const Box = forwardRef(
         refTimeline.current?.kill();
         refTimeline.current?.clear();
       };
-    }, [debug, scrollTrigger, progress, innerRef.current, gsapRegistered]);
+    }, [
+      debug,
+      scrollTrigger,
+      progress,
+      velocity,
+      innerRef.current,
+      gsapRegistered,
+    ]);
 
     const tagType: any = ['section', 'footer', 'header'].includes(`${variant}`)
       ? variant
@@ -113,7 +138,9 @@ export const Box = forwardRef(
     return createElement(
       isAnimated ? getMotionTag(tagType) : tagType, // if motion props exist on component, make this component animatable, otherwise render static div
       { ...allProps, ref: innerRef },
-      <ScrollTriggerContext.Provider value={{ progress }}>
+      <ScrollTriggerContext.Provider
+        value={{ inView, motionState, progress, scrollState }}
+      >
         {props.children}
       </ScrollTriggerContext.Provider>,
     );
