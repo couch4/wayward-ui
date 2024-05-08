@@ -47,7 +47,7 @@ export const Image = forwardRef(
 
         if (blurOrSVG && blurOrSVG.includes('</svg>')) {
           setIsSVG(
-            <Box
+            <div
               dangerouslySetInnerHTML={{ __html: blurOrSVG }}
               {...generatedSVG(props)}
             />,

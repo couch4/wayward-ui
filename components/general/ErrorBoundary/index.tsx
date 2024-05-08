@@ -1,16 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-function ErrorBoundary({ children, fallback }: any) {
+function ErrorBoundary({
+  children,
+  fallback = <div>Error thrown in boundary</div>,
+}: any) {
   const [hasError] = useState(false);
 
   useEffect(() => {
     if (hasError) {
-      console.error("Error occurred within the ErrorBoundary");
+      console.log('Error occurred within the ErrorBoundary');
     }
   }, [hasError]);
 
   if (hasError) {
-    return fallback || "Something went wrong.";
+    return fallback;
   }
 
   return children;

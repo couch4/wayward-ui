@@ -1,5 +1,14 @@
+import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Box, ContentBlock, Stack, Text } from '../../../components';
+import {
+  Box,
+  ContentBlock,
+  SmoothScroll,
+  Stack,
+  Text,
+} from '../../../components';
+import { useTransform, useMotionValueEvent, useSpring } from 'framer-motion';
+import { useScrollTrigger } from '../../../components';
 
 const meta: Meta<typeof Box> = {
   component: Box,
@@ -103,5 +112,75 @@ export const Footer: Story = {
         <Text text="Contact" />
       </Stack>
     ),
+  },
+};
+
+const ProgressChild = () => {
+  const { progress } = useScrollTrigger();
+  const [percent, setPercent] = useState(0);
+
+  const progressSpring = useSpring(progress, { stiffness: 100, damping: 40 });
+  const x = useTransform(progressSpring, [0, 1], [0, 300]);
+  const width = useTransform(progressSpring, [0, 1], [0, 600]);
+
+  useMotionValueEvent(progress, 'change', (x: number) => {
+    setPercent(Math.round(x * 100));
+  });
+
+  return (
+    <Box
+      initial={{ x: 0, width: 0 }}
+      // @ts-ignore
+      style={{ x, width }}
+      className="absolute overflow-hidden left-4 top-4 rounded-3xl w-32 h-32 bg-purple-500 flex justify-center items-center text-white"
+    >
+      <Text text={`${percent}%`} textStyle="h1" />
+    </Box>
+  );
+};
+
+export const ScrollTrigger: Story = {
+  args: {
+    className: 'rounded-3xl w-40 h-40 bg-blue-500 relative',
+    children: <ProgressChild />,
+    initial: 'inactive',
+    animateOnScrollDown: true,
+    debug: true,
+    variants: {
+      inactive: {
+        opacity: 0,
+        scale: 0,
+      },
+      active: {
+        opacity: 1,
+        scale: 1,
+      },
+    },
+  },
+};
+
+export const ScrollTriggerPin: Story = {
+  decorators: [
+    (Story) => {
+      return (
+        <>
+          <Stack direction="column" className="py-[1000px]">
+            <Story />
+          </Stack>
+          <SmoothScroll />
+        </>
+      );
+    },
+  ],
+  args: {
+    className: 'rounded-3xl w-40 h-40 bg-blue-500 relative',
+    children: <ProgressChild />,
+    onLeaveBack: 'active',
+    scrollTrigger: {
+      pin: true,
+      start: 'top center',
+      end: '+=400',
+    },
+    debug: true,
   },
 };

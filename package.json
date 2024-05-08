@@ -1,6 +1,6 @@
 {
   "name": "mof-cl",
-  "version": "0.1.22",
+  "version": "0.1.27",
   "main": "./index.js",
   "types": "./index.d.ts",
   "scripts": {
@@ -42,7 +42,9 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-storybook": "^0.6.15",
     "framer-motion": "^11.0.3",
+    "gsap": "^3.12.5",
     "isomorphic-dompurify": "^2.2.0",
+    "lenis": "^1.0.45",
     "next": "14.0.4",
     "next-i18next": "^15.2.0",
     "postcss": "^8",
