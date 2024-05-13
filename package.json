@@ -1,6 +1,6 @@
 {
   "name": "mof-cl",
-  "version": "0.1.32",
+  "version": "0.1.34",
   "main": "./index.js",
   "types": "./index.d.ts",
   "scripts": {
@@ -43,7 +43,7 @@
     "eslint-plugin-storybook": "^0.6.15",
     "framer-motion": "^11.0.3",
     "gsap": "^3.12.5",
-    "isomorphic-dompurify": "^2.2.0",
+    "isomorphic-dompurify": "^2.9.0",
     "lenis": "^1.0.45",
     "next": "14.0.4",
     "next-i18next": "^15.2.0",
@@ -52,6 +52,7 @@
     "prettier": "^3.1.1",
     "prop-types": "^15.8.1",
     "react": "^18",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18",
     "react-player": "^2.16.0",
     "react-scrollbars-custom": "^4.1.1",
