@@ -32,6 +32,7 @@ const getMotionTag = (tag: any) => {
     section: motion.section,
     footer: motion.footer,
     header: motion.header,
+    nav: motion.nav,
     span: motion.span,
   };
 
