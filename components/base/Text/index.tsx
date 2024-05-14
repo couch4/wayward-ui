@@ -1,11 +1,12 @@
-import { createElement, forwardRef, Ref, useEffect, useState } from "react";
-import { TextProps } from "./Text.types";
-import { textVars } from "./Text.styles";
-import DOMPurify from "isomorphic-dompurify";
-import { motion } from "framer-motion";
-import { containsMotionProps } from "../../../utils";
-import Link from "next/link";
-import { allowedTags } from "./chunks";
+'use client';
+import { createElement, forwardRef, Ref, useEffect, useState } from 'react';
+import { TextProps } from './Text.types';
+import { textVars } from './Text.styles';
+import DOMPurify from 'isomorphic-dompurify';
+import { motion } from 'framer-motion';
+import { containsMotionProps } from '../../../utils';
+import Link from 'next/link';
+import { allowedTags } from './chunks';
 
 export const Text = forwardRef(
   (
@@ -13,7 +14,7 @@ export const Text = forwardRef(
       className,
       variant,
       text,
-      textStyle = "p",
+      textStyle = 'p',
       link = {},
       rich = false,
       htag: seoTag,
@@ -21,34 +22,28 @@ export const Text = forwardRef(
     }: TextProps,
     ref: Ref<TextProps>,
   ) => {
-    const [clientReady, setClientReady] = useState<boolean>(false);
-
     const isAnimated = containsMotionProps(props); //contains framer motion props?
 
-    useEffect(() => {
-      setClientReady(true);
-    }, []);
-
-    if ((!text && !link.text) || !clientReady) return null;
+    if (!text && !link.text) return null;
 
     // HTML string - unwanted tags stripping
     const currentText = link?.text || (text as string);
     let cleanedText = currentText;
     // @ts-ignore
-    if (typeof window !== "undefined") {
-      cleanedText = DOMPurify.sanitize(currentText, {
-        ALLOWED_TAGS: rich ? allowedTags.rich : allowedTags.default,
-      });
-    }
+    // if (typeof window !== 'undefined') {
+    cleanedText = DOMPurify.sanitize(currentText, {
+      ALLOWED_TAGS: rich ? allowedTags.rich : allowedTags.default,
+    });
+    // }
 
-    if (textStyle === "button" && variant !== "popover") {
+    if (textStyle === 'button' && variant !== 'popover') {
       return text;
     }
 
     const isLink: boolean = !!link.text;
     const linkProps = isLink ? (({ linkType, ...rest }) => rest)(link) : {};
 
-    if (cleanedText === "[object Object]") return null;
+    if (cleanedText === '[object Object]') return null;
 
     const allProps = {
       // pass all styling defaults to decoupled styles file to future-proof modularity
@@ -58,11 +53,11 @@ export const Text = forwardRef(
       dangerouslySetInnerHTML: { __html: cleanedText },
     };
 
-    let textTag: any = link?.text ? Link : seoTag || "p";
-    if (typeof textStyle === "string" && textStyle.match(/h[1-6]/)) {
+    let textTag: any = link?.text ? Link : seoTag || 'p';
+    if (typeof textStyle === 'string' && textStyle.match(/h[1-6]/)) {
       textTag = seoTag || textStyle;
     }
-    if (rich) textTag = "div";
+    if (rich) textTag = 'div';
 
     return createElement(
       // if motion props exist on component, make this component animatable, otherwise render static Text
@@ -72,10 +67,10 @@ export const Text = forwardRef(
   },
 );
 
-Text.displayName = "Text";
+Text.displayName = 'Text';
 
 const getMotionTag = (tag: any) => {
-  if (typeof tag === "object") return motion(Link);
+  if (typeof tag === 'object') return motion(Link);
 
   const tags: any = {
     p: motion.p,

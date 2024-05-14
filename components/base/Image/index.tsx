@@ -19,6 +19,7 @@ export const Image = forwardRef(
       placeholder,
       sizes,
       quality,
+      preserveSVG = false,
       disablePlaceholder,
       ...props
     }: ImageProps,
@@ -41,11 +42,12 @@ export const Image = forwardRef(
           propSrc,
           imageHeight,
           focalPoint,
+          preserveSVG,
         );
 
         if (blurOrSVG && blurOrSVG.includes('</svg>')) {
           setIsSVG(
-            <Box
+            <div
               dangerouslySetInnerHTML={{ __html: blurOrSVG }}
               {...generatedSVG(props)}
             />,

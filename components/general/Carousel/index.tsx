@@ -1,38 +1,38 @@
-import { forwardRef, Ref, useRef, useState } from "react";
-import { CarouselProps } from "./Carousel.types";
-import { carousel, carouselVars } from "./Carousel.styles";
-import { Stack } from "../../../components";
+import { forwardRef, Ref, useRef, useState } from 'react';
+import { CarouselProps } from './Carousel.types';
+import { carousel, carouselVars } from './Carousel.styles';
+import { Stack } from '../../../components';
 import {
   CarouselContext,
   CarouselControls,
   CarouselPagination,
   CarouselWrapper,
-} from "./chunks";
-import { getValueAtBreakpoint } from "../../../utils";
-import { useDimensions } from "../../../hooks";
+} from './chunks';
+import { getValueAtBreakpoint } from '../../../utils';
+import { useDimensions } from '../../../hooks';
 
 export const Carousel = forwardRef(
   (
     {
       className,
-      variant = "primary",
+      variant = 'primary',
       size,
       items = [],
       loop = false,
-      animationStyle = "default",
+      animationStyle = 'default',
       gap = 0,
-      width: propsWidth = "100%",
+      width: propsWidth = '100%',
       height: propsHeight,
       controls,
       showPagination = false,
-      paginationType = "dots",
+      paginationType = 'dots',
       crop = true,
       columns = 1,
       isClickable = false,
-      itemAnimationVariant = "default",
+      itemAnimationVariant = 'default',
       paginationStyle,
-      inactiveWidth = "100%",
-      inactiveHeight = "100%",
+      inactiveWidth = '100%',
+      inactiveHeight = '100%',
       ...props
     }: CarouselProps,
     ref: Ref<CarouselProps>,
@@ -102,4 +102,4 @@ export const Carousel = forwardRef(
   },
 );
 
-Carousel.displayName = "Carousel";
+Carousel.displayName = 'Carousel';

@@ -7,6 +7,11 @@ export * from './base/Image';
 export * from './base/Stack';
 export * from './base/Text';
 
+// scrollTriggers
+export { useScrollTrigger } from './base/Box';
+export { useScrollTriggerGrid } from './base/Grid';
+export { useScrollTriggerStack } from './base/Stack';
+
 // general components
 export { default as Accordion } from './general/Accordion';
 export * from './general/ButtonGroup';
@@ -24,6 +29,7 @@ export { default as Popover } from './general/Popover';
 export { default as ShareTooltip } from './general/ShareTooltip';
 export { default as SmoothScroll } from './general/SmoothScroll';
 export { default as ShowJSON } from './general/ShowJSON';
+export { default as SmoothScroll } from './general/SmoothScroll';
 export { default as Tooltip } from './general/Tooltip';
 export { default as Video } from './general/Video';
 

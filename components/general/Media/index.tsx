@@ -17,6 +17,7 @@ export const Media = forwardRef(
       orientation,
       imageQuality,
       disablePlaceholder,
+      preserveSVG,
       ...props
     }: MediaProps,
     ref: Ref<MediaProps>,
@@ -34,6 +35,7 @@ export const Media = forwardRef(
         priority={priority}
         quality={imageQuality}
         disablePlaceholder={disablePlaceholder}
+        preserveSVG={preserveSVG}
       />
     );
     if (data?.video) {

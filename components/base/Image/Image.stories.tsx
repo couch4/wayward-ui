@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Box, Image, Stack, Text } from '../../../components';
+// @ts-ignore
 import localImage from '../../../assets/images/zhaCarousel1.jpg';
 
 const imageUrlWithQuery =
@@ -9,7 +10,7 @@ const imageUrlWithoutQuery =
 const imageUrlWithFocalPoint =
   'https://qa-api.zaha-hadid.com/media/bwzfe0he/01667_cp_n101337.jpg?rxy=0.8771146616541353,0.20592004721792143';
 const svgSrc =
-  'http://localhost:8055/assets/3b2af8a6-035d-4ef1-ad8c-fe584689ed0f';
+  'http://165.232.45.12:8055/assets/3b2af8a6-035d-4ef1-ad8c-fe584689ed0f';
 
 const meta: Meta<typeof Image> = {
   component: Image,
@@ -93,5 +94,6 @@ export const StaticallyImportedImage: Story = {
 export const SVG: Story = {
   args: {
     src: svgSrc,
+    style: { color: 'black', width: '20rem', height: '20rem' },
   },
 };

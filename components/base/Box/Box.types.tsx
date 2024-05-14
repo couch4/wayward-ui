@@ -6,8 +6,15 @@ import { MotionProps } from 'framer-motion';
 type HTMLAndMotionProps = React.HTMLAttributes<HTMLElement> & MotionProps;
 
 export interface BoxProps extends HTMLAndMotionProps, VariantProps<typeof box> {
-  bgSrc?: string;
   motion?: boolean;
+  scrollTrigger?: any;
+  debug?: boolean;
+  onEnter?: string;
+  onEnterBack?: string;
+  onLeave?: string;
+  onLeaveBack?: string;
+  onRefresh?: string;
+  animateOnScrollDown?: boolean;
 }
 
 export type BoxVars = (
