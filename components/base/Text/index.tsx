@@ -54,7 +54,7 @@ export const Text = forwardRef(
     };
 
     let textTag: any = link?.text ? Link : seoTag || 'p';
-    if (typeof textStyle === 'string' && textStyle.match(/h[1-6]/)) {
+    if (typeof textStyle === 'string' && textStyle.match(/h[1-6]/) && !isLink) {
       textTag = seoTag || textStyle;
     }
     if (rich) textTag = 'div';

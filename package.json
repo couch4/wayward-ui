@@ -1,6 +1,6 @@
 {
   "name": "mof-cl",
-  "version": "0.1.34",
+  "version": "0.1.42",
   "main": "./index.js",
   "types": "./index.d.ts",
   "scripts": {

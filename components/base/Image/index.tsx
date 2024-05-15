@@ -21,6 +21,7 @@ export const Image = forwardRef(
       quality,
       preserveSVG = false,
       disablePlaceholder,
+      priority = false,
       ...props
     }: ImageProps,
     ref: Ref<any>,
