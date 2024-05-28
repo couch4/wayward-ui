@@ -100,7 +100,7 @@ export const Stack = forwardRef(
             },
             onLeaveBack: () => {
               if (onLeaveBack) {
-                setMotionState(onLeaveBack);
+                setMotionState(animateOnScrollDown ? 'initial' : onLeaveBack);
               }
               setScrollState('leaveBack');
             },

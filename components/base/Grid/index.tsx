@@ -100,7 +100,7 @@ export const Grid = forwardRef(
             },
             onLeaveBack: () => {
               if (onLeaveBack) {
-                setMotionState(onLeaveBack);
+                setMotionState(animateOnScrollDown ? 'initial' : onLeaveBack);
               }
               setScrollState('leaveBack');
             },

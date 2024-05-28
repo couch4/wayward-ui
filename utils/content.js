@@ -1,31 +1,31 @@
 // @ts-ignore - grabs variables from the root project's tailwind config
-import twConfig from "/tailwind.config.ts";
+import twConfig from '/tailwind.config.ts';
 
 const backUpBreakpoints = {
-  sm: "640px",
-  md: "768px",
-  lg: "1024px",
-  xl: "1280px",
-  xxl: "1536px",
+  sm: '640px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1280px',
+  xxl: '1536px',
 };
 
 // @ts-ignore
 const { screens: breakpoints } = twConfig?.theme?.extend;
 const availBreakpoints = breakpoints
   ? Object.keys(breakpoints)
-  : ["base", "sm", "md", "lg", "xl", "xxl"];
+  : ['base', 'sm', 'md', 'lg', 'xl', 'xxl'];
 
 const breakpointVals = breakpoints || backUpBreakpoints;
 delete breakpointVals.full;
 
 export const stripHtml = (html) => {
-  return html.replace(/(<([^>]+)>)/gi, "");
+  return html.replace(/(<([^>]+)>)/gi, '');
 };
 
 export const isInViewport = (el) => {
   const rect = el.getBoundingClientRect();
 
-  if (typeof window === "undefined") return null;
+  if (typeof window === 'undefined') return null;
 
   return (
     rect.top >= 0 &&
@@ -38,17 +38,17 @@ export const isInViewport = (el) => {
 
 export const loadLazyImage = (element) => {
   if (element) {
-    element.querySelectorAll("*").forEach((item) => {
-      if (item.getAttribute("data-srcset")) {
-        item.setAttribute("srcset", item.getAttribute("data-srcset"));
-        item.removeAttribute("data-srcset");
+    element.querySelectorAll('*').forEach((item) => {
+      if (item.getAttribute('data-srcset')) {
+        item.setAttribute('srcset', item.getAttribute('data-srcset'));
+        item.removeAttribute('data-srcset');
       }
-      if (item.getAttribute("data-src")) {
-        item.setAttribute("src", item.getAttribute("data-src"));
-        item.removeAttribute("data-src");
+      if (item.getAttribute('data-src')) {
+        item.setAttribute('src', item.getAttribute('data-src'));
+        item.removeAttribute('data-src');
       }
     });
-    element.classList.add("lazy-loaded");
+    element.classList.add('lazy-loaded');
   }
 };
 
@@ -64,7 +64,8 @@ export const containsMotionProps = (props) => {
     props.whileFocus ||
     props.whileDrag ||
     props.whileInView ||
-    props.motion
+    props.motion ||
+    props.animateOnScrollDown
   ) {
     containsMotionProps = true;
   }
@@ -85,7 +86,7 @@ export const extractAllOfType = (data, type) => {
     Object.keys(data).forEach((key) => {
       const value = data[key];
 
-      if (typeof value === "object" && value !== null && key !== "image") {
+      if (typeof value === 'object' && value !== null && key !== 'image') {
         recurse(value);
       } else if (key === type && value !== null) {
         flattened.push(value);
@@ -112,10 +113,10 @@ const findLastNotGreater = (arr, value) => {
 };
 
 export const getCurrentBreakpoint = (width) => {
-  let currentBreakpoint = "base";
+  let currentBreakpoint = 'base';
 
   const breakpointNums = Object.values(breakpointVals).map((breakpoint) => {
-    if (!breakpoint.includes("%")) {
+    if (!breakpoint.includes('%')) {
       return parseInt(breakpoint);
     }
   });
@@ -133,11 +134,11 @@ export const getCurrentBreakpoint = (width) => {
 
 export const getValueAtBreakpoint = (values, breakpoint, percentageOf) => {
   let value = values;
-  if (typeof values === "object") {
+  if (typeof values === 'object') {
     value = Object.values(values)[0];
     for (let i = 0; i < availBreakpoints.length; i++) {
       const val = availBreakpoints[i];
-      if (values[val] && breakpoint !== "base") value = values[val];
+      if (values[val] && breakpoint !== 'base') value = values[val];
       if (val === breakpoint) {
         break;
       }
@@ -146,11 +147,11 @@ export const getValueAtBreakpoint = (values, breakpoint, percentageOf) => {
 
   if (percentageOf) {
     let percentOfVal = value;
-    if (typeof value === "number") {
+    if (typeof value === 'number') {
       percentOfVal = value / percentageOf;
     }
-    if (value.includes("%")) {
-      const decimalise = parseInt(value.replace("%", "")) / 100;
+    if (value.includes('%')) {
+      const decimalise = parseInt(value.replace('%', '')) / 100;
       percentOfVal = decimalise * percentageOf;
     }
     return percentOfVal;
