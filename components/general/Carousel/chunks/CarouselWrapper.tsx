@@ -1,10 +1,10 @@
-import { FC, useContext, useState } from "react";
-import { Box, Stack } from "../../../../components";
-import CarouselItem from "./CarouselItem";
-import { ICarouselWrapper } from "../Carousel.types";
-import { PanInfo } from "framer-motion";
-import { carouselCanvas, carouselWrapper } from "../Carousel.styles";
-import { CarouselContext } from "./";
+import { FC, useContext, useState } from 'react';
+import { Box, Stack } from '../../../../components';
+import CarouselItem from './CarouselItem';
+import { ICarouselWrapper } from '../Carousel.types';
+import { PanInfo } from 'framer-motion';
+import { carouselCanvas, carouselWrapper } from '../Carousel.styles';
+import { CarouselContext } from './';
 
 // @ts-ignore
 // const html = document.documentElement;
@@ -64,7 +64,7 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
     const vel = velocity.x;
     const fastEnough = Math.abs(vel) > 5;
 
-    if (fastEnough && typeof currItem === "number") {
+    if (fastEnough && typeof currItem === 'number') {
       const delta = vel > 0 ? -1 : 1;
       const next = currItem + delta;
 
@@ -80,7 +80,7 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
   };
 
   let x = 0;
-  if (typeof currItem === "number") {
+  if (typeof currItem === 'number') {
     x = -currItem * slideWidth;
   }
 
@@ -88,7 +88,7 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
     <Box {...carouselCanvas(crop)}>
       <Stack
         direction="row"
-        drag="x"
+        drag={length > 1 ? 'x' : false}
         onDragEnd={endDrag}
         onDragStart={startDrag}
         animate={{ x }}
