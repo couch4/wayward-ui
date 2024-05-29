@@ -100,13 +100,13 @@ export const Grid = forwardRef(
             },
             onLeaveBack: () => {
               if (onLeaveBack) {
-                setMotionState(animateOnScrollDown ? 'initial' : onLeaveBack);
+                setMotionState(animateOnScrollDown ? 'inactive' : onLeaveBack);
               }
               setScrollState('leaveBack');
             },
             onRefresh: () => {
               if (onRefresh) {
-                setMotionState(onRefresh);
+                setMotionState(animateOnScrollDown ? 'inactive' : onRefresh);
               }
               setScrollState('refresh');
             },

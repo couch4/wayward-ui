@@ -99,13 +99,13 @@ export const Box = forwardRef(
             },
             onLeaveBack: () => {
               if (onLeaveBack) {
-                setMotionState(onLeaveBack);
+                setMotionState(animateOnScrollDown ? 'inactive' : onLeaveBack);
               }
               setScrollState('leaveBack');
             },
             onRefresh: () => {
               if (onRefresh) {
-                setMotionState(onRefresh);
+                setMotionState(animateOnScrollDown ? 'inactive' : onRefresh);
               }
               setScrollState('refresh');
             },
