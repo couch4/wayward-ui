@@ -14,6 +14,8 @@ export const box = cva('box', {
       footer: '',
       nav: '',
       span: '',
+      stack: '',
+      grid: '',
     },
   },
   defaultVariants: {

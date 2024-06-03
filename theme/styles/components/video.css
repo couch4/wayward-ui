@@ -1,47 +1,46 @@
-.media-holder {
-  @apply overflow-hidden;
-
-  .video {
-    &-wrapper {
-      @apply overflow-hidden;
-      > div:first-child {
-        @apply absolute 
-        z-[1]
+.video {
+  &-wrapper {
+    @apply relative overflow-hidden;
+    #backgroundPlayer {
+      @apply absolute 
+        z-[10]
         pointer-events-none
         left-[50%]
         top-[50%]
         translate-x-[-50%]
         translate-y-[-50%]
-        opacity-0;
-        transition: 0.3s opacity;
-      }
-      &.started {
-        > div:first-child {
-          opacity: 1;
-        }
-      }
-      &.autoplay {
-        .video-controls {
-          @apply hidden;
-        }
-      }
-      &.fullscreen-enabled {
-        > div:first-child {
-          @apply hidden;
-        }
-      }
-      &.fullscreen-active {
-        > div:first-child {
-          @apply flex pointer-events-auto;
-        }
-      }
-      img {
-        @apply !h-full;
+        opacity-100;
+      transition: 0.3s opacity;
+    }
+    &.started {
+      > div:first-child {
+        opacity: 1;
       }
     }
-    &-controls {
-      @apply absolute
+    &.autoplay {
+      .video-controls {
+        @apply hidden;
+      }
+    }
+    &.fullscreen-enabled {
+      > div:first-child {
+        @apply hidden;
+      }
+    }
+    &.fullscreen-active {
+      > div:first-child {
+        @apply flex pointer-events-auto;
+      }
+    }
+
+    img {
+      @apply !h-full
+        z-0;
+    }
+  }
+
+  &-controls {
+    @apply absolute
           z-[2];
-    }
   }
 }

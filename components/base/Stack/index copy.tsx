@@ -10,8 +10,8 @@ import {
   useRef,
   useState,
 } from 'react';
-import { BoxProps } from './Box.types';
-import { boxVars } from './Box.styles';
+import { StackProps } from './Stack.types';
+import { stackVars } from './Stack.styles';
 import { motion, useMotionValue } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -24,11 +24,13 @@ const scrollTriggerDefaults = {
   toggleActions: 'restart none none none',
 };
 
-export const Box = forwardRef(
+export const Stack = forwardRef(
   (
     {
       className,
-      variant = 'flex',
+      direction = 'row',
+      align = 'start',
+      gap,
       scrollTrigger,
       debug = false,
       onEnter,
@@ -37,9 +39,8 @@ export const Box = forwardRef(
       onLeaveBack,
       onRefresh,
       animateOnScrollDown,
-      extendedProps, // for stack and grid
       ...props
-    }: BoxProps,
+    }: StackProps,
     ref: Ref<any>,
   ) => {
     const innerRef = useRef<HTMLDivElement>(null);
@@ -51,11 +52,8 @@ export const Box = forwardRef(
 
     const isAnimated = containsMotionProps(props); //contains framer motion props?
     const allProps = {
-      ...props,
-      ...(extendedProps
-        ? extendedProps
-        : boxVars(variant, className, props.style)),
-      ...(motionState ? { animate: motionState } : {}),
+      ...stackVars(direction, align, gap, className), // pass all styling defaults to decoupled styles file to future-proof modularity
+      ...props, // pass down remaining props
     };
 
     // scrolltrigger
@@ -134,12 +132,8 @@ export const Box = forwardRef(
       gsapRegistered,
     ]);
 
-    const tagType: any = ['section', 'footer', 'header'].includes(`${variant}`)
-      ? variant
-      : 'div';
-
     return createElement(
-      isAnimated ? getMotionTag(tagType) : tagType, // if motion props exist on component, make this component animatable, otherwise render static div
+      isAnimated ? motion.div : 'div', // if motion props exist on component, make this component animatable, otherwise render static stack
       { ...allProps, ref: innerRef },
       <ScrollTriggerContext.Provider
         value={{ inView, motionState, progress, scrollState }}
@@ -150,22 +144,9 @@ export const Box = forwardRef(
   },
 );
 
-Box.displayName = 'Box';
+Stack.displayName = 'Stack';
 
-const getMotionTag = (tag: any) => {
-  const tags: any = {
-    div: motion.div,
-    section: motion.section,
-    footer: motion.footer,
-    header: motion.header,
-    nav: motion.nav,
-    span: motion.span,
-  };
-
-  return tags[tag] || motion.p;
-};
-
-export const useScrollTrigger = () => useContext(ScrollTriggerContext);
+export const useScrollTriggerStack = () => useContext(ScrollTriggerContext);
 
 const clamp = (num: number, min: number, max: number) =>
   Math.min(Math.max(num, min), max);

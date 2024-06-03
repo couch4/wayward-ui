@@ -1,12 +1,14 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Carousel, Image } from "../../../components";
+import type { Meta, StoryObj } from '@storybook/react';
+import { Carousel, Image } from '../../../components';
 // @ts-ignore
-import Arrow from "../../../assets/icons/chevron.svg";
+import Arrow from '../../../assets/icons/chevron.svg';
 
 const urls: any = [
-  "https://base.matterofform.com/media/1zudodgf/frans-ruiter-phnfcr2eh00-unsplash.jpg?width=1600&format=webp",
-  "https://base.matterofform.com/media/uziesd2a/anthony-delanoix-cfi7_hcxecu-unsplash.jpg?width=1600&format=webp",
-  "https://base.matterofform.com/media/44lnxixr/a7f1ed2ef6b95603a7fe9591043396e2.jpeg?width=1600&format=webp",
+  'https://base.matterofform.com/media/1zudodgf/frans-ruiter-phnfcr2eh00-unsplash.jpg?width=1000&format=webp',
+  'https://base.matterofform.com/media/uziesd2a/anthony-delanoix-cfi7_hcxecu-unsplash.jpg?width=1000&format=webp',
+  'https://base.matterofform.com/media/44lnxixr/a7f1ed2ef6b95603a7fe9591043396e2.jpeg?width=1000&format=webp',
+  'https://base.matterofform.com/media/uziesd2a/anthony-delanoix-cfi7_hcxecu-unsplash.jpg?width=1000&format=webp',
+  'https://base.matterofform.com/media/44lnxixr/a7f1ed2ef6b95603a7fe9591043396e2.jpeg?width=1000&format=webp',
 ];
 
 const items = urls.map((url: string, i: number) => {
@@ -24,9 +26,9 @@ const items = urls.map((url: string, i: number) => {
 
 const meta: Meta<typeof Carousel> = {
   component: Carousel,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
   argTypes: {
     align: {
@@ -40,12 +42,12 @@ const meta: Meta<typeof Carousel> = {
       },
     },
     variant: {
-      options: ["primary", "focus", "bookcase"],
+      options: ['primary', 'focus', 'bookcase'],
     },
   },
   args: {
-    animationStyle: "default",
-    variant: "primary",
+    animationStyle: 'default',
+    variant: 'primary',
   },
 };
 
@@ -85,7 +87,7 @@ export const UncroppedCarousel: Story = {
 export const FocusCarousel: Story = {
   parameters: {
     backgrounds: {
-      default: "dark",
+      default: 'dark',
     },
   },
   args: {
@@ -97,7 +99,7 @@ export const FocusCarousel: Story = {
     showPagination: true,
     crop: false,
     gap: 0,
-    variant: "focus",
+    variant: 'focus',
     width: 661,
     height: 441,
   },
@@ -113,8 +115,30 @@ export const BookcaseLoopingCarousel: Story = {
     showPagination: true,
     crop: false,
     loop: true,
-    variant: "bookcase",
+    variant: 'bookcase',
     width: 661,
     height: 441,
+  },
+};
+
+export const CarouselWithSlider: Story = {
+  parameters: {
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'dark',
+    },
+  },
+  args: {
+    className: 'carousel-slider',
+    items,
+    controls: {
+      show: true,
+      directionComponent: <Arrow />,
+    },
+    showPagination: true,
+    paginationType: 'slider',
+    gap: 10,
+    width: window.innerWidth * 0.5 - 45,
+    height: window.innerHeight * 0.5,
   },
 };

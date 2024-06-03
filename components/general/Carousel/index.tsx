@@ -94,6 +94,7 @@ export const Carousel = forwardRef(
               length={carouselPages}
               paginationType={paginationType}
               paginationStyle={paginationStyle}
+              animationStyle={animationStyle}
             />
           )}
         </CarouselContext.Provider>

@@ -1,30 +1,34 @@
-import classNames from "classnames";
+import classNames from 'classnames';
 
 export const videoWrapper = (
   isPlaying: boolean,
   isAutoPlay: boolean,
-  allowFullScreen: boolean,
+  allowFullscreen: boolean,
   isFullscreen: boolean,
   init: boolean,
 ) => ({
   className: classNames(
-    "video-wrapper",
+    'video-wrapper',
     { playing: isPlaying },
-    { autoplay: isAutoPlay && !allowFullScreen },
-    { "fullscreen-enabled": allowFullScreen },
-    { "fullscreen-active": isFullscreen },
+    { autoplay: isAutoPlay && !allowFullscreen },
+    { 'fullscreen-enabled': allowFullscreen },
+    { 'fullscreen-active': isFullscreen },
     { started: !init },
   ),
   style: {
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%',
   },
 });
 
 export const videoControls = (isPlaying: boolean, hasStarted: boolean) => ({
   className: classNames(
-    "video-controls",
+    'video-controls',
     { playing: isPlaying },
     { started: hasStarted },
   ),
 });
+
+export const reactPlayer = {
+  className: 'video-react-player',
+};

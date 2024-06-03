@@ -44,8 +44,7 @@ export const Media = forwardRef(
           <Video
             onAutoPlayStarted={onAutoPlayStarted}
             onPlayerReady={onPlayerReady}
-            data={data?.video}
-            cover={data?.image}
+            data={data}
             {...hasImageSizes}
             priority={priority} // for cover image
             imageQuality={imageQuality}
@@ -53,10 +52,6 @@ export const Media = forwardRef(
         </Suspense>
       );
     }
-    // if (data.isSvg && data.svg) {
-    //   const SVG = require(data.imageUrl).current;
-    //   variant = <SVG /> || null;
-    // }
 
     if (!variant) return null;
 

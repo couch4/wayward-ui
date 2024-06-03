@@ -2,25 +2,31 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Box, Media } from '../../../components';
 
 const imageProps = {
-  imageUrl:
-    'https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/53kgzguw/refargotohp-1azkcg0c38a-unsplash.jpg?width=696&format=webp',
-  imageAlt: 'Image alt text',
-  caption: 'Example of a caption',
-  isSvg: false,
+  image: {
+    src: 'https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/53kgzguw/refargotohp-1azkcg0c38a-unsplash.jpg?width=696&format=webp',
+    alt: 'Image alt text',
+    caption: 'Example of a caption',
+  },
 };
 const videoProps = {
-  coverImage: {
-    imageUrl:
-      'https://zhweb-qa-f-app.azurewebsites.net/media/11tbjmi2/kychan-ccfo0o_ltsy-unsplash.jpg',
-    imageAlt: 'This will be the alt text',
-    isSvg: false,
+  image: {
+    src: 'https://zhweb-qa-f-app.azurewebsites.net/media/11tbjmi2/kychan-ccfo0o_ltsy-unsplash.jpg',
+    alt: 'This will be the alt text',
   },
-  vimeoId: '889428749',
-  youtubeId: '',
-  autoPlay: true,
-  allowFullscreen: false,
-  loop: true,
-  controls: false,
+  video: {
+    src: '889428749',
+    type: 'vimeo',
+    autoPlay: true,
+    loop: true,
+    allowFullscreen: false,
+    allowControls: false,
+    allowSound: false,
+  },
+};
+
+const videoPropsFullscreen = {
+  ...videoProps,
+  allowFullscreen: true,
 };
 
 /**  This is the media component */
@@ -28,7 +34,7 @@ const meta: Meta<typeof Media> = {
   component: Media,
   // tags: ["autodocs"],
   parameters: {
-    layout: 'fullscreen',
+    layout: 'centered',
     docs: {
       toc: true,
       controls: { exclude: ['style'] },
@@ -47,7 +53,7 @@ export const MediaImage: Story = {
   decorators: [
     (Story) => {
       return (
-        <Box className="w-full h-[20rem] bg-gray-500 [&>*:first-child]:w-full">
+        <Box className="w-[calc(100vw/2)] h-[calc(100vh/2)] bg-gray-500 [&>*:first-child]:w-full relative">
           <Story />
         </Box>
       );
@@ -59,11 +65,11 @@ export const MediaImage: Story = {
   },
 };
 
-export const MediaVideo: Story = {
+export const MediaVideoInline: Story = {
   decorators: [
     (Story) => {
       return (
-        <Box className="w-full h-[20rem] bg-gray-500 [&>*:first-child]:w-full">
+        <Box className="w-[calc(100vw/2)] h-[calc(100vh/2)] bg-gray-500 [&>*:first-child]:w-full relative">
           <Story />
         </Box>
       );
@@ -71,5 +77,20 @@ export const MediaVideo: Story = {
   ],
   args: {
     data: videoProps,
+  },
+};
+
+export const MediaVideoFullscreen: Story = {
+  decorators: [
+    (Story) => {
+      return (
+        <Box className="w-[calc(100vw/2)] h-[calc(100vh/2)] bg-gray-500 [&>*:first-child]:w-full relative">
+          <Story />
+        </Box>
+      );
+    },
+  ],
+  args: {
+    data: videoPropsFullscreen,
   },
 };

@@ -11,7 +11,7 @@ import { getBase64 } from './Image.actions';
 export const Image = forwardRef(
   (
     {
-      src: propSrc,
+      src: propSrc = '',
       width: propWidth,
       height: propHeight,
       alt = 'image',
@@ -32,7 +32,7 @@ export const Image = forwardRef(
     const isAnimated = containsMotionProps(props);
 
     // get focal point
-    const queryString = propSrc.split('?')[1];
+    const queryString = propSrc.includes('?') ? propSrc.split('?')[1] : propSrc;
     const searchParams = new URLSearchParams(queryString);
     const focalPoint = searchParams.get('rxy');
     const imageHeight = searchParams.get('height');
@@ -88,9 +88,11 @@ export const Image = forwardRef(
 
     const allProps = {
       alt,
+
       ...props,
       ...optimiserProps,
       ...blurData,
+      priority,
     };
 
     if (isSVG) return isSVG;
