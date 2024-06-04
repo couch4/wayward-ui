@@ -1,7 +1,6 @@
 'use client';
-import { useEffect, useRef, FC, useState } from 'react';
+import { useRef, FC, useState } from 'react';
 import { Box } from '../../';
-import screenfull from 'screenfull';
 import { videoWrapper } from './Video.styles';
 import {
   VideoContext,
@@ -9,6 +8,7 @@ import {
   VideoFullscreen,
   VideoPlayer,
 } from './chunks';
+import './Video.css';
 
 const Video: FC<any> = ({
   data,
@@ -19,7 +19,6 @@ const Video: FC<any> = ({
   imageQuality,
 }: any) => {
   const videoWrapperRef = useRef<HTMLDivElement>(null);
-  const [isClient, setIsClient] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -28,18 +27,7 @@ const Video: FC<any> = ({
   const [init, setInit] = useState(true);
   const { image: cover, video } = data;
 
-  useEffect(() => {
-    setIsClient(true);
-    document.addEventListener('fullscreenchange', onFullscreenChange);
-
-    return () => {
-      document.removeEventListener('fullscreenchange', onFullscreenChange);
-    };
-  }, []);
-
   const handleFullscreen = (e?: any) => {
-    console.log('handleFullscreen', video);
-
     if (!video?.allowFullscreen) return;
 
     setIsMuted(false);
@@ -47,22 +35,6 @@ const Video: FC<any> = ({
     setIsPlaying(true);
 
     e && e.stopPropagation();
-    // inlineViewer && screenfull.request(inlineViewer);
-  };
-
-  const onFullscreenChange = () => {
-    console.log(
-      'onFullscreenChange',
-      video,
-      screenfull.isFullscreen,
-      screenfull,
-    );
-
-    if (!screenfull.isFullscreen) {
-      setIsMuted(true);
-      setIsFullscreen(false);
-      setIsPlaying(false);
-    }
   };
 
   return data ? (
@@ -75,14 +47,14 @@ const Video: FC<any> = ({
         isFullscreen,
         init,
       )}
-      onClick={handleFullscreen}
+      layoutId="videoPlayer"
+      layout
     >
       <VideoContext.Provider
         value={{
           data: video,
           fullViewer,
           handleFullscreen,
-          isClient,
           isMuted,
           isFullscreen,
           isPlaying,

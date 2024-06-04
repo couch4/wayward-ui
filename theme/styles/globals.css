@@ -25,7 +25,6 @@
   @import '../../components/general/Nav/Nav.css';
   @import '../../components/general/Popover/Popover.css';
   @import '../../components/general/Tooltip/Tooltip.css';
-  @import 'components/video.css';
 
   /* modules */
   @import 'modules/BannerFullBleedModule.css';

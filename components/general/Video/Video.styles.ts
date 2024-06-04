@@ -29,6 +29,49 @@ export const videoControls = (isPlaying: boolean, hasStarted: boolean) => ({
   ),
 });
 
-export const reactPlayer = {
-  className: 'video-react-player',
+export const videoControlsToolbar = {
+  className: classNames('video-controls-toolbar'),
+};
+
+export const videoControlsToolbarButtons = {
+  className: classNames('video-controls-toolbar-buttons'),
+};
+
+export const videoFullscreen = {
+  id: 'video-fullscreen',
+};
+
+export const videoTimeline = {
+  className: classNames('video-timeline'),
+};
+
+export const videoProgress = (progress: number) => ({
+  className: classNames('video-timeline-progress'),
+  style: {
+    width: `${progress * 100}%`,
+  },
+  layoutId: 'video-timeline-progress',
+  transition: {
+    type: 'spring',
+    stiffness: 500,
+    damping: 50,
+  },
+});
+
+export const videoLoadedProgress = (progress: number) => ({
+  className: classNames('video-timeline-loaded'),
+
+  style: {
+    width: `${progress * 100}%`,
+  },
+  layoutId: 'video-timeline-loaded',
+  transition: {
+    type: 'spring',
+    stiffness: 500,
+    damping: 50,
+  },
+});
+
+export const videoTimer = {
+  className: classNames('video-timer'),
 };

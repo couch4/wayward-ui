@@ -1,7 +1,12 @@
 // @ts-ignore
 import Arrow from './assets/icons/arrow.svg';
 // @ts-ignore
-import Close from './assets/icons/close.svg';
+import Pause from './assets/icons/iconPause.svg';
+// @ts-ignore
+import Close from './assets/icons/iconClose.svg';
+// @ts-ignore
+import Fullscreen from './assets/icons/iconFullscreen.svg';
+
 // MOF component library presets and overrides
 
 export default {
@@ -28,6 +33,32 @@ export default {
         iconPost: <Arrow />,
       },
       text: 'PLAY',
+    },
+    videoPause: {
+      icons: {
+        iconPost: <Pause />,
+      },
+      text: 'PAUSE',
+    },
+    videoFullscreen: {
+      icons: {
+        iconPost: <Fullscreen />,
+      },
+    },
+    videoFullscreenPlay: {
+      icons: {
+        iconPost: <Arrow />,
+      },
+    },
+    videoFullscreenPause: {
+      icons: {
+        iconPost: <Pause />,
+      },
+    },
+    videoClose: {
+      icons: {
+        iconPost: <Close />,
+      },
     },
     linkWithIcon: {
       icons: {

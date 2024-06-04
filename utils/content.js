@@ -65,7 +65,8 @@ export const containsMotionProps = (props) => {
     props.whileDrag ||
     props.whileInView ||
     props.motion ||
-    props.animateOnScrollDown
+    props.animateOnScrollDown ||
+    props.layoutId
   ) {
     containsMotionProps = true;
   }

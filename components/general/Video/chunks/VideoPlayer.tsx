@@ -2,16 +2,12 @@
 import { FC, useEffect, useContext, useRef, useState } from 'react';
 import { VideoContext, VideoControls } from './';
 import { useDimensions } from '../../../../hooks';
-import dynamic from 'next/dynamic';
-import { reactPlayer } from '../Video.styles';
-const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
+import ReactPlayer from 'react-player/lazy';
 
 const VideoPlayer: FC<any> = ({ isInline = true }: any) => {
   const {
     data,
-    handleFullscreen,
     fullViewer,
-    init,
     inlineViewer,
     isFullscreen,
     isMuted,
@@ -26,6 +22,8 @@ const VideoPlayer: FC<any> = ({ isInline = true }: any) => {
     wrapper,
   } = useContext(VideoContext);
   const { width, height } = useDimensions(wrapper);
+  const [progress, setProgress] = useState(null);
+  const [duration, setDuration] = useState(null);
   const [playerDimensions, setPlayerDimensions] = useState({
     vidWidth: 640,
     vidHeight: 390,
@@ -59,8 +57,9 @@ const VideoPlayer: FC<any> = ({ isInline = true }: any) => {
       }
 
       if (vidHolder) {
-        vidHolder.style.width = `${containerWidth}px`;
-        vidHolder.style.height = `${containerHeight}px`;
+        // + 2 gives a pixel grace either side.
+        vidHolder.style.width = `${Math.ceil(containerWidth + 2)}px`;
+        vidHolder.style.height = `${Math.ceil(containerHeight + 2)}px`;
       }
     }
   };
@@ -83,8 +82,9 @@ const VideoPlayer: FC<any> = ({ isInline = true }: any) => {
       if (container) {
         setInlineViewer(container);
         if (data?.autoPlay) {
+          onAutoPlayStarted && onAutoPlayStarted();
           setInit(false);
-          setIsPlaying(!data?.allowFullscreen);
+          setIsPlaying(true);
         }
       }
     } else {
@@ -94,22 +94,25 @@ const VideoPlayer: FC<any> = ({ isInline = true }: any) => {
     }
   };
 
+  const updateProgress = (progress: any) => {
+    if (!isInline) {
+      setProgress(progress);
+    }
+  };
+
+  const getDuration = (duration: any) => {
+    if (!isInline) {
+      setDuration(duration);
+    }
+  };
+
   const togglePlay = (e: any) => {
     e.stopPropagation();
 
-    if (isInline) {
-      if (init) {
-        setInit(false);
-        onAutoPlayStarted && onAutoPlayStarted();
-      }
-
-      data?.allowFullscreen && handleFullscreen();
-    } else {
-      if (fullViewer) {
-        fullViewer.playing = !isPlaying;
-        setIsPlaying(!isPlaying);
-      }
-    }
+    isInline
+      ? (inlineViewer.playing = !isPlaying)
+      : (fullViewer.playing = !isPlaying);
+    setIsPlaying(!isPlaying);
   };
 
   const toggleMute = (e: any) => {
@@ -127,10 +130,13 @@ const VideoPlayer: FC<any> = ({ isInline = true }: any) => {
         url={vidSrc}
         playing={isPlaying}
         onReady={handleReady}
-        controls={data?.allowControls || data?.allowFullscreen}
+        controls={false}
         muted={isMuted}
-        autoPlay={data?.autoPlay && isInline && !data?.allowFullscreen}
+        onProgress={updateProgress}
+        onDuration={getDuration}
+        autoPlay={data?.autoPlay && isInline}
         playsinline={isInline}
+        progressInterval={isInline ? 2000 : 100}
         loop={data?.loop}
         width="100%"
         height="100%"
@@ -141,9 +147,10 @@ const VideoPlayer: FC<any> = ({ isInline = true }: any) => {
             },
           },
         }}
-        {...reactPlayer}
       />
-      <VideoControls {...{ togglePlay, toggleMute }} />
+      <VideoControls
+        {...{ togglePlay, toggleMute, progress, duration, playerRef }}
+      />
     </>
   );
 };

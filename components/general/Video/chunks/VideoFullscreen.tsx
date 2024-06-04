@@ -1,6 +1,8 @@
 'use client';
 import { FC, useContext, useEffect } from 'react';
+import { Box } from '../../../';
 import { VideoContext, VideoPlayer } from './';
+import { videoFullscreen } from '../Video.styles';
 import { createPortal } from 'react-dom';
 
 const VideoFullscreen: FC<any> = () => {
@@ -20,7 +22,12 @@ const VideoFullscreen: FC<any> = () => {
   }, []);
 
   return isFullscreen
-    ? createPortal(<VideoPlayer isInline={false} />, document.body)
+    ? createPortal(
+        <Box {...videoFullscreen} layoutId="videoPlayer">
+          <VideoPlayer isInline={false} />
+        </Box>,
+        document.body,
+      )
     : null;
 };
 
