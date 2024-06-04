@@ -4,19 +4,21 @@ import { VideoContext, VideoControls } from './';
 import { useDimensions } from '../../../../hooks';
 import dynamic from 'next/dynamic';
 import { reactPlayer } from '../Video.styles';
-import { skip } from 'node:test';
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
 
 const VideoPlayer: FC<any> = ({ isInline = true }: any) => {
   const {
     data,
     handleFullscreen,
+    fullViewer,
     init,
     inlineViewer,
+    isFullscreen,
     isMuted,
     isPlaying,
     onAutoPlayStarted,
     onPlayerReady,
+    setFullViewer,
     setIsMuted,
     setIsPlaying,
     setInit,
@@ -41,14 +43,12 @@ const VideoPlayer: FC<any> = ({ isInline = true }: any) => {
 
   useEffect(() => {
     handleResize();
-  }, [vidWrapper, width, height]);
+  }, [vidWrapper, width, height, inlineViewer]);
 
   const handleResize = () => {
     if (vidWrapper) {
       const { aspect } = playerDimensions;
       const vidHolder = vidWrapper.querySelector('#backgroundPlayer');
-
-      console.log(vidWrapper);
 
       let containerWidth = width;
       let containerHeight = width * 10;
@@ -80,8 +80,6 @@ const VideoPlayer: FC<any> = ({ isInline = true }: any) => {
         container,
       });
 
-      handleResize();
-
       if (container) {
         setInlineViewer(container);
         if (data?.autoPlay) {
@@ -89,6 +87,10 @@ const VideoPlayer: FC<any> = ({ isInline = true }: any) => {
           setIsPlaying(!data?.allowFullscreen);
         }
       }
+    } else {
+      const fullPlayer = document.getElementById('fullPlayer');
+      const container = fullPlayer?.getElementsByTagName('iframe')[0];
+      setFullViewer(container);
     }
   };
 
@@ -100,10 +102,14 @@ const VideoPlayer: FC<any> = ({ isInline = true }: any) => {
         setInit(false);
         onAutoPlayStarted && onAutoPlayStarted();
       }
-      data?.allowFullscreen ?? handleFullscreen();
-    }
 
-    setIsPlaying(!isPlaying);
+      data?.allowFullscreen && handleFullscreen();
+    } else {
+      if (fullViewer) {
+        fullViewer.playing = !isPlaying;
+        setIsPlaying(!isPlaying);
+      }
+    }
   };
 
   const toggleMute = (e: any) => {
@@ -111,7 +117,7 @@ const VideoPlayer: FC<any> = ({ isInline = true }: any) => {
     setIsMuted(!isMuted);
   };
 
-  const skipRender = !data || !wrapper.current;
+  const skipRender = !data || !wrapper.current || (isFullscreen && isInline);
 
   return skipRender ? null : (
     <>

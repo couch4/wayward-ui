@@ -23,7 +23,8 @@ const Video: FC<any> = ({
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [inlineViewer, setInlineViewer] = useState(null);
+  const [inlineViewer, setInlineViewer] = useState<any>(null);
+  const [fullViewer, setFullViewer] = useState<any>(null);
   const [init, setInit] = useState(true);
   const { image: cover, video } = data;
 
@@ -37,6 +38,8 @@ const Video: FC<any> = ({
   }, []);
 
   const handleFullscreen = (e?: any) => {
+    console.log('handleFullscreen', video);
+
     if (!video?.allowFullscreen) return;
 
     setIsMuted(false);
@@ -44,10 +47,17 @@ const Video: FC<any> = ({
     setIsPlaying(true);
 
     e && e.stopPropagation();
-    inlineViewer && screenfull.request(inlineViewer);
+    // inlineViewer && screenfull.request(inlineViewer);
   };
 
   const onFullscreenChange = () => {
+    console.log(
+      'onFullscreenChange',
+      video,
+      screenfull.isFullscreen,
+      screenfull,
+    );
+
     if (!screenfull.isFullscreen) {
       setIsMuted(true);
       setIsFullscreen(false);
@@ -70,6 +80,7 @@ const Video: FC<any> = ({
       <VideoContext.Provider
         value={{
           data: video,
+          fullViewer,
           handleFullscreen,
           isClient,
           isMuted,
@@ -78,6 +89,7 @@ const Video: FC<any> = ({
           inlineViewer,
           onAutoPlayStarted,
           onPlayerReady,
+          setFullViewer,
           setInit,
           setIsFullscreen,
           setIsPlaying,
@@ -92,7 +104,7 @@ const Video: FC<any> = ({
           priority={priority}
           quality={imageQuality}
         />
-        <VideoFullscreen />
+        <VideoFullscreen isFullscreen={isFullscreen} />
       </VideoContext.Provider>
     </Box>
   ) : null;

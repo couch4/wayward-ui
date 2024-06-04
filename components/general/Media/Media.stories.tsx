@@ -24,9 +24,16 @@ const videoProps = {
   },
 };
 
+const fullscreenSplice = {
+  video: {
+    ...videoProps.video,
+    allowFullscreen: true,
+  },
+};
+
 const videoPropsFullscreen = {
   ...videoProps,
-  allowFullscreen: true,
+  ...fullscreenSplice,
 };
 
 /**  This is the media component */

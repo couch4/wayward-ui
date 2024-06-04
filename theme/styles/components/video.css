@@ -44,3 +44,11 @@
           z-[2];
   }
 }
+
+body {
+  #fullPlayer {
+    @apply bg-black
+    absolute
+    inset-0;
+  }
+}
