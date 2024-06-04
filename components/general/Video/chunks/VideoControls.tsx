@@ -13,6 +13,7 @@ import {
   videoTimeline,
   videoTimer,
 } from '../Video.styles';
+import { isMobile } from 'react-device-detect';
 
 const VideoControls: FC<any> = ({
   toggleMute,
@@ -22,6 +23,7 @@ const VideoControls: FC<any> = ({
   playerRef,
 }) => {
   const {
+    data,
     handleFullscreen,
     init,
     isFullscreen,
@@ -31,6 +33,8 @@ const VideoControls: FC<any> = ({
   } = useContext(VideoContext);
   const timelineRef = useRef(null);
   const { x, width } = useDimensions(timelineRef);
+
+  if (!data?.allowControls) return null;
 
   const handleClose = () => {
     setIsFullscreen(false);
@@ -58,13 +62,17 @@ const VideoControls: FC<any> = ({
             <Button
               onClick={togglePlay}
               variant={
-                isPlaying ? 'videoFullscreenPause' : 'videoFullscreenPlay'
+                isMobile
+                  ? 'videoFullscreenPlay'
+                  : isPlaying
+                    ? 'videoFullscreenPause'
+                    : 'videoFullscreenPlay'
               }
             />
             <Button
               onClick={toggleMute}
               variant={
-                isMuted ? 'videoFullscreenUnMute' : 'videoFullscreenMute'
+                isMuted ? 'videoFullscreenMute' : 'videoFullscreenUnMute'
               }
             />
             <Text

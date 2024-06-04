@@ -3,6 +3,7 @@ import { FC, useEffect, useContext, useRef, useState } from 'react';
 import { VideoContext, VideoControls } from './';
 import { useDimensions } from '../../../../hooks';
 import ReactPlayer from 'react-player/lazy';
+import { isMobile } from 'react-device-detect';
 
 const VideoPlayer: FC<any> = ({ isInline = true }: any) => {
   const {
@@ -138,12 +139,13 @@ const VideoPlayer: FC<any> = ({ isInline = true }: any) => {
         playsinline={isInline}
         progressInterval={isInline ? 2000 : 100}
         loop={data?.loop}
+        volume={1}
         width="100%"
         height="100%"
         config={{
           vimeo: {
             playerOptions: {
-              background: isInline,
+              background: isInline && isMuted,
             },
           },
         }}

@@ -28,6 +28,8 @@ const fullscreenSplice = {
   video: {
     ...videoProps.video,
     allowFullscreen: true,
+    allowControls: true,
+    autoPlay: false,
   },
 };
 
