@@ -88,7 +88,7 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
     <Box {...carouselCanvas(crop)}>
       <Stack
         direction="row"
-        drag={length > 1 ? 'x' : false}
+        drag={length > 0 ? 'x' : false}
         onDragEnd={endDrag}
         onDragStart={startDrag}
         animate={{ x }}
