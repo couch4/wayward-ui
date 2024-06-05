@@ -43,7 +43,7 @@
 
 body {
   #video-fullscreen {
-    @apply absolute
+    @apply fixed
     inset-0
     !scale-100;
 

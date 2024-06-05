@@ -49,6 +49,9 @@ the proposed schema is below;
 
 <ShowJSON data={proposedSchema} collapsed={false} />
 
+This way data is always in a predictable format. Every Media object will at the very least contain an image. And if it has
+a video, the image will serve as the video's cover image. Note: we no longer need to include **isSVG** as the image component now detects this itself.
+
 <br />
 
 ## Props
@@ -74,10 +77,24 @@ To disable this behaviour, set the **disablePlaceholder** prop to true.
 ### Media - Video
 
 Videos are fetched and rendered with
-[React-Player](https://github.com/cookpete/react-player). Currently if
-**allowFullscreen** is set to true, the video will be rendered in fullscreen. If
-set to true, then autoPlay won't work and vice versa.
+[React-Player](https://github.com/cookpete/react-player).
 
 There are also a bunch of buttons that can be exposed by CSS (and assigned an SVG, for example) in the <span style={{color:"pink"}}>**.video-controls**</span> class.
 
-<Canvas of={MediaStories.MediaVideo} sourceState="shown" exclude={['style']} />
+<Canvas
+  of={MediaStories.MediaVideoInline}
+  sourceState="shown"
+  exclude={['style']}
+  width="100%"
+/>
+
+Have also built a custom fullscreen player - that we can style ourselves and can play in iOS - as Apple blocks access to the fullscreen API.
+Was previously using [screenfull.js](https://github.com/sindresorhus/screenfull.js) but it too cannot get past Apple's gates! Icons and UI in this example
+have limited styling, as this will be handled project by project.
+
+<Canvas
+  of={MediaStories.MediaVideoFullscreen}
+  sourceState="shown"
+  exclude={['style']}
+  style={{ width: '100%' }}
+/>

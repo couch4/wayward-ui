@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Box, Image, Stack, Text } from '../../../components';
 // @ts-ignore
 import localImage from '../../../assets/images/zhaCarousel1.jpg';
+// @ts-ignore
+import mofSVG from '../../../assets/icons/mofLogo.svg';
 
 const imageUrlWithQuery =
   'https://cdn-zhweb-qa-media.azureedge.net/api/v1/media/53kgzguw/refargotohp-1azkcg0c38a-unsplash.jpg?width=696&format=webp';
@@ -24,16 +26,15 @@ const meta: Meta<typeof Image> = {
 export default meta;
 type Story = StoryObj<typeof Image>;
 
-export const ExplicitWidthAndHeight: Story = {
-  args: {
-    src: imageUrlWithoutQuery,
-    width: 800,
-    height: 600,
-    priority: true,
-    blurDataURL: `${imageUrlWithoutQuery}?width=80&height=60`,
-    placeholder: 'blur',
-  },
-};
+// export const ExplicitWidthAndHeight: Story = {
+//   args: {
+//     src: imageUrlWithoutQuery,
+//     width: 800,
+//     height: 600,
+//     priority: true,
+//     responsive: false,
+//   },
+// };
 
 export const FillContainer: Story = {
   decorators: [
@@ -82,18 +83,18 @@ export const FocalPoint: Story = {
   },
 };
 
-export const StaticallyImportedImage: Story = {
-  args: {
-    src: localImage.src,
-    width: localImage.width,
-    height: localImage.height,
-    sizes: '(min-width: 808px) 50vw, 100vw',
-  },
-};
+// export const StaticallyImportedImage: Story = {
+//   args: {
+//     src: localImage.src,
+//     width: localImage.width,
+//     height: localImage.height,
+//     sizes: '(min-width: 808px) 50vw, 100vw',
+//   },
+// };
 
 export const SVG: Story = {
   args: {
-    src: svgSrc,
+    src: 'https://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svg',
     style: { color: 'black', width: '20rem', height: '20rem' },
   },
 };
