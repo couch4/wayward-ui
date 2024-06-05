@@ -6,6 +6,10 @@ import Pause from './assets/icons/iconPause.svg';
 import Close from './assets/icons/iconClose.svg';
 // @ts-ignore
 import Fullscreen from './assets/icons/iconFullscreen.svg';
+// @ts-ignore
+import Mute from './assets/icons/iconMute.svg';
+// @ts-ignore
+import UnMute from './assets/icons/iconUnMute.svg';
 
 // MOF component library presets and overrides
 
@@ -53,6 +57,16 @@ export default {
     videoFullscreenPause: {
       icons: {
         iconPost: <Pause />,
+      },
+    },
+    videoFullscreenMute: {
+      icons: {
+        iconPost: <Mute />,
+      },
+    },
+    videoFullscreenUnMute: {
+      icons: {
+        iconPost: <UnMute />,
       },
     },
     videoClose: {

@@ -12,7 +12,8 @@
           opacity-0;
       transition: 0.3s opacity;
     }
-    &.started {
+    &.started,
+    &.playing {
       #backgroundPlayer {
         opacity: 1;
       }
@@ -83,6 +84,15 @@ body {
 
             svg {
               @apply w-4 h-4;
+            }
+          }
+          &-fullscreen {
+            &-mute,
+            &-un-mute {
+              svg {
+                @apply w-4
+                h-4;
+              }
             }
           }
         }

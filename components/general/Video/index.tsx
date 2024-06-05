@@ -64,6 +64,7 @@ const Video: FC<any> = ({
           setFullViewer,
           setInit,
           setIsFullscreen,
+          setIsMuted,
           setIsPlaying,
           setInlineViewer,
           wrapper: videoWrapperRef,
