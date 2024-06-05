@@ -140,6 +140,18 @@ const ProgressChild = () => {
 };
 
 export const ScrollTrigger: Story = {
+  decorators: [
+    (Story) => {
+      return (
+        <>
+          <Stack direction="column" className="py-[1000px]">
+            <Story />
+          </Stack>
+          <SmoothScroll />
+        </>
+      );
+    },
+  ],
   args: {
     className: 'rounded-3xl w-40 h-40 bg-blue-500 relative',
     children: <ProgressChild />,
