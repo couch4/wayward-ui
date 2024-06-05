@@ -69,6 +69,7 @@ export const MediaImage: Story = {
   args: {
     data: imageProps,
     responsive: true,
+    imageSizes: '50vw',
   },
 };
 

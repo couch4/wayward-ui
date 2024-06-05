@@ -55,6 +55,8 @@ export const FillContainer: Story = {
   args: {
     src: imageUrlWithoutQuery,
     responsive: true,
+    sizes: '400px',
+    quality: 90,
   },
 };
 
@@ -80,6 +82,7 @@ export const FocalPoint: Story = {
     src: imageUrlWithFocalPoint,
     priority: true,
     responsive: true,
+    sizes: '800px',
   },
 };
 
