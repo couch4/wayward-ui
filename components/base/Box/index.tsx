@@ -107,8 +107,8 @@ export const Box = forwardRef(
               setScrollState('leaveBack');
             },
             onRefresh: () => {
-              if (onRefresh || animateOnScrollDown) {
-                setMotionState(animateOnScrollDown ? 'inactive' : onRefresh);
+              if (onRefresh) {
+                setMotionState(onRefresh);
               }
               setScrollState('refresh');
             },
