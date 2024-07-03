@@ -1,13 +1,13 @@
-import { forwardRef, Ref } from "react";
-import { Stack, Button, ShareTooltip } from "../../../components";
-import { buttonGroupVars } from "./ButtonGroup.styles";
-import { ButtonGroupProps } from "./ButtonGroup.types";
-import { useRouter } from "next/navigation";
+import { forwardRef, Ref } from 'react';
+import { Stack, Button, ShareTooltip } from '../../../components';
+import { buttonGroupVars } from './ButtonGroup.styles';
+import { ButtonGroupProps } from './ButtonGroup.types';
+import { useRouter } from 'next/navigation';
 
 export const ButtonGroup = forwardRef(
   (
     {
-      direction = "row",
+      direction = 'row',
       primaryProps,
       secondaryProps,
       shareData,
@@ -19,12 +19,6 @@ export const ButtonGroup = forwardRef(
 
     if (!primaryProps?.href && !secondaryProps?.href) return null;
 
-    const handleClick = (variant: string) => {
-      const url =
-        variant === "primary" ? primaryProps.href : secondaryProps.href;
-      if (url) router.push(url);
-    };
-
     const allProps = {
       ...buttonGroupVars(direction, props.className),
       ...props,
@@ -33,19 +27,12 @@ export const ButtonGroup = forwardRef(
 
     return (
       <Stack {...allProps}>
-        {primaryProps?.href && (
-          <Button onClick={() => handleClick("primary")} {...primaryProps} />
-        )}
-        {secondaryProps?.href && (
-          <Button
-            onClick={() => handleClick("secondary")}
-            {...secondaryProps}
-          />
-        )}
+        {primaryProps?.href && <Button {...primaryProps} />}
+        {secondaryProps?.href && <Button {...secondaryProps} />}
         {shareData && <ShareTooltip {...shareData} />}
       </Stack>
     );
   },
 );
 
-ButtonGroup.displayName = "ButtonGroup";
+ButtonGroup.displayName = 'ButtonGroup';

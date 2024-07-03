@@ -1,8 +1,9 @@
-import { FC, useContext, useState } from 'react';
+import { FC, useContext, useRef, useState } from 'react';
 import { Box, Stack } from '../../../../components';
 import CarouselItem from './CarouselItem';
 import { ICarouselWrapper } from '../Carousel.types';
 import { PanInfo } from 'framer-motion';
+import { useDimensions } from '../../../../hooks';
 import { carouselCanvas, carouselWrapper } from '../Carousel.styles';
 import { CarouselContext } from './';
 
@@ -12,7 +13,7 @@ import { CarouselContext } from './';
 const CarouselWrapper: FC<ICarouselWrapper> = ({
   items,
   dragWidth,
-  dragHeight,
+  dragHeight = 0,
   gap,
   animationStyle,
   columnNum,
@@ -21,10 +22,19 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
   variant,
   ...props
 }) => {
+  const canvasRef = useRef(null);
+  const {
+    width: canvasWidth,
+    height: canvasHeight,
+    screenWidth,
+    screenHeight,
+  } = useDimensions(canvasRef);
   const length = Math.floor((items.length - 1) / columnNum);
-  const { currItem, setCurrItem, isClickable } = useContext(CarouselContext);
+  const { currItem, direction, setCurrItem, isClickable, snap } =
+    useContext(CarouselContext);
   const [isDragging, setIsDragging] = useState(false);
   const slideWidth = dragWidth + (gap || 0);
+  const slideHeight = dragHeight + (gap || 0);
 
   const carouselItems = loop ? [...items, ...items] : items;
 
@@ -41,6 +51,7 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
         width={dragWidth}
         height={dragHeight}
         slideWidth={slideWidth}
+        slideHeight={slideHeight}
         columnNum={columnNum}
         length={length}
         animationStyle={animationStyle}
@@ -60,8 +71,12 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
     event: MouseEvent | TouchEvent | PointerEvent,
     info: PanInfo,
   ) => {
+    if (!snap) return;
     const { velocity } = info;
-    const vel = velocity.x;
+    let vel = velocity.x;
+    if (direction === 'vertical') {
+      vel = velocity.y;
+    }
     const fastEnough = Math.abs(vel) > 5;
 
     if (fastEnough && typeof currItem === 'number') {
@@ -79,20 +94,60 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
     // html.style.touchAction = "auto";
   };
 
-  let x = 0;
+  let offset = 0;
   if (typeof currItem === 'number') {
-    x = -currItem * slideWidth;
+    offset = -currItem * slideWidth;
+  }
+
+  let animateOffset: any = { x: offset };
+  if (direction === 'vertical') {
+    animateOffset = { y: offset };
+  }
+
+  const dragDir = direction === 'vertical' ? 'y' : 'x';
+
+  let dragConstraints = {
+    left: offset,
+    right: offset,
+    top: 0,
+    bottom: 0,
+  };
+  if (!snap && direction === 'horizontal') {
+    dragConstraints = {
+      left: screenWidth - canvasWidth,
+      right: 0,
+      top: 0,
+      bottom: 0,
+    };
+  }
+
+  if (direction === 'vertical') {
+    dragConstraints = {
+      left: 0,
+      right: 0,
+      top: offset,
+      bottom: offset,
+    };
+
+    if (!snap) {
+      dragConstraints = {
+        left: 0,
+        right: 0,
+        top: screenHeight - canvasHeight,
+        bottom: 0,
+      };
+    }
   }
 
   return (
-    <Box {...carouselCanvas(crop)}>
+    <Box ref={canvasRef} {...carouselCanvas(crop)}>
       <Stack
-        direction="row"
-        drag={length > 0 ? 'x' : false}
+        direction={direction === 'vertical' ? 'column' : 'row'}
+        drag={length > 0 ? dragDir : false}
         onDragEnd={endDrag}
         onDragStart={startDrag}
-        animate={{ x }}
-        dragConstraints={{ left: x, right: x, top: 0, bottom: 0 }}
+        animate={animateOffset}
+        dragConstraints={dragConstraints}
         {...carouselWrapper(gap, animationStyle, isDragging)}
         {...props}
       >

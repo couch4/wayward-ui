@@ -8,6 +8,7 @@ import {
   carouselAnimationSuperSlow,
 } from './Carousel.motion';
 import classNames from 'classnames';
+import './Carousel.css';
 
 const transition = {
   default: carouselAnimationDefault,
@@ -47,17 +48,20 @@ export const carouselVars: CarouselVars = (
   width,
   height,
   classes,
+  crop,
+  direction,
 ) => {
   const heightVals = height ? { height } : {};
+  const widthVals = width ? { width } : {};
 
   return {
     className: carousel({
       variant,
       size,
-      className: classNames(classes),
+      className: classNames(classes, { crop }, [direction]),
     }),
     style: {
-      width,
+      ...widthVals,
       ...heightVals,
     },
   };
@@ -84,6 +88,8 @@ export const itemHolder: any = (
   offset: number,
   style: any,
   loop: boolean,
+  snap: boolean,
+  direction: 'horizontal' | 'vertical',
 ) => {
   const addOffset = loop
     ? {
@@ -91,11 +97,19 @@ export const itemHolder: any = (
       }
     : '';
 
+  const snapWidth =
+    snap && direction === 'horizontal' ? { width: `${width}px` } : {};
+  const snapHeight =
+    snap && direction === 'vertical'
+      ? { height: `${width}px`, width: '100%' }
+      : {};
+
   return {
-    className: `carousel-item`,
+    className: classNames('carousel-item', { 'variable-size': !snap }),
     style: {
       ...style,
-      width: `${width}px`,
+      ...snapWidth,
+      ...snapHeight,
       ...addOffset,
     },
   };

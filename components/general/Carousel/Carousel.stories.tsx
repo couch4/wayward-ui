@@ -4,11 +4,15 @@ import { Carousel, Image } from '../../../components';
 import Arrow from '../../../assets/icons/chevron.svg';
 
 const urls: any = [
-  'https://base.matterofform.com/media/1zudodgf/frans-ruiter-phnfcr2eh00-unsplash.jpg?width=1000&format=webp',
-  'https://base.matterofform.com/media/uziesd2a/anthony-delanoix-cfi7_hcxecu-unsplash.jpg?width=1000&format=webp',
-  'https://base.matterofform.com/media/44lnxixr/a7f1ed2ef6b95603a7fe9591043396e2.jpeg?width=1000&format=webp',
-  'https://base.matterofform.com/media/uziesd2a/anthony-delanoix-cfi7_hcxecu-unsplash.jpg?width=1000&format=webp',
-  'https://base.matterofform.com/media/44lnxixr/a7f1ed2ef6b95603a7fe9591043396e2.jpeg?width=1000&format=webp',
+  'https://images.pexels.com/photos/14850976/pexels-photo-14850976.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  'https://images.pexels.com/photos/258393/pexels-photo-258393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  'https://images.pexels.com/photos/20988839/pexels-photo-20988839/free-photo-of-glenfinnan-viaduct-in-scotland.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  'https://images.pexels.com/photos/3698327/pexels-photo-3698327.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  'https://images.pexels.com/photos/19434724/pexels-photo-19434724/free-photo-of-view-of-the-bridge-of-sighs-in-oxford-england-united-kingdom.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  'https://images.pexels.com/photos/7065481/pexels-photo-7065481.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  'https://images.pexels.com/photos/20141298/pexels-photo-20141298/free-photo-of-national-museum-of-scotland-in-edinburgh.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  'https://images.pexels.com/photos/2716774/pexels-photo-2716774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  'https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
 ];
 
 const items = urls.map((url: string, i: number) => {
@@ -137,6 +141,37 @@ export const CarouselWithSlider: Story = {
     },
     showPagination: true,
     paginationType: 'slider',
+    gap: 10,
+    width: window.innerWidth * 0.5 - 45,
+    height: window.innerHeight * 0.5,
+  },
+};
+
+export const ImageSlider: Story = {
+  parameters: {
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'dark',
+    },
+  },
+  args: {
+    items,
+    snap: false,
+    gap: 10,
+    height: window.innerHeight * 0.5,
+  },
+};
+
+export const CarouselVertical: Story = {
+  parameters: {
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'dark',
+    },
+  },
+  args: {
+    items,
+    direction: 'vertical',
     gap: 10,
     width: window.innerWidth * 0.5 - 45,
     height: window.innerHeight * 0.5,

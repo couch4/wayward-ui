@@ -2,12 +2,12 @@
   @apply relative w-full h-full justify-start;
   touch-action: pan-y;
 
+  &.crop {
+    @apply overflow-hidden;
+  }
+
   &-canvas {
     @apply h-full;
-
-    &.crop {
-      @apply overflow-hidden;
-    }
   }
 
   &-wrapper {
@@ -19,6 +19,12 @@
 
     img {
       @apply w-full h-full pointer-events-none;
+    }
+
+    &.variable-size img {
+      @apply !relative
+      !w-auto
+      !object-contain;
     }
   }
 

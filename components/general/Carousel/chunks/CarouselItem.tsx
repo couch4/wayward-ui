@@ -23,11 +23,18 @@ const CarouselItem: FC<ICarouselItem> = ({
   loop = false,
   animationStyle,
   slideWidth,
+  slideHeight,
   variant,
   ...props
 }) => {
-  const { currItem, inactiveWidth, inactiveHeight, breakpoint } =
-    useContext(CarouselContext);
+  const {
+    currItem,
+    inactiveWidth,
+    inactiveHeight,
+    breakpoint,
+    snap,
+    direction,
+  } = useContext(CarouselContext);
   let isActive = currItem === index;
   const newInactiveWidth = getValueAtBreakpoint(
     inactiveWidth,
@@ -47,6 +54,11 @@ const CarouselItem: FC<ICarouselItem> = ({
 
     // reorders stack to faux infinte scroll
     offset = slideWidth * (fullLength * groupOffset + itemsLength);
+
+    if (direction === 'vertical') {
+      offset = slideHeight * (fullLength * groupOffset + itemsLength);
+    }
+
     isActive = currItem - fullLength * groupOffset - itemsLength === index;
   }
 
@@ -71,8 +83,18 @@ const CarouselItem: FC<ICarouselItem> = ({
     none: {},
   };
 
+  // need to work this out
+  let slideSize = direction === 'vertical' ? slideHeight : width / columnNum;
+
   const allProps = {
-    ...itemHolder(width / columnNum, offset, (props as any).style, loop),
+    ...itemHolder(
+      width / columnNum,
+      offset,
+      (props as any).style,
+      loop,
+      snap,
+      direction,
+    ),
     ...props,
     // src: typeof item === 'string' ? item : '',
     // @ts-ignore

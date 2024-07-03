@@ -20,7 +20,12 @@ export interface CarouselProps
   };
   columns?: number | string | Record<string, any>;
   showPagination?: boolean;
-  paginationType?: 'dots' | 'numbers' | 'leadingZeroNumbers' | 'slider';
+  paginationType?:
+    | 'dots'
+    | 'numbers'
+    | 'leadingZeroNumbers'
+    | 'slider'
+    | 'thumbs';
   paginationStyle?: any;
   align?: 'left' | 'center';
   crop?: boolean;
@@ -34,6 +39,8 @@ export interface CarouselProps
     | 'none';
   inactiveWidth?: number | string | Record<string, any>;
   inactiveHeight?: number | string | Record<string, any>;
+  snap?: boolean;
+  direction?: 'horizontal' | 'vertical';
 }
 
 export type CarouselVars = (
@@ -42,6 +49,8 @@ export type CarouselVars = (
   width: CarouselProps['width'],
   height: CarouselProps['height'],
   className: CarouselProps['className'],
+  crop: CarouselProps['crop'],
+  direction: CarouselProps['direction'],
 ) => Record<any, any>;
 
 export interface ICarouselWrapper {
@@ -62,6 +71,7 @@ export interface ICarouselItem {
   width: number;
   height?: number;
   slideWidth: number;
+  slideHeight: number;
   length: number;
   loop?: boolean;
   columnNum: number;

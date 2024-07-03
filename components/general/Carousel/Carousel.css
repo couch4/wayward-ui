@@ -1,0 +1,129 @@
+.carousel {
+  @apply relative w-full h-full justify-start;
+  touch-action: pan-y;
+
+  &.crop {
+    @apply overflow-hidden;
+  }
+
+  &.vertical {
+    .carousel {
+      &-canvas,
+      &-wrapper {
+        @apply w-full;
+      }
+    }
+  }
+
+  &-canvas {
+    @apply h-full;
+  }
+
+  &-wrapper {
+    @apply h-full gap-0 cursor-grab;
+  }
+
+  &-item {
+    @apply relative h-full;
+
+    img {
+      @apply w-full h-full pointer-events-none;
+    }
+
+    &.variable-size img {
+      @apply !relative
+        !w-auto
+        !object-contain;
+    }
+  }
+
+  &-control {
+    @apply w-9
+      h-9
+      justify-end
+      !flex-none
+      opacity-70
+      hover:opacity-100
+      duration-100
+      transition-opacity
+      cursor-pointer
+      pointer-events-auto 
+      text-white;
+
+    &.prev {
+      @apply rotate-180;
+    }
+
+    &.hide {
+      @apply opacity-0;
+    }
+
+    &-wrapper {
+      @apply absolute
+        top-[50%]
+        left-0
+        translate-y-[-50%]
+        p-5
+        justify-between
+        pointer-events-none;
+    }
+  }
+
+  &-pagination {
+    @apply absolute left-[50%] translate-x-[-50%] bottom-[-3rem];
+
+    &-step {
+      @apply bg-white w-2 h-2 rounded-full opacity-50 transition-all duration-300 ease-out;
+    }
+
+    &.active {
+      @apply opacity-100 scale-125;
+    }
+
+    &-step-click-area {
+      @apply w-7 h-7 justify-center items-center cursor-pointer;
+    }
+
+    &-scrub {
+      @apply h-full
+        cursor-grab
+        bg-white;
+    }
+  }
+
+  &-slider {
+    @apply p-10;
+
+    .carousel-pagination {
+      @apply bg-black/20
+        h-2
+        -bottom-2
+        translate-x-0
+        w-[80%]
+        left-10;
+    }
+
+    .carousel-control {
+      @apply w-5 h-5;
+
+      &-wrapper {
+        @apply -right-[100%] 
+          left-[initial]
+          translate-x-12
+          -translate-y-[0.4rem]
+          gap-x-4
+          p-0
+          top-full;
+        width: initial !important;
+      }
+    }
+  }
+
+  &.bookcase .carousel-item {
+    @apply origin-bottom;
+  }
+
+  &.focus .carousel-control-wrapper {
+    @apply left-[-10%] right-[-3rem] !w-[120%];
+  }
+}

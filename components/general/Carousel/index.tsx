@@ -26,13 +26,15 @@ export const Carousel = forwardRef(
       controls,
       showPagination = false,
       paginationType = 'dots',
-      crop = true,
+      crop = false,
       columns = 1,
       isClickable = false,
       itemAnimationVariant = 'default',
       paginationStyle,
       inactiveWidth = '100%',
       inactiveHeight = '100%',
+      direction = 'horizontal',
+      snap = true,
       ...props
     }: CarouselProps,
     ref: Ref<CarouselProps>,
@@ -50,7 +52,15 @@ export const Carousel = forwardRef(
     if (items.length === 0) return null;
 
     const allProps = {
-      ...carouselVars(variant, size, carouselWidth, carouselHeight, className),
+      ...carouselVars(
+        variant,
+        size,
+        carouselWidth,
+        carouselHeight,
+        className,
+        crop,
+        direction,
+      ),
       ...props,
     };
 
@@ -68,6 +78,8 @@ export const Carousel = forwardRef(
             inactiveWidth,
             inactiveHeight,
             breakpoint,
+            snap,
+            direction,
           }}
         >
           <CarouselWrapper
