@@ -1,4 +1,4 @@
-import { FC, useContext, useRef, useState } from 'react';
+import { FC, useContext, useEffect, useRef, useState } from 'react';
 import { Box, Stack } from '../../../../components';
 import CarouselItem from './CarouselItem';
 import { ICarouselWrapper } from '../Carousel.types';
@@ -6,9 +6,10 @@ import { PanInfo } from 'framer-motion';
 import { useDimensions } from '../../../../hooks';
 import { carouselCanvas, carouselWrapper } from '../Carousel.styles';
 import { CarouselContext } from './';
+import { isMobile } from 'react-device-detect';
 
 // @ts-ignore
-// const html = document.documentElement;
+let html: any;
 
 const CarouselWrapper: FC<ICarouselWrapper> = ({
   items,
@@ -26,14 +27,21 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
   const { width: wrapperWidth, height: wrapperHeight } =
     useDimensions(wrapperRef);
   const length = Math.floor((items.length - 1) / columnNum);
-  const { carouselWidth, currItem, direction, setCurrItem, isClickable, snap } =
+  const { currItem, direction, setCurrItem, isClickable, snap } =
     useContext(CarouselContext);
   const [isDragging, setIsDragging] = useState(false);
   const slideWidth = dragWidth + gap * columnNum;
   const slideHeight = dragHeight + gap;
 
   const carouselItems = loop ? [...items, ...items] : items;
-  const isDraggable = wrapperWidth > carouselWidth;
+
+  useEffect(() => {
+    window.dispatchEvent(new Event('resize'));
+  }, [wrapperWidth, dragWidth]);
+
+  if (typeof window !== 'undefined') {
+    html = document.documentElement;
+  }
 
   const handleItemClick = (index: number) => {
     !loop && isClickable && setCurrItem(index);
@@ -60,7 +68,9 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
   });
 
   const startDrag = () => {
-    // html.style.touchAction = "none";
+    if (html && isMobile) {
+      html.style.touchAction = 'none';
+    }
     setIsDragging(true);
   };
 
@@ -68,6 +78,10 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
     event: MouseEvent | TouchEvent | PointerEvent,
     info: PanInfo,
   ) => {
+    if (html && isMobile) {
+      html.style.touchAction = 'auto';
+    }
+
     if (!snap) return;
     const { velocity } = info;
     let vel = velocity.x;
@@ -88,7 +102,6 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
     }
 
     setIsDragging(false);
-    // html.style.touchAction = "auto";
   };
 
   let offset = 0;
@@ -143,7 +156,7 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
       <Stack
         ref={wrapperRef}
         direction={direction === 'vertical' ? 'column' : 'row'}
-        drag={length > 0 && isDraggable ? dragDir : false}
+        drag={length > 0 ? dragDir : false}
         onDragEnd={endDrag}
         onDragStart={startDrag}
         animate={animateOffset}

@@ -24,7 +24,9 @@ const Thumbs: FC<any> = ({ onClickThumb, items }) => {
         ...item.props,
         sizes: '200px',
         imageSizes: '200px',
-        backgroundImaageSizes: '200px',
+        ...(item.props.backgroundImageSizes
+          ? { backgroundImageSizes: '200px' }
+          : {}),
       };
 
       newItem = { ...item, props: newProps };

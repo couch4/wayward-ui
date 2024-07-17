@@ -1,7 +1,7 @@
-import { FC, useState } from "react";
-import { Popover, Stack, Text } from "../../../components";
-import { getOptionLabel } from "../../../utils";
-import { dropdownOption } from "./DropdownFilter.styles";
+import { FC, useState } from 'react';
+import { Popover, Stack, Text } from '../../../components';
+import { getOptionLabel } from '../../../utils';
+import { dropdownOption } from './DropdownFilter.styles';
 
 const DropdownFilter: FC<any> = ({
   filter,
@@ -13,6 +13,7 @@ const DropdownFilter: FC<any> = ({
   variant,
 }) => {
   const [isChecked, setIsChecked] = useState(false);
+  const [isDirty, setIsDirty] = useState(false);
 
   const options = filter?.filters || [];
   if (options.length < 1) return null;
@@ -26,15 +27,17 @@ const DropdownFilter: FC<any> = ({
 
     onChange(filter?.filterValue, newSelected);
     setIsChecked(checked);
+
+    setIsDirty(newSelected.length > 0);
   };
 
   const title =
-    variant === "selectedInTitle"
+    variant === 'selectedInTitle'
       ? getOptionLabel(filter.filterName, options, selectedFilters)
       : filter.filterName;
 
   return (
-    <Popover title={title} icons={icons} isDirty={isChecked}>
+    <Popover title={title} icons={icons} isDirty={isDirty}>
       {options.map((option: any) => {
         const isChecked = selectedFilters.includes(option.filterGuid);
         return (

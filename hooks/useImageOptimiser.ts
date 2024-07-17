@@ -32,7 +32,7 @@ export default function useImageOptimiser(
   const responsiveProps = {
     fill: true,
     fit: 'cover',
-    sizes: sizes || '100vw',
+    sizes: sizes || dimensions?.width || '100vw',
     style: {
       objectFit: 'cover',
       ...focalPointSettings(focalPoint),
