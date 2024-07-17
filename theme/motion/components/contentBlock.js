@@ -6,8 +6,11 @@ export const emptyContentBlockAnim = {
   infoTag: {},
   infoTags: {},
   headingTitle: {},
-  subHeading: {},
-  description: {},
+  subTitle: {},
+  bodyCopy: {},
   primaryCta: {},
   secondaryCta: {},
+  media: {},
+  backgroundMedia: {},
+  buttonGroup: {},
 };

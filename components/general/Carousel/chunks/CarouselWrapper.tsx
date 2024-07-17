@@ -14,7 +14,7 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
   items,
   dragWidth,
   dragHeight = 0,
-  gap,
+  gap = 0,
   animationStyle,
   columnNum,
   crop,
@@ -22,21 +22,18 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
   variant,
   ...props
 }) => {
-  const canvasRef = useRef(null);
-  const {
-    width: canvasWidth,
-    height: canvasHeight,
-    screenWidth,
-    screenHeight,
-  } = useDimensions(canvasRef);
+  const wrapperRef = useRef(null);
+  const { width: wrapperWidth, height: wrapperHeight } =
+    useDimensions(wrapperRef);
   const length = Math.floor((items.length - 1) / columnNum);
-  const { currItem, direction, setCurrItem, isClickable, snap } =
+  const { carouselWidth, currItem, direction, setCurrItem, isClickable, snap } =
     useContext(CarouselContext);
   const [isDragging, setIsDragging] = useState(false);
-  const slideWidth = dragWidth + (gap || 0);
-  const slideHeight = dragHeight + (gap || 0);
+  const slideWidth = dragWidth + gap * columnNum;
+  const slideHeight = dragHeight + gap;
 
   const carouselItems = loop ? [...items, ...items] : items;
+  const isDraggable = wrapperWidth > carouselWidth;
 
   const handleItemClick = (index: number) => {
     !loop && isClickable && setCurrItem(index);
@@ -96,7 +93,8 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
 
   let offset = 0;
   if (typeof currItem === 'number') {
-    offset = -currItem * slideWidth;
+    const newOffset = -currItem * slideWidth;
+    offset = Math.min(Math.max(newOffset, -length * slideWidth), 0);
   }
 
   let animateOffset: any = { x: offset };
@@ -112,9 +110,10 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
     top: 0,
     bottom: 0,
   };
+
   if (!snap && direction === 'horizontal') {
     dragConstraints = {
-      left: screenWidth - canvasWidth,
+      left: dragWidth - wrapperWidth,
       right: 0,
       top: 0,
       bottom: 0,
@@ -133,17 +132,18 @@ const CarouselWrapper: FC<ICarouselWrapper> = ({
       dragConstraints = {
         left: 0,
         right: 0,
-        top: screenHeight - canvasHeight,
+        top: dragHeight - wrapperHeight,
         bottom: 0,
       };
     }
   }
 
   return (
-    <Box ref={canvasRef} {...carouselCanvas(crop)}>
+    <Box {...carouselCanvas(crop)}>
       <Stack
+        ref={wrapperRef}
         direction={direction === 'vertical' ? 'column' : 'row'}
-        drag={length > 0 ? dragDir : false}
+        drag={length > 0 && isDraggable ? dragDir : false}
         onDragEnd={endDrag}
         onDragStart={startDrag}
         animate={animateOffset}

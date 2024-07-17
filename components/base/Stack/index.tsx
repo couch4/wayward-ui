@@ -9,6 +9,7 @@ export const Stack = forwardRef(
       className,
       direction = 'row',
       align = 'start',
+      variant = 'stack',
       gap,
       ...props
     }: StackProps,
@@ -16,7 +17,7 @@ export const Stack = forwardRef(
   ) => {
     return (
       <Box
-        variant="stack"
+        variant={variant}
         ref={ref}
         extendedProps={stackVars(direction, align, gap, className)}
         {...props}

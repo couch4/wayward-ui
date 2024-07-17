@@ -149,7 +149,7 @@ export const CarouselWithSlider: Story = {
 
 export const ImageSlider: Story = {
   parameters: {
-    layout: 'fullscreen',
+    layout: 'centered',
     backgrounds: {
       default: 'dark',
     },
@@ -175,5 +175,54 @@ export const CarouselVertical: Story = {
     gap: 10,
     width: window.innerWidth * 0.5 - 45,
     height: window.innerHeight * 0.5,
+  },
+};
+
+export const CarouselWithThumbs: Story = {
+  parameters: {
+    layout: 'centered',
+    backgrounds: {
+      default: 'dark',
+    },
+  },
+  args: {
+    className: 'carousel-thumbs',
+    items,
+    controls: {
+      show: true,
+      directionComponent: <Arrow />,
+    },
+    showPagination: true,
+    paginationType: 'thumbs',
+    gap: 10,
+    width: window.innerWidth * 0.5 - 45,
+    height: window.innerHeight * 0.5,
+  },
+};
+
+export const CarouselMultiView: Story = {
+  parameters: {
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'dark',
+    },
+  },
+  decorators: (Story) => (
+    <div
+      style={{
+        width: '80%',
+        margin: 'auto',
+        height: '70vh',
+        border: 'red solid 1px',
+      }}
+    >
+      <Story />
+    </div>
+  ),
+  args: {
+    items,
+    columns: { md: 2, lg: 3 },
+    paginationType: 'thumbs',
+    gap: 10,
   },
 };

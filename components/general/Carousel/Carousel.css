@@ -20,7 +20,10 @@
   }
 
   &-wrapper {
-    @apply h-full gap-0 cursor-grab;
+    @apply h-full
+    gap-0
+    shrink-0
+    cursor-grab;
   }
 
   &-item {
@@ -88,6 +91,17 @@
       @apply h-full
         cursor-grab
         bg-white;
+    }
+
+    &-thumbs {
+      @apply left-0
+      gap-x-2
+      cursor-pointer;
+      &-item {
+        @apply relative
+        h-20
+          aspect-[4/3];
+      }
     }
   }
 

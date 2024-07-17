@@ -1,5 +1,5 @@
 'use client';
-import { createElement, forwardRef, Ref, useEffect, useState } from 'react';
+import { createElement, forwardRef, Ref } from 'react';
 import { TextProps } from './Text.types';
 import { textVars } from './Text.styles';
 import DOMPurify from 'isomorphic-dompurify';
@@ -84,6 +84,7 @@ const getMotionTag = (tag: any) => {
     a: motion.a,
     button: motion.button,
     div: motion.div,
+    li: motion.li,
   };
 
   return tags[tag] || motion.p;

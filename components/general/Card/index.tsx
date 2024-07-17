@@ -58,6 +58,7 @@ export const Card = forwardRef(
               data?.mediaOrientation && data?.mediaOrientation?.toLowerCase()
             }
             imageQuality={imageQuality}
+            {...motion?.media}
           />
         )}
         {bgImage && (
@@ -68,6 +69,7 @@ export const Card = forwardRef(
             responsive
             priority
             imageQuality={backgroundImageQuality}
+            {...motion?.backgroundMedia}
           />
         )}
         <ContentBlock

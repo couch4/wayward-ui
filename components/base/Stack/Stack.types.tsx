@@ -18,6 +18,7 @@ export interface StackProps
   onLeaveBack?: string;
   onRefresh?: string;
   animateOnScrollDown?: boolean;
+  variant?: 'stack' | 'list' | 'orderedList';
 }
 
 export type StackVars = (

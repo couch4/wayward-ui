@@ -16,6 +16,9 @@ export const box = cva('box', {
       span: '',
       stack: '',
       grid: '',
+      list: '',
+      orderedList: '',
+      li: '',
     },
   },
   defaultVariants: {

@@ -54,6 +54,7 @@ export const text = cva('text', {
       label: 'text-label',
       'lable-sm': 'text-label-sm',
       button: '',
+      li: '',
       ...texts?.textStyles,
     },
   },

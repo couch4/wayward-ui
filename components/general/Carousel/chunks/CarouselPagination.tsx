@@ -7,7 +7,8 @@ import {
   carouselPaginationStep,
   carouselPaginationStepClickArea,
 } from '../Carousel.styles';
-import { CarouselContext, CarouselSlider } from './';
+import { CarouselContext, CarouselSlider, CarouselThumbs } from './';
+import { types } from 'util';
 
 const CarouselPagination: FC<ICarouselPagination> = ({
   length,
@@ -54,6 +55,19 @@ const CarouselPagination: FC<ICarouselPagination> = ({
     );
   });
 
+  const types = {
+    dots: renderDots,
+    numbers: renderDots,
+    slider: (
+      <CarouselSlider
+        animationStyle={animationStyle}
+        sliderContainer={paginationRef}
+        length={length}
+      />
+    ),
+    thumbs: <CarouselThumbs animationStyle={animationStyle} />,
+  };
+
   const allProps = {
     ...carouselPagination,
     ...props,
@@ -61,15 +75,7 @@ const CarouselPagination: FC<ICarouselPagination> = ({
 
   return (
     <Stack ref={paginationRef} direction="row" {...allProps}>
-      {isSlider ? (
-        <CarouselSlider
-          animationStyle={animationStyle}
-          sliderContainer={paginationRef}
-          length={length}
-        />
-      ) : (
-        renderDots
-      )}
+      {types[paginationType as 'dots']}
     </Stack>
   );
 };

@@ -21,6 +21,7 @@ export type ContentBlockMotionTypes = {
   bodyCopy?: Record<string, any>;
   primaryCta?: Record<string, any>;
   secondaryCta?: Record<string, any>;
+  buttonGroup?: Record<string, any>;
 };
 
 type HTMLAndMotionProps = React.HTMLAttributes<HTMLElement> & MotionProps;

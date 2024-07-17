@@ -90,6 +90,7 @@ export const itemHolder: any = (
   loop: boolean,
   snap: boolean,
   direction: 'horizontal' | 'vertical',
+  isActive: boolean,
 ) => {
   const addOffset = loop
     ? {
@@ -105,7 +106,11 @@ export const itemHolder: any = (
       : {};
 
   return {
-    className: classNames('carousel-item', { 'variable-size': !snap }),
+    className: classNames(
+      'carousel-item',
+      { 'variable-size': !snap },
+      { active: isActive },
+    ),
     style: {
       ...style,
       ...snapWidth,
@@ -174,3 +179,11 @@ export const sliderScrub = (
   },
   transition: transition[animationStyle as 'default'],
 });
+
+export const carouselThumbs = {
+  className: 'carousel-pagination-thumbs',
+};
+
+export const thumb = {
+  className: 'carousel-pagination-thumbs-item',
+};

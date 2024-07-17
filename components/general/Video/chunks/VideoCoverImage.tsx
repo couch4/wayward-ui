@@ -2,8 +2,9 @@
 import { FC } from 'react';
 import { Image } from '../../../';
 
-const VideoCoverImage: FC<any> = ({ data: { src, alt }, ...props }: any) => {
-  if (!src) return null;
+const VideoCoverImage: FC<any> = ({ data, ...props }: any) => {
+  if (!data || !data?.src) return null;
+  const { src, alt } = data;
 
   return <Image src={src} alt={alt} responsive {...props} />;
 };

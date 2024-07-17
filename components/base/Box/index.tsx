@@ -160,6 +160,9 @@ const getMotionTag = (tag: any) => {
     header: motion.header,
     nav: motion.nav,
     span: motion.span,
+    list: motion.ul,
+    orderedList: motion.ol,
+    li: motion.li,
   };
 
   return tags[tag] || motion.p;

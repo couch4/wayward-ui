@@ -64,6 +64,8 @@ const PrimaryContentBlock: FC<ContentBlockContentProps> = ({
             ...data?.secondaryCta,
           }}
           {...shareData}
+          // @ts-ignore
+          {...motion?.buttonGroup}
         />
       )}
     </Stack>

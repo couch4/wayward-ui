@@ -1,6 +1,6 @@
 import { forwardRef, Ref, useRef, useState } from 'react';
 import { CarouselProps } from './Carousel.types';
-import { carousel, carouselVars } from './Carousel.styles';
+import { carouselVars } from './Carousel.styles';
 import { Stack } from '../../../components';
 import {
   CarouselContext,
@@ -80,6 +80,8 @@ export const Carousel = forwardRef(
             breakpoint,
             snap,
             direction,
+            carouselWidth: width,
+            items,
           }}
         >
           <CarouselWrapper

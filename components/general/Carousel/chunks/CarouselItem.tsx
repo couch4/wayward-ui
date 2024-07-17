@@ -94,6 +94,7 @@ const CarouselItem: FC<ICarouselItem> = ({
       loop,
       snap,
       direction,
+      isActive,
     ),
     ...props,
     // src: typeof item === 'string' ? item : '',
