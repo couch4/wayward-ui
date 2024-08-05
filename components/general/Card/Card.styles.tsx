@@ -1,11 +1,11 @@
 import { cva } from 'class-variance-authority';
 import { CardVars } from './Card.types';
 import { camelToHyphen } from '../../../utils';
-// @ts-ignore - mof overrides
-import mofConfig from '/mofConfig';
+// @ts-ignore - wayward overrides
+import config from '/wayward.config';
 import classNames from 'classnames';
 
-const cards = mofConfig?.contentProps;
+const cards = config?.contentProps;
 let customCardVariants: any = [];
 if (cards) {
   customCardVariants = Object.entries(cards).map(([key]) => {

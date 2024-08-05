@@ -2,8 +2,8 @@ import { useDimensions } from './';
 import { stripQueryString } from '../utils';
 import { useDevicePixelRatio } from 'use-device-pixel-ratio';
 import { focalPointSettings } from '../components/base/Image/Image.styles';
-// @ts-ignore - mof overrides
-import mofConfig from '/mofConfig';
+// @ts-ignore - wayward overrides
+import config from '/wayward.config';
 
 const dprQuality = [70, 30, 20];
 
@@ -48,8 +48,7 @@ export default function useImageOptimiser(
   const imageLoader = ({ width }: any) => {
     const hasFocalPoint = focalPoint ? `&rxy=${focalPoint}` : '';
     const hasHeight = imageHeight ? `&height=${imageHeight}` : '';
-    const isCDNDisabled = mofConfig?.images?.disableCDNOptimisation || false;
-    const extraParams = isCDNDisabled ? '' : `${hasFocalPoint}${hasHeight}`;
+    const extraParams = `${hasFocalPoint}${hasHeight}`;
 
     return `${stripQueryString(
       url,

@@ -1,11 +1,11 @@
-import { cva } from "class-variance-authority";
-import { ButtonVars } from "./Button.types";
-import classNames from "classnames";
-import { camelToHyphen } from "../../../utils";
-// @ts-ignore - mof overrides
-import mofConfig from "/mofConfig";
+import { cva } from 'class-variance-authority';
+import { ButtonVars } from './Button.types';
+import classNames from 'classnames';
+import { camelToHyphen } from '../../../utils';
+// @ts-ignore - wayward overrides
+import config from '/wayward.config';
 
-const buttons = mofConfig.button;
+const buttons = config.button;
 let customButtonVariants: any = [];
 if (buttons) {
   customButtonVariants = Object.keys(buttons).map((key: string) => {
@@ -18,23 +18,23 @@ if (buttons) {
 const variantObject = Object.assign({}, ...customButtonVariants);
 
 // Button Base and Variant Styles
-export const button = cva("button", {
+export const button = cva('button', {
   variants: {
     variant: {
-      primary: "button-primary",
-      secondary: "button-secondary",
-      nav: "nav-button",
+      primary: 'button-primary',
+      secondary: 'button-secondary',
+      nav: 'nav-button',
       ...variantObject,
     },
     size: {
-      sm: "sm",
-      md: "md",
-      lg: "lg",
-      full: "full",
+      sm: 'sm',
+      md: 'md',
+      lg: 'lg',
+      full: 'full',
     },
     theme: {
-      light: "light",
-      dark: "dark",
+      light: 'light',
+      dark: 'dark',
     },
   },
   // example compond variant
@@ -42,8 +42,8 @@ export const button = cva("button", {
   //   { variant: "primary", size: ["md", "full"], class: "uppercase" },
   // ],
   defaultVariants: {
-    variant: "primary",
-    size: "md",
+    variant: 'primary',
+    size: 'md',
   },
 });
 
@@ -53,7 +53,7 @@ export const buttonVars: ButtonVars = (variant, size, linkType, classes) => {
     className: button({
       variant,
       size,
-      className: classNames(classes, { external: linkType === "External" }),
+      className: classNames(classes, { external: linkType === 'External' }),
     }),
   };
 };

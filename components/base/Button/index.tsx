@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import { Stack, Text } from '../../../components';
 import { containsMotionProps } from '../../../utils';
 import { useRouter } from 'next/navigation';
-// @ts-ignore - mof overrides
-import mofConfig from '/mofConfig';
+// @ts-ignore - wayward overrides
+import config from '/wayward.config';
 
 export const Button = forwardRef(
   (
@@ -32,13 +32,12 @@ export const Button = forwardRef(
 
     // set icon from config, unless overrideen by props
     const iconPre =
-      propsIconPre || mofConfig?.button?.[variant as 'primary']?.icons?.iconPre;
+      propsIconPre || config?.button?.[variant as 'primary']?.icons?.iconPre;
     const iconPost =
-      propsIconPost ||
-      mofConfig?.button?.[variant as 'primary']?.icons?.iconPost;
+      propsIconPost || config?.button?.[variant as 'primary']?.icons?.iconPost;
 
-    const renderText = !mofConfig?.button?.[variant as 'primary']?.omitText;
-    const configText = mofConfig?.button?.[variant as 'primary']?.text;
+    const renderText = !config?.button?.[variant as 'primary']?.omitText;
+    const configText = config?.button?.[variant as 'primary']?.text;
 
     if (!text && !configText && !iconPre && !iconPost && !href) return null;
 

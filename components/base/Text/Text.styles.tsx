@@ -1,10 +1,10 @@
 import { cva } from 'class-variance-authority';
 import { TextVars } from './Text.types';
 import { camelToHyphen } from '../../../utils';
-// @ts-ignore - mof overrides
-import mofConfig from '/mofConfig';
+// @ts-ignore - wayward overrides
+import config from '/wayward.config';
 
-const texts = mofConfig.text;
+const texts = config.text;
 let customTextVariants: any = [];
 if (texts && texts.variants) {
   customTextVariants = Object.entries(texts.variants).map(([key]) => {

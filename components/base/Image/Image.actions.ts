@@ -1,7 +1,7 @@
 'use server';
 import { stripQueryString } from '../../../utils';
 // @ts-ignore
-import mofConfig from '/mofConfig';
+import config from '/wayward.config';
 const fs = require('fs');
 
 export const getBase64 = async (
@@ -18,8 +18,8 @@ export const getBase64 = async (
 
   const hasFocalPoint = focalPoint ? `&rxy=${focalPoint}` : '';
   const hasHeight = imageHeight ? `&height=${imageHeight}` : '';
-  const isCDNDisabled = mofConfig?.images?.disableCDNOptimisation || false;
-  const headers = mofConfig?.headers || {};
+  const isCDNDisabled = config?.images?.disableCDNOptimisation || false;
+  const headers = config?.headers || {};
   const params = isCDNDisabled
     ? '?width=300&quality=10'
     : `?width=300&quality=10${hasFocalPoint}${hasHeight}`;

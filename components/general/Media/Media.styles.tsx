@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 // @ts-ignore - grabs variables from the root project's tailwind config
-import mofConfig from '/mofConfig';
+import config from '/wayward.config';
 
 // @ts-ignore
-const { contentProps } = mofConfig;
+const { contentProps } = config;
 let contentVariant: string = 'primary';
 
 export const mediaHolder = (align: any, orientation: any, props: any) => {

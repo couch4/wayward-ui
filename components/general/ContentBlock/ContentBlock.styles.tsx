@@ -1,13 +1,13 @@
-import { ContentBlockVars } from "./ContentBlock.types";
-import { camelToHyphen } from "../../../utils/formatting";
-import classNames from "classnames";
+import { ContentBlockVars } from './ContentBlock.types';
+import { camelToHyphen } from '../../../utils/formatting';
+import classNames from 'classnames';
 // @ts-ignore - grabs variables from the root project's tailwind config
-import mofConfig from "/mofConfig";
+import config from '/wayward.config';
 
 // @ts-ignore
-const { contentProps } = mofConfig;
+const { contentProps } = config;
 let motion: any = {};
-let contentVariant: string = "primary";
+let contentVariant: string = 'primary';
 let configStyle: any;
 
 // contentBlock Props
@@ -17,12 +17,12 @@ export const contentBlockVars: ContentBlockVars = (
   classes,
 ) => {
   motion = childAnims;
-  contentVariant = variant || "primary";
+  contentVariant = variant || 'primary';
   configStyle = contentProps?.[contentVariant] || {};
 
   return {
     className: classNames(
-      "content-block",
+      'content-block',
       [`content-block-${variant}`],
       classes,
     ),
@@ -31,7 +31,7 @@ export const contentBlockVars: ContentBlockVars = (
 };
 
 export const renderText = (name: string) => {
-  const textStyles = configStyle?.textStyles?.[name] || { textStyle: "p" };
+  const textStyles = configStyle?.textStyles?.[name] || { textStyle: 'p' };
 
   return {
     className: camelToHyphen(name),
@@ -51,11 +51,11 @@ export const renderButton = (name: string) => {
 };
 
 export const contentInfoTags = (motion?: Record<string, any>) => ({
-  className: "info",
+  className: 'info',
   ...motion,
 });
 
 export const preContent = (motion?: Record<string, any>) => ({
-  className: "pre-content",
+  className: 'pre-content',
   ...motion,
 });

@@ -3,21 +3,19 @@
 const nextConfig = {
   experimental: {
     serverActions: {
-      allowedOrigins: ["azurewebsites.net", "*.azurewebsites.net"],
+      allowedOrigins: ['azurewebsites.net', '*.azurewebsites.net'],
     },
   },
-  webpack(config, { isServer }) {
+  webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ["@svgr/webpack"],
+      use: ['@svgr/webpack'],
     });
     return config;
   },
   env: {
-    RUNTIME: "storybook",
-    IMAGE_PROCESSOR_URL:
-      process.env.IMAGE_PROCESSOR_URL ||
-      "https://cdn-zhweb-qa-media.azureedge.net/api/v1/",
+    RUNTIME: 'storybook',
+    IMAGE_PROCESSOR_URL: null,
   },
   images: {
     deviceSizes: [384, 450, 640, 750, 828, 1080, 1200, 1400, 1600, 1920, 2048],
