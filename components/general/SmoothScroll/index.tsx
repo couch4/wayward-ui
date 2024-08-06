@@ -1,9 +1,9 @@
 'use client';
-import { useRef, useEffect } from 'react';
+import { FC, useRef, useEffect } from 'react';
 import Lenis from 'lenis';
 import { isMobile } from 'react-device-detect';
 
-export const SmoothScroll = () => {
+export const SmoothScroll: FC<any> = ({ onLoaded }) => {
   const lenisRef = useRef<Lenis | undefined>(undefined);
   const rafHandleRef = useRef<number | null>(null);
 
@@ -18,6 +18,8 @@ export const SmoothScroll = () => {
         rafHandleRef.current = requestAnimationFrame(raf);
       };
       rafHandleRef.current = requestAnimationFrame(raf);
+      lenisRef.current.start();
+      onLoaded(lenisRef.current);
     }
 
     // Clean up on component unmount

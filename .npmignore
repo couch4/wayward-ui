@@ -1,0 +1,30 @@
+# Development files
+*.log
+*.tsbuildinfo
+.eslintrc*
+.prettierrc*
+.vscode
+tsconfig.json
+
+# Build artifacts
+/assets/images
+/dist
+/build
+/static
+/.next
+/.storybook
+
+# Version control
+.git
+.gitignore
+
+# Dependency directories
+node_modules
+
+# Environment files
+.env*
+
+# Other unnecessary files
+*.css.map
+*.scss
+.bun.lockb
