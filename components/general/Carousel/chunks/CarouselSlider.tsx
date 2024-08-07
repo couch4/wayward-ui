@@ -69,11 +69,13 @@ export default CarouselSlider;
 const ClickAreas = ({ onClickArea, length }: any) => {
   const array = Array.from({ length }, (_, index) => index);
 
-  return array.map((index: number) => (
+  const clickAreas = array.map((index: number) => (
     <Box
       key={`clickArea_${index}`}
       onClick={() => onClickArea(index)}
       {...clickBox(index, length)}
     />
   ));
+
+  return <>{clickAreas}</>;
 };
