@@ -1,5 +1,10 @@
 'use client';
-import { createElement, forwardRef, Ref } from 'react';
+import {
+  createElement,
+  forwardRef,
+  ForwardRefRenderFunction,
+  Ref,
+} from 'react';
 import { TextProps } from './Text.types';
 import { textVars } from './Text.styles';
 import DOMPurify from 'isomorphic-dompurify';
@@ -21,7 +26,7 @@ export const Text = forwardRef(
       ...props
     }: TextProps,
     ref: Ref<TextProps>,
-  ) => {
+  ): any => {
     const isAnimated = containsMotionProps(props); //contains framer motion props?
 
     if (!text && !link.text) return null;

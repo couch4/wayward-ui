@@ -1,3 +1,4 @@
+'use client';
 import { forwardRef, Ref, useEffect, useRef, useState } from 'react';
 import { Box } from '../../../components';
 import NextImage from 'next/image';

@@ -18,8 +18,12 @@ export const SmoothScroll: FC<any> = ({ onLoaded }) => {
         rafHandleRef.current = requestAnimationFrame(raf);
       };
       rafHandleRef.current = requestAnimationFrame(raf);
-      lenisRef.current.start();
-      onLoaded(lenisRef.current);
+      setTimeout(() => {
+        lenisRef.current?.start();
+      }, 500);
+      if (onLoaded) {
+        onLoaded(lenisRef.current);
+      }
     }
 
     // Clean up on component unmount

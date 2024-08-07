@@ -1,3 +1,4 @@
+'use client';
 import { forwardRef, Ref } from 'react';
 import { StackProps } from './Stack.types';
 import { stackVars } from './Stack.styles';
@@ -14,7 +15,7 @@ export const Stack = forwardRef(
       ...props
     }: StackProps,
     ref: Ref<any>,
-  ) => {
+  ): any => {
     return (
       <Box
         variant={variant}

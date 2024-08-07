@@ -1,7 +1,8 @@
-import { FC, useEffect, useState } from "react";
-import { AccordionItem } from "./chunks";
-import { accordionContent } from "./Accordion.styles";
-import { Stack } from "../../";
+'use client';
+import { FC, useEffect, useState } from 'react';
+import { AccordionItem } from './chunks';
+import { accordionContent } from './Accordion.styles';
+import { Stack } from '../../';
 
 const Accordion: FC = ({
   data,

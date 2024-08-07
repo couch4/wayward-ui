@@ -1,3 +1,4 @@
+'use client';
 import { createElement, forwardRef, ReactNode, Ref, useCallback } from 'react';
 import { ButtonProps } from './Button.types';
 import { buttonVars } from './Button.styles';
@@ -25,7 +26,7 @@ export const Button = forwardRef(
       ...props
     }: ButtonProps,
     ref: Ref<any>,
-  ) => {
+  ): any => {
     const router = useRouter();
 
     const isAnimated = containsMotionProps(props); //contains framer motion props?

@@ -1,10 +1,11 @@
+'use client';
 import { forwardRef, Ref } from 'react';
 import { GridProps } from './Grid.types';
 import { gridVars } from './Grid.styles';
 import { Box } from '../../../components';
 
 export const Grid = forwardRef(
-  ({ className, rows, cols, gap, ...props }: GridProps, ref: Ref<any>) => {
+  ({ className, rows, cols, gap, ...props }: GridProps, ref: Ref<any>): any => {
     return (
       <Box
         variant="grid"

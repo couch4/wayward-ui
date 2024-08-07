@@ -1,3 +1,4 @@
+'use client';
 import {
   createElement,
   createContext,
@@ -41,7 +42,7 @@ export const Box = forwardRef(
       ...props
     }: BoxProps,
     ref: Ref<any>,
-  ) => {
+  ): any => {
     const innerRef = useRef<HTMLDivElement>(null);
     useImperativeHandle(ref, () => innerRef.current!, []);
     const [motionState, setMotionState] = useState<string | undefined>();

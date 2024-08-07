@@ -66,7 +66,7 @@ const CarouselSlider: FC<any> = ({
 
 export default CarouselSlider;
 
-const ClickAreas: FC<any> = ({ onClickArea, length }) => {
+const ClickAreas = ({ onClickArea, length }: any) => {
   const array = Array.from({ length }, (_, index) => index);
 
   return array.map((index: number) => (

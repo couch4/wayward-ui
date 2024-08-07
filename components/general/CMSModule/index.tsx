@@ -1,15 +1,15 @@
-import { createElement } from "react";
-import { Stack, Text } from "../../";
-import * as Modules from "../../../modules";
-import ShowJSON from "../ShowJSON";
-import { notFound } from "./CMSModule.styles";
+import { createElement } from 'react';
+import { Stack, Text } from '../../';
+import * as Modules from '../../../modules';
+import ShowJSON from '../ShowJSON';
+import { notFound } from './CMSModule.styles';
 
 const CMSModule = ({
   module: { moduleName, moduleId, props: moduleProps },
   ...props
 }: any) =>
   // @ts-ignore
-  moduleName && typeof Modules[moduleName] !== "undefined" ? (
+  moduleName && typeof Modules[moduleName] !== 'undefined' ? (
     // @ts-ignore
     createElement(Modules[moduleName], {
       data: {
@@ -25,7 +25,7 @@ const CMSModule = ({
         text={`The Module <b style="color:teal;">${moduleName}</b> has not been created yet.`}
         textStyle="h2"
       />
-      <ShowJSON data={moduleProps} />
+      <ShowJSON data={moduleProps} collapsed={false} />
     </Stack>
   );
 
